@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ein Tag in Berlin — Deutsch für Dänen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161922;
+    --ink-soft:#5A6072;
+    --card:#FCFBF8;
+    --card-line:rgba(22,25,34,.10);
+    --gelb:#E0AE12;     /* U-Bahn-gul */
+    --gruen:#3E8E5A;    /* S-Bahn-grøn / rigtigt */
+    --rot:#D6453C;      /* fejl */
+    --rot-bg:#FBE6E4;
+    --gruen-bg:#E5F1E9;
+    --gelb-bg:#FBF1D2;
+    --shadow:0 2px 0 rgba(22,25,34,.05), 0 26px 50px -28px rgba(22,25,34,.55);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;min-height:100%}
+  body{
+    font-family:"Inter",system-ui,sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,#FFE0B0 0%,#F7C2A0 45%,#9FC3E6 100%);
+    transition:background 1.1s ease;
+    -webkit-font-smoothing:antialiased;min-height:100vh;
+  }
+  body.t-mid{background:linear-gradient(160deg,#BFE0F6 0%,#DCEFFB 100%)}
+  body.t-noon{background:linear-gradient(160deg,#F7DA97 0%,#F4C39A 100%)}
+  body.t-eve{background:linear-gradient(160deg,#D29EC0 0%,#7A6BA6 70%,#4C4680 100%)}
+  body.t-night{background:linear-gradient(160deg,#2D3066 0%,#191B33 100%)}
+  body.t-night, body.t-eve{color:#fff}
+
+  .wrap{max-width:680px;margin:0 auto;padding:22px 16px 70px}
+
+  /* ---- top bar ---- */
+  .topbar{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .logo{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:18px;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
+  .ubahn{background:var(--gelb);color:#161922;font-family:"Space Grotesk";font-weight:700;
+    width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-size:15px}
+  .spacer{flex:1}
+  .pack{position:relative;border:none;background:rgba(255,255,255,.85);color:var(--ink);
+    border-radius:11px;padding:8px 12px;font-family:"DM Mono",monospace;font-size:12px;cursor:pointer;
+    display:flex;align-items:center;gap:7px;box-shadow:0 6px 18px -10px rgba(0,0,0,.5)}
+  .pack:hover{background:#fff}
+  .pack .cnt{background:var(--ink);color:#fff;border-radius:20px;font-size:11px;padding:1px 7px;min-width:20px;text-align:center}
+
+  /* ---- route line ---- */
+  .route{display:flex;align-items:flex-start;gap:0;margin:16px 2px 20px;position:relative}
+  .stop{flex:1;display:flex;flex-direction:column;align-items:center;position:relative}
+  .stop::before{content:"";position:absolute;top:7px;left:-50%;width:100%;height:3px;background:rgba(255,255,255,.55)}
+  .stop:first-child::before{display:none}
+  .stop.done::before,.stop.cur::before{background:var(--gelb)}
+  .dot{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.75);border:3px solid rgba(255,255,255,.55);z-index:1}
+  .stop.done .dot{background:var(--gelb);border-color:var(--gelb)}
+  .stop.cur .dot{background:#fff;border-color:var(--gelb);box-shadow:0 0 0 4px rgba(224,174,18,.4)}
+  .stop .tm{font-family:"DM Mono",monospace;font-size:9.5px;margin-top:5px;opacity:.7;white-space:nowrap}
+  body.t-night .stop::before,body.t-eve .stop::before{background:rgba(255,255,255,.3)}
+
+  /* ---- scene card ---- */
+  .card{background:var(--card);color:var(--ink);border:1px solid var(--card-line);border-radius:20px;
+    padding:24px;box-shadow:var(--shadow);animation:rise .35s ease}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .scene-head{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+  .scene-emoji{font-size:26px}
+  .scene-meta{font-family:"DM Mono",monospace;font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.1em}
+  .scene-place{font-family:"Space Grotesk";font-weight:700;font-size:20px;letter-spacing:-.01em}
+
+  .story{font-size:16px;line-height:1.65;margin:4px 0 18px}
+  .story .gl{position:relative;border-bottom:2px dotted var(--gelb);cursor:help;background:none;border-left:0;border-right:0;border-top:0;
+    font:inherit;color:inherit;padding:0;font-weight:600}
+  .story .gl::after{content:attr(data-da);position:absolute;left:50%;bottom:135%;transform:translateX(-50%) scale(.96);
+    background:var(--ink);color:#fff;font-family:"DM Mono",monospace;font-size:11px;padding:5px 9px;border-radius:8px;
+    white-space:nowrap;opacity:0;pointer-events:none;transition:.12s;z-index:5}
+  .story .gl::before{content:"";position:absolute;left:50%;bottom:135%;transform:translateX(-50%) translateY(6px);
+    border:5px solid transparent;border-top-color:var(--ink);opacity:0;transition:.12s}
+  .story .gl:hover::after,.story .gl.open::after{opacity:1;transform:translateX(-50%) scale(1)}
+  .story .gl:hover::before,.story .gl.open::before{opacity:1}
+
+  .task{font-family:"Space Grotesk";font-weight:600;font-size:16.5px;margin:0 0 12px;display:flex;gap:8px;align-items:baseline}
+  .task .q{color:var(--gelb)}
+
+  .opts{display:grid;gap:9px}
+  .opt{text-align:left;border:1.5px solid var(--card-line);background:#fff;border-radius:13px;padding:13px 15px;
+    cursor:pointer;font-size:15.5px;font-weight:500;color:var(--ink);transition:.12s;line-height:1.35}
+  .opt:hover{border-color:var(--ink);transform:translateY(-1px)}
+  .opt:disabled{cursor:default;transform:none}
+  .opt.right{border-color:var(--gruen);background:var(--gruen-bg)}
+  .opt.wrong{border-color:var(--rot);background:var(--rot-bg)}
+  .opt.right::after{content:"✓";float:right;color:var(--gruen);font-weight:700}
+  .opt.wrong::after{content:"✕";float:right;color:var(--rot);font-weight:700}
+
+  .fb{margin-top:14px;border-radius:13px;padding:13px 15px;font-size:14px;line-height:1.55;display:none;border:1px solid var(--card-line)}
+  .fb.show{display:block;animation:rise .2s ease}
+  .fb.ok{background:var(--gruen-bg);border-color:#bfe0cd}
+  .fb.no{background:var(--rot-bg);border-color:#f0c8c4}
+  .fb .lab{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:3px}
+  .fb.ok .lab{color:var(--gruen)} .fb.no .lab{color:var(--rot)}
+
+  .gram{margin-top:13px;border:1px solid var(--card-line);border-left:4px solid var(--gelb);
+    background:var(--gelb-bg);border-radius:0 13px 13px 0;padding:14px 16px;display:none}
+  .gram.show{display:block;animation:rise .25s ease}
+  .gram h4{font-family:"Space Grotesk";font-size:13px;margin:0 0 6px;display:flex;align-items:center;gap:7px;letter-spacing:.01em}
+  .gram h4 .tag{font-family:"DM Mono";font-size:9.5px;background:var(--gelb);color:#161922;padding:2px 7px;border-radius:5px;letter-spacing:.05em}
+  .gram p{margin:0;font-size:13.5px;line-height:1.6;color:var(--ink)}
+  .gram .de{font-weight:700;color:#9a7400} .gram .da{font-weight:700;color:var(--rot)}
+
+  .loot{margin-top:12px;font-family:"DM Mono",monospace;font-size:12px;color:var(--ink-soft);display:none;align-items:center;gap:8px;flex-wrap:wrap}
+  .loot.show{display:flex}
+  .loot .chip{background:#fff;border:1px solid var(--card-line);border-radius:20px;padding:4px 11px;color:var(--ink)}
+
+  .next{margin-top:16px;border:none;background:var(--ink);color:#fff;border-radius:13px;padding:13px 22px;
+    font-family:"Space Grotesk";font-weight:600;font-size:15px;cursor:pointer;display:none;align-items:center;gap:8px}
+  .next.show{display:inline-flex}
+  .next:hover{background:#000}
+
+  /* backpack panel */
+  .drawer{position:fixed;inset:0;background:rgba(20,22,30,.45);display:none;align-items:flex-start;justify-content:center;z-index:20;padding:60px 16px}
+  .drawer.show{display:flex;animation:rise .2s ease}
+  .drawer-card{background:var(--card);color:var(--ink);border-radius:18px;max-width:420px;width:100%;padding:22px;box-shadow:var(--shadow);max-height:80vh;overflow:auto}
+  .drawer-card h3{font-family:"Space Grotesk";margin:0 0 4px;font-size:18px}
+  .drawer-card .sub{color:var(--ink-soft);font-size:12.5px;margin:0 0 14px}
+  .vlist{display:flex;flex-direction:column;gap:7px}
+  .vrow{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--card-line);padding:8px 2px;font-size:14px}
+  .vrow .de{font-weight:600} .vrow .da{color:var(--ink-soft);font-size:13px;text-align:right}
+  .closeX{float:right;border:none;background:none;font-size:20px;cursor:pointer;color:var(--ink-soft);line-height:1}
+  .empty{color:var(--ink-soft);font-size:13.5px}
+
+  /* finale */
+  .finale{text-align:center;padding:14px 6px}
+  .finale .em{font-size:42px}
+  .finale h2{font-family:"Space Grotesk";font-size:26px;margin:8px 0 4px}
+  .finale p{color:var(--ink-soft);font-size:14.5px;margin:0 0 4px}
+  .finale .big{font-family:"Space Grotesk";font-weight:700;font-size:40px;color:var(--gelb)}
+
+  @media (max-width:480px){
+    .stop .tm{display:none}
+    .scene-place{font-size:18px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="logo"><span class="ubahn">U</span> Ein Tag in Berlin</div>
+    <div class="spacer"></div>
+    <button class="pack" id="packBtn">🎒 Rucksack <span class="cnt" id="packCnt">0</span></button>
+  </div>
+
+  <div class="route" id="route"></div>
+
+  <div id="stage"></div>
+</div>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-card">
+    <button class="closeX" id="closeDrawer">×</button>
+    <h3>🎒 Dein Vokabel-Rucksack</h3>
+    <p class="sub">Ord du har samlet op undervejs i dag.</p>
+    <div class="vlist" id="vlist"><p class="empty">Tomt endnu — kom i gang med dagen!</p></div>
+  </div>
+</div>
+
+<script>
+/* ---------------- data ---------------- */
+const SKY = ["", "", "t-mid","t-mid","t-noon","t-noon","t-eve","t-night","t-night"];
+const SCENES = [
+  {
+    tm:"07:30", emoji:"⏰", place:"Zu Hause",
+    story:`Dein Wecker klingelt. Du <span class="gl" data-da="står (langsomt) op">stehst</span> langsam <span class="gl" data-da="op — skilt fra verbet!">auf</span> und gehst in die Küche. Der <span class="gl" data-da="køleskabet">Kühlschrank</span> ist fast leer.`,
+    q:"Du willst frühstücken. Hvad siger du til dig selv?",
+    opts:[
+      {t:"Ich mache mir ein Frühstück.", ok:true, fb:"Korrekt og naturligt — <b>ich mache</b> (du-form ville være machst)."},
+      {t:"Ich macht ein Frühstück.", ok:false, fb:"Forkert bøjning. <b>ich</b> → <b>mache</b>, ikke <b>macht</b> (det er er/sie/es)."},
+      {t:"Ich bin ein Frühstück.", ok:false, fb:"Det betyder «jeg ER en morgenmad» 🙂 Brug <b>machen</b>, ikke <b>sein</b>."}
+    ],
+    gram:{tag:"Verben", t:"Skilte (trennbare) verber", h:`<span class="de">aufstehen</span> deler sig: forstavelsen springer til enden. <span class="de">Ich stehe um sieben <b>auf</b>.</span> Du kender det fra dansk: «jeg står <span class="da">op</span>».`},
+    loot:[["aufstehen","at stå op"],["das Frühstück","morgenmaden"],["der Kühlschrank","køleskabet"]]
+  },
+  {
+    tm:"08:15", emoji:"☕", place:"Im Café",
+    story:`Im Café an der Ecke riecht es nach frischem Kaffee. Die <span class="gl" data-da="servitricen">Bedienung</span> schaut dich an: «Was darf es sein?»`,
+    q:"Hvordan bestiller du høfligt en kaffe?",
+    opts:[
+      {t:"Ich hätte gern einen Kaffee, bitte.", ok:true, fb:"Perfekt høflig form. <b>einen</b> Kaffee = akkusativ (der Kaffee → einen)."},
+      {t:"Ich will Kaffee.", ok:false, fb:"Forstås, men lyder kontant. <b>Ich hätte gern…</b> eller <b>Ich möchte…</b> er høfligt."},
+      {t:"Gib mir Kaffee.", ok:false, fb:"Det er bydeform til en ven — for direkte over for en fremmed."}
+    ],
+    gram:{tag:"Kasus", t:"Akkusativ ved hankøn", h:`Genstandsledet hos hankøn ændrer artiklen: <span class="de">der Kaffee → einen Kaffee</span>. Kun <b>hankøn</b> skifter (-en); hun/intet/flertal står ens.`},
+    loot:[["bestellen","at bestille"],["höflich","høflig"],["einen Kaffee","en kaffe (akk.)"]]
+  },
+  {
+    tm:"09:00", emoji:"🚇", place:"U-Bahnhof",
+    story:`Du musst zu einem <span class="gl" data-da="aftale / møde">Termin</span>. Du nimmst nicht das Fahrrad — heute fährst du <span class="gl" data-da="med">mit</span> der U-Bahn.`,
+    q:"«Ich fahre ___ U-Bahn zur Arbeit.» Hvilken form?",
+    opts:[
+      {t:"mit der U-Bahn", ok:true, fb:"Rigtigt. <b>mit</b> styrer dativ → die U-Bahn bliver til <b>der</b> U-Bahn."},
+      {t:"mit die U-Bahn", ok:false, fb:"<b>mit</b> kræver dativ. Hunkøn i dativ: die → <b>der</b>."},
+      {t:"mit den U-Bahn", ok:false, fb:"<b>den</b> er akkusativ hankøn. Her: dativ hunkøn → <b>der</b>."}
+    ],
+    gram:{tag:"Präpositionen", t:"mit + Dativ", h:`<span class="de">mit, aus, bei, nach, von, zu</span> styrer altid dativ. <span class="de">zur</span> = zu+der, <span class="de">zum</span> = zu+dem. <span class="de">Ich fahre <b>zur</b> Arbeit.</span>`},
+    loot:[["mit der U-Bahn","med metroen"],["der Termin","aftalen / mødet"],["zur Arbeit","på arbejde (retning)"]]
+  },
+  {
+    tm:"12:30", emoji:"🥨", place:"Im Späti",
+    story:`Mittagspause. Im <span class="gl" data-da="døgnkiosk (Berlin-slang)">Späti</span> nimmst du eine Club-Mate und ein <span class="gl" data-da="rundstykke / lille brød">Brötchen</span>. An der Kasse merkst du: du hast nur die Karte dabei.`,
+    q:"Du har ingen kontanter. Hvordan siger du det?",
+    opts:[
+      {t:"Ich habe kein Bargeld.", ok:true, fb:"Rigtigt. <b>kein</b> nægter et navneord (das Bargeld → kein)."},
+      {t:"Ich habe nicht Bargeld.", ok:false, fb:"<b>nicht</b> nægter verber/udsagn. Foran et navneord uden artikel: brug <b>kein-</b>."},
+      {t:"Ich habe keine Bargeld.", ok:false, fb:"Køn passer ikke: <b>das</b> Bargeld → <b>kein</b> (ikke keine, som er hunkøn/flertal)."}
+    ],
+    gram:{tag:"Negation", t:"kein vs. nicht", h:`Kan du sætte «ingen/intet» foran navneordet på dansk? → brug <span class="de">kein-</span>. Ellers <span class="de">nicht</span>. <span class="de">Ich trinke <b>nicht</b>.</span> · <span class="de">Ich habe <b>kein</b> Geld.</span>`},
+    loot:[["das Bargeld","kontanter"],["der Späti","døgnkiosk"],["die Mittagspause","frokostpausen"]]
+  },
+  {
+    tm:"14:00", emoji:"🌳", place:"Im Park",
+    story:`Du setzt dich kurz auf eine Bank im Park. Jemand neben dir lächelt und fragt: <span class="gl" data-da="hvor kommer du fra?">«Woher kommst du?»</span>`,
+    q:"Du er dansker. Hvordan svarer du?",
+    opts:[
+      {t:"Ich komme aus Dänemark.", ok:true, fb:"Rigtigt. Oprindelse (lande/byer) → <b>aus</b> + dativ."},
+      {t:"Ich komme von Dänemark.", ok:false, fb:"<b>von</b> bruges om personer/retninger. Lande og byer: <b>aus</b> Dänemark, <b>aus</b> Berlin."},
+      {t:"Ich bin aus Dänemark gekommen.", ok:false, fb:"Grammatisk muligt, men det betyder «jeg er ankommet fra…». Til oprindelse: nutid <b>Ich komme aus…</b>"}
+    ],
+    gram:{tag:"Wortschatz", t:"Woher? → aus", h:`<span class="de">Woher kommst du?</span> besvares med <span class="de">aus</span>: <span class="de">aus Dänemark, aus Kopenhagen</span>. <span class="de">Wo wohnst du?</span> → <span class="de">in</span>: <span class="de">in Berlin</span>.`},
+    loot:[["Woher kommst du?","hvor kommer du fra?"],["aus Dänemark","fra Danmark"],["sich setzen","at sætte sig"]]
+  },
+  {
+    tm:"18:00", emoji:"🥘", place:"Supermarkt",
+    story:`Auf dem Heimweg planst du das Abendessen. Du hast Lust zu kochen — vielleicht ein Curry mit Kichererbsen.`,
+    q:"«Jeg vil gerne lave mad i aften.» Hvilken sætning er rigtig?",
+    opts:[
+      {t:"Ich möchte heute Abend kochen.", ok:true, fb:"Rigtigt! Modalverbet <b>möchte</b> står på plads 2, og <b>kochen</b> (infinitiv) ryger til sidst."},
+      {t:"Ich möchte kochen heute Abend.", ok:false, fb:"Næsten — men infinitiven <b>kochen</b> skal helt til slut. «…heute Abend <b>kochen</b>.»"},
+      {t:"Ich kochen möchte heute Abend.", ok:false, fb:"Modalverbet skal på plads 2: <b>möchte</b>. Hovedverbet bliver infinitiv til sidst."}
+    ],
+    gram:{tag:"Modalverben", t:"Sætningsklammen (Satzklammer)", h:`Modalverbet (<span class="de">möchte, kann, muss, will</span>) bøjes på plads 2 — hovedverbet står som infinitiv <b>til sidst</b>. <span class="de">Ich <b>muss</b> jetzt nach Hause <b>gehen</b>.</span> Som dansk: «jeg <span class="da">vil</span> gerne <span class="da">lave</span> mad».`},
+    loot:[["kochen","at lave mad"],["möchte","vil gerne"],["das Abendessen","aftensmaden"]]
+  },
+  {
+    tm:"21:00", emoji:"🌙", place:"Zu Hause",
+    story:`Satt und müde sitzt du auf dem Sofa. Eine Freundin schreibt: «Na, wie war dein Tag?»`,
+    q:"Hvordan fortæller du, hvad du har lavet i dag?",
+    opts:[
+      {t:"Ich habe heute viel gemacht.", ok:true, fb:"Rigtigt — perfektum: <b>haben</b> + participium <b>gemacht</b>."},
+      {t:"Ich bin heute viel gemacht.", ok:false, fb:"Forkert hjælpeverbum. <b>machen</b> tager <b>haben</b>, ikke <b>sein</b>."},
+      {t:"Ich habe heute viel machen.", ok:false, fb:"Mangler participium. Ikke <b>machen</b>, men <b>gemacht</b>."}
+    ],
+    gram:{tag:"Perfekt", t:"Datid i talesprog", h:`<span class="de">haben/sein</span> + participium (ofte <span class="de">ge-…-t</span>): <span class="de">machen → gemacht</span>. De fleste tager <b>haben</b>; bevægelse/forandring tager <b>sein</b>: <span class="de">gehen → ich <b>bin</b> gegangen</span>.`},
+    loot:[["Ich habe … gemacht","jeg har lavet/gjort"],["Wie war dein Tag?","hvordan var din dag?"],["müde","træt"]]
+  }
+];
+
+/* ---------------- state ---------------- */
+let idx=0, right=0, answered=false;
+const collected=[]; // [de,da]
+const $=s=>document.querySelector(s);
+
+function renderRoute(){
+  $('#route').innerHTML = SCENES.map((s,i)=>{
+    const cls = i<idx?'done':(i===idx?'cur':'');
+    return `<div class="stop ${cls}"><span class="dot"></span><span class="tm">${s.tm}</span></div>`;
+  }).join('');
+}
+function setSky(){ document.body.className = SKY[idx] || ''; }
+
+function renderScene(){
+  setSky(); renderRoute(); answered=false;
+  if(idx>=SCENES.length){ renderFinale(); return; }
+  const s=SCENES[idx];
+  $('#stage').innerHTML = `
+    <div class="card">
+      <div class="scene-head">
+        <span class="scene-emoji">${s.emoji}</span>
+        <div>
+          <div class="scene-meta">${s.tm} · Station ${idx+1}/${SCENES.length}</div>
+          <div class="scene-place">${s.place}</div>
+        </div>
+      </div>
+      <p class="story">${s.story}</p>
+      <p class="task"><span class="q">▸</span> ${s.q}</p>
+      <div class="opts" id="opts">
+        ${s.opts.map((o,i)=>`<button class="opt" data-i="${i}">${o.t}</button>`).join('')}
+      </div>
+      <div class="fb" id="fb"></div>
+      <div class="gram" id="gram">
+        <h4><span class="tag">${s.gram.tag}</span> ${s.gram.t}</h4>
+        <p>${s.gram.h}</p>
+      </div>
+      <div class="loot" id="loot"><span>🎒 Im Rucksack:</span></div>
+      <button class="next" id="next">${idx===SCENES.length-1?'Tag beenden 🌙':'Weiter →'}</button>
+    </div>`;
+
+  // gloss tap-to-reveal (mobile)
+  $('#stage').querySelectorAll('.gl').forEach(g=>{
+    g.addEventListener('click',e=>{e.stopPropagation(); g.classList.toggle('open');
+      $('#stage').querySelectorAll('.gl').forEach(o=>{if(o!==g)o.classList.remove('open')});});
+  });
+
+  $('#opts').addEventListener('click',e=>{
+    const b=e.target.closest('.opt'); if(!b||answered) return;
+    answered=true;
+    const o=s.opts[+b.dataset.i];
+    $('#opts').querySelectorAll('.opt').forEach((x,xi)=>{
+      x.disabled=true; if(s.opts[xi].ok)x.classList.add('right');
+    });
+    if(!o.ok)b.classList.add('wrong');
+    const fb=$('#fb'); fb.className='fb show '+(o.ok?'ok':'no');
+    fb.innerHTML=`<span class="lab">${o.ok?'Richtig!':'Hoppla'}</span>${o.fb}`;
+    $('#gram').classList.add('show');
+    // collect loot
+    const loot=$('#loot');
+    s.loot.forEach(([de,da])=>{ collected.push([de,da]);
+      loot.insertAdjacentHTML('beforeend',`<span class="chip">${de}</span>`); });
+    loot.classList.add('show');
+    $('#packCnt').textContent=collected.length;
+    if(o.ok)right++;
+    $('#next').classList.add('show');
+  });
+  $('#next').onclick=()=>{ idx++; renderScene(); window.scrollTo({top:0,behavior:'smooth'}); };
+}
+
+function renderFinale(){
+  document.body.className='t-night';
+  $('#route').querySelectorAll('.stop').forEach(s=>{s.classList.remove('cur');s.classList.add('done')});
+  $('#stage').innerHTML=`
+    <div class="card finale">
+      <div class="em">🌃</div>
+      <h2>Geschafft — ein ganzer Tag auf Deutsch!</h2>
+      <div class="big">${right}/${SCENES.length}</div>
+      <p>rigtige valg · ${collected.length} nye ord i rygsækken</p>
+      <p style="margin-top:6px">Gut gemacht. Schlaf gut! 😴</p>
+      <button class="next show" id="again" style="margin:16px auto 0">Neuer Tag ↺</button>
+    </div>`;
+  $('#again').onclick=()=>{ idx=0;right=0;collected.length=0;$('#packCnt').textContent=0;
+    $('#vlist').innerHTML='<p class="empty">Tomt endnu — kom i gang med dagen!</p>';
+    renderScene(); window.scrollTo({top:0,behavior:'smooth'}); };
+}
+
+/* backpack drawer */
+$('#packBtn').onclick=()=>{
+  const list=$('#vlist');
+  list.innerHTML = collected.length
+    ? collected.map(([de,da])=>`<div class="vrow"><span class="de">${de}</span><span class="da">${da}</span></div>`).join('')
+    : '<p class="empty">Tomt endnu — kom i gang med dagen!</p>';
+  $('#drawer').classList.add('show');
+};
+$('#closeDrawer').onclick=()=>$('#drawer').classList.remove('show');
+$('#drawer').addEventListener('click',e=>{ if(e.target.id==='drawer')$('#drawer').classList.remove('show'); });
+
+renderScene();
+</script>
+</body>
+</html>
