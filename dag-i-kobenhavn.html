@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>En dag i København — Dänisch für Deutsche</title>
+<link rel="icon" type="image/svg+xml" href="./favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161922;
+    --ink-soft:#5A6072;
+    --card:#FCFBF8;
+    --card-line:rgba(22,25,34,.10);
+    --gelb:#C8442E;     /* dänisches Rot (statt U-Bahn-Gelb) */
+    --gruen:#3E8E5A;
+    --rot:#D6453C;
+    --rot-bg:#FBE6E4;
+    --gruen-bg:#E5F1E9;
+    --gelb-bg:#FBE2DC;
+    --shadow:0 2px 0 rgba(22,25,34,.05), 0 26px 50px -28px rgba(22,25,34,.55);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;min-height:100%}
+  body{
+    font-family:"Inter",system-ui,sans-serif;color:var(--ink);
+    background:linear-gradient(160deg,#FFE0B0 0%,#F7C2A0 45%,#9FC3E6 100%);
+    transition:background 1.1s ease;
+    -webkit-font-smoothing:antialiased;min-height:100vh;
+  }
+  body.t-mid{background:linear-gradient(160deg,#BFE0F6 0%,#DCEFFB 100%)}
+  body.t-noon{background:linear-gradient(160deg,#F7DA97 0%,#F4C39A 100%)}
+  body.t-eve{background:linear-gradient(160deg,#D29EC0 0%,#7A6BA6 70%,#4C4680 100%)}
+  body.t-night{background:linear-gradient(160deg,#2D3066 0%,#191B33 100%)}
+  body.t-night, body.t-eve{color:#fff}
+
+  .wrap{max-width:680px;margin:0 auto;padding:22px 16px 70px}
+
+  .topbar{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .logo{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:18px;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
+  .ubahn{background:var(--gelb);color:#fff;font-family:"Space Grotesk";font-weight:700;
+    width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-size:15px}
+  .spacer{flex:1}
+  .pack{position:relative;border:none;background:rgba(255,255,255,.85);color:var(--ink);
+    border-radius:11px;padding:8px 12px;font-family:"DM Mono",monospace;font-size:12px;cursor:pointer;
+    display:flex;align-items:center;gap:7px;box-shadow:0 6px 18px -10px rgba(0,0,0,.5)}
+  .pack:hover{background:#fff}
+  .pack .cnt{background:var(--ink);color:#fff;border-radius:20px;font-size:11px;padding:1px 7px;min-width:20px;text-align:center}
+
+  .route{display:flex;align-items:flex-start;gap:0;margin:16px 2px 20px;position:relative}
+  .stop{flex:1;display:flex;flex-direction:column;align-items:center;position:relative}
+  .stop::before{content:"";position:absolute;top:7px;left:-50%;width:100%;height:3px;background:rgba(255,255,255,.55)}
+  .stop:first-child::before{display:none}
+  .stop.done::before,.stop.cur::before{background:var(--gelb)}
+  .dot{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.75);border:3px solid rgba(255,255,255,.55);z-index:1}
+  .stop.done .dot{background:var(--gelb);border-color:var(--gelb)}
+  .stop.cur .dot{background:#fff;border-color:var(--gelb);box-shadow:0 0 0 4px rgba(200,68,46,.4)}
+  .stop .tm{font-family:"DM Mono",monospace;font-size:9.5px;margin-top:5px;opacity:.7;white-space:nowrap}
+  body.t-night .stop::before,body.t-eve .stop::before{background:rgba(255,255,255,.3)}
+
+  .card{background:var(--card);color:var(--ink);border:1px solid var(--card-line);border-radius:20px;
+    padding:24px;box-shadow:var(--shadow);animation:rise .35s ease}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .scene-head{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+  .scene-emoji{font-size:26px}
+  .scene-meta{font-family:"DM Mono",monospace;font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.1em}
+  .scene-place{font-family:"Space Grotesk";font-weight:700;font-size:20px;letter-spacing:-.01em}
+
+  .story{font-size:16px;line-height:1.65;margin:4px 0 18px}
+  .story .gl{position:relative;border-bottom:2px dotted var(--gelb);cursor:help;background:none;border-left:0;border-right:0;border-top:0;
+    font:inherit;color:inherit;padding:0;font-weight:600}
+  .story .gl::after{content:attr(data-da);position:absolute;left:50%;bottom:135%;transform:translateX(-50%) scale(.96);
+    background:var(--ink);color:#fff;font-family:"DM Mono",monospace;font-size:11px;padding:5px 9px;border-radius:8px;
+    white-space:nowrap;opacity:0;pointer-events:none;transition:.12s;z-index:5}
+  .story .gl::before{content:"";position:absolute;left:50%;bottom:135%;transform:translateX(-50%) translateY(6px);
+    border:5px solid transparent;border-top-color:var(--ink);opacity:0;transition:.12s}
+  .story .gl:hover::after,.story .gl.open::after{opacity:1;transform:translateX(-50%) scale(1)}
+  .story .gl:hover::before,.story .gl.open::before{opacity:1}
+
+  .task{font-family:"Space Grotesk";font-weight:600;font-size:16.5px;margin:0 0 12px;display:flex;gap:8px;align-items:baseline}
+  .task .q{color:var(--gelb)}
+
+  .opts{display:grid;gap:9px}
+  .opt{text-align:left;border:1.5px solid var(--card-line);background:#fff;border-radius:13px;padding:13px 15px;
+    cursor:pointer;font-size:15.5px;font-weight:500;color:var(--ink);transition:.12s;line-height:1.35}
+  .opt:hover{border-color:var(--ink);transform:translateY(-1px)}
+  .opt:disabled{cursor:default;transform:none}
+  .opt.right{border-color:var(--gruen);background:var(--gruen-bg)}
+  .opt.wrong{border-color:var(--rot);background:var(--rot-bg)}
+  .opt.right::after{content:"✓";float:right;color:var(--gruen);font-weight:700}
+  .opt.wrong::after{content:"✕";float:right;color:var(--rot);font-weight:700}
+
+  .fb{margin-top:14px;border-radius:13px;padding:13px 15px;font-size:14px;line-height:1.55;display:none;border:1px solid var(--card-line)}
+  .fb.show{display:block;animation:rise .2s ease}
+  .fb.ok{background:var(--gruen-bg);border-color:#bfe0cd}
+  .fb.no{background:var(--rot-bg);border-color:#f0c8c4}
+  .fb .lab{font-family:"DM Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:3px}
+  .fb.ok .lab{color:var(--gruen)} .fb.no .lab{color:var(--rot)}
+
+  .gram{margin-top:13px;border:1px solid var(--card-line);border-left:4px solid var(--gelb);
+    background:var(--gelb-bg);border-radius:0 13px 13px 0;padding:14px 16px;display:none}
+  .gram.show{display:block;animation:rise .25s ease}
+  .gram h4{font-family:"Space Grotesk";font-size:13px;margin:0 0 6px;display:flex;align-items:center;gap:7px;letter-spacing:.01em}
+  .gram h4 .tag{font-family:"DM Mono";font-size:9.5px;background:var(--gelb);color:#fff;padding:2px 7px;border-radius:5px;letter-spacing:.05em}
+  .gram p{margin:0;font-size:13.5px;line-height:1.6;color:var(--ink)}
+  .gram .de{font-weight:700;color:#CF8A14} .gram .da{font-weight:700;color:var(--gelb)}
+
+  .loot{margin-top:12px;font-family:"DM Mono",monospace;font-size:12px;color:var(--ink-soft);display:none;align-items:center;gap:8px;flex-wrap:wrap}
+  .loot.show{display:flex}
+  .loot .chip{background:#fff;border:1px solid var(--card-line);border-radius:20px;padding:4px 11px;color:var(--ink)}
+
+  .next{margin-top:16px;border:none;background:var(--ink);color:#fff;border-radius:13px;padding:13px 22px;
+    font-family:"Space Grotesk";font-weight:600;font-size:15px;cursor:pointer;display:none;align-items:center;gap:8px}
+  .next.show{display:inline-flex}
+  .next:hover{background:#000}
+
+  .drawer{position:fixed;inset:0;background:rgba(20,22,30,.45);display:none;align-items:flex-start;justify-content:center;z-index:20;padding:60px 16px}
+  .drawer.show{display:flex;animation:rise .2s ease}
+  .drawer-card{background:var(--card);color:var(--ink);border-radius:18px;max-width:420px;width:100%;padding:22px;box-shadow:var(--shadow);max-height:80vh;overflow:auto}
+  .drawer-card h3{font-family:"Space Grotesk";margin:0 0 4px;font-size:18px}
+  .drawer-card .sub{color:var(--ink-soft);font-size:12.5px;margin:0 0 14px}
+  .vlist{display:flex;flex-direction:column;gap:7px}
+  .vrow{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--card-line);padding:8px 2px;font-size:14px}
+  .vrow .de{font-weight:600} .vrow .da{color:var(--ink-soft);font-size:13px;text-align:right}
+  .closeX{float:right;border:none;background:none;font-size:20px;cursor:pointer;color:var(--ink-soft);line-height:1}
+  .empty{color:var(--ink-soft);font-size:13.5px}
+
+  .finale{text-align:center;padding:14px 6px}
+  .finale .em{font-size:42px}
+  .finale h2{font-family:"Space Grotesk";font-size:26px;margin:8px 0 4px}
+  .finale p{color:var(--ink-soft);font-size:14.5px;margin:0 0 4px}
+  .finale .big{font-family:"Space Grotesk";font-weight:700;font-size:40px;color:var(--gelb)}
+
+  @media (max-width:480px){
+    .stop .tm{display:none}
+    .scene-place{font-size:18px}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <div class="logo"><span class="ubahn">M</span> En dag i København</div>
+    <div class="spacer"></div>
+    <button class="pack" id="packBtn">🎒 Rygsæk <span class="cnt" id="packCnt">0</span></button>
+  </div>
+
+  <div class="route" id="route"></div>
+
+  <div id="stage"></div>
+</div>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-card">
+    <button class="closeX" id="closeDrawer">×</button>
+    <h3>🎒 Dein Wortschatz-Rucksack</h3>
+    <p class="sub">Wörter, die du heute unterwegs aufgesammelt hast.</p>
+    <div class="vlist" id="vlist"><p class="empty">Noch leer — leg los mit dem Tag!</p></div>
+  </div>
+</div>
+
+<script>
+const SKY = ["", "", "t-mid","t-mid","t-noon","t-noon","t-eve","t-night","t-night"];
+const SCENES = [
+  {
+    tm:"07:30", emoji:"⏰", place:"Derhjemme",
+    story:`Dit vækkeur ringer. Du <span class="gl" data-da="stehst auf (langsam)">står</span> langsomt <span class="gl" data-da="auf — getrennte Vorsilbe!">op</span> og går ud i køkkenet. <span class="gl" data-da="der Kühlschrank">Køleskabet</span> er næsten tomt.`,
+    q:"Du willst frühstücken. Wie sagst du es zu dir selbst auf Dänisch?",
+    opts:[
+      {t:"Jeg laver morgenmad.", ok:true, fb:"Richtig und natürlich. <b>laver</b> = mache (eine Form für alle Personen)."},
+      {t:"Jeg lavet morgenmad.", ok:false, fb:"Falsche Form. <b>lavet</b> ist das Partizip ('gemacht'). Präsens für 'ich mache' = <b>laver</b>."},
+      {t:"Jeg er morgenmad.", ok:false, fb:"Das heißt 'ich BIN Frühstück' 🙂 Benutze <b>laver</b> (machen), nicht <b>er</b> (sein)."}
+    ],
+    gram:{tag:"Verben", t:"Trennbare Verben — auch im Dänischen", h:`<span class="da">at stå op</span> teilt sich genau wie im Deutschen: die Partikel rutscht nach hinten. <span class="da">Jeg står klokken syv <b>op</b>.</span> Du kennst das Muster aus dem Deutschen.`},
+    loot:[["at stå op","aufstehen"],["morgenmaden","das Frühstück"],["køleskabet","der Kühlschrank"]]
+  },
+  {
+    tm:"08:15", emoji:"☕", place:"På café",
+    story:`På caféen på hjørnet dufter der af friskbrygget kaffe. <span class="gl" data-da="die Bedienung">Tjeneren</span> kigger på dig: «Hvad må det være?»`,
+    q:"Wie bestellst du höflich einen Kaffee?",
+    opts:[
+      {t:"Jeg vil gerne have en kaffe, tak.", ok:true, fb:"Perfekt höflich. <b>vil gerne have</b> = möchte gern haben. <b>tak</b> ist das dänische 'bitte/danke' am Satzende."},
+      {t:"Jeg vil have kaffe.", ok:false, fb:"Verständlich, aber direkt. <b>vil gerne have</b> mit <em>gerne</em> macht es höflich."},
+      {t:"Giv mig kaffe.", ok:false, fb:"Das ist Befehlsform für Freunde — zu direkt für eine fremde Person."}
+    ],
+    gram:{tag:"Höflichkeit", t:"vil gerne — der höfliche Wunsch", h:`Im Dänischen gibt es kein <em>möchte</em>. Statt dessen: <span class="da">vil gerne + Infinitiv/Substantiv</span>. <span class="da">Jeg vil gerne have…</span> = ich hätte gern. <b>tak</b> ans Satzende für 'bitte'.`},
+    loot:[["at bestille","bestellen"],["høflig","höflich"],["en kaffe","einen Kaffee"]]
+  },
+  {
+    tm:"09:00", emoji:"🚇", place:"Metrostationen",
+    story:`Du skal til en <span class="gl" data-da="Termin / Treffen">aftale</span>. Du tager ikke cyklen — i dag kører du <span class="gl" data-da="mit">med</span> metroen.`,
+    q:"«Jeg kører ___ metroen på arbejde.» Welche Form?",
+    opts:[
+      {t:"med metroen", ok:true, fb:"Richtig. <b>med</b> + bestimmter Form (metroen). Keine Kasus wie im Deutschen — einfach <em>med</em> + Wort."},
+      {t:"med den metro", ok:false, fb:"Doppelte Bestimmtheit gibt's nicht: entweder <b>metroen</b> ODER <b>den metro</b> + Adjektiv. Hier: <b>metroen</b>."},
+      {t:"mit metroen", ok:false, fb:"<b>mit</b> ist deutsch! Dänisch: <b>med</b>."}
+    ],
+    gram:{tag:"Präpositionen", t:"Keine Kasus nach Präpositionen", h:`Im Deutschen müsste man wissen ob <em>mit</em> Dativ verlangt. Im Dänischen: <span class="da">med, fra, til, hos, om</span> — alle nehmen einfach das Wort, fertig. <b>Eine Sache weniger zu lernen.</b>`},
+    loot:[["med metroen","mit der Metro"],["en aftale","ein Termin"],["på arbejde","auf Arbeit"]]
+  },
+  {
+    tm:"12:30", emoji:"🥐", place:"På bageren",
+    story:`Frokostpause. På <span class="gl" data-da="der Bäcker">bageren</span> tager du en <span class="gl" data-da="Roggenbrötchen mit Belag — dänisches Klassiker">smørrebrød</span> og en sodavand. Ved kassen opdager du: du har kun kortet med.`,
+    q:"Du hast kein Bargeld. Wie sagst du das?",
+    opts:[
+      {t:"Jeg har ikke kontanter.", ok:true, fb:"Richtig. <b>ikke</b> ist das einzige Wort für 'kein/nicht' — viel einfacher als deutsch."},
+      {t:"Jeg har kein kontanter.", ok:false, fb:"<b>kein</b> ist deutsch! Dänisch hat kein 'kein' — einfach <b>ikke</b> benutzen."},
+      {t:"Jeg ikke har kontanter.", ok:false, fb:"Wortstellung falsch. Im Hauptsatz: <b>ikke</b> kommt NACH dem Verb. <em>Jeg har <b>ikke</b>…</em>"}
+    ],
+    gram:{tag:"Negation", t:"ikke — eins für alles", h:`Dänisch unterscheidet NICHT zwischen <em>nicht</em> und <em>kein-</em>. <span class="da">ikke</span> macht beides: <span class="da">Jeg drikker <b>ikke</b>.</span> · <span class="da">Jeg har <b>ikke</b> penge.</span> <b>Position:</b> nach dem Verb im Hauptsatz, vor dem Verb im Nebensatz.`},
+    loot:[["kontanter","Bargeld"],["bageren","der Bäcker"],["frokostpausen","die Mittagspause"]]
+  },
+  {
+    tm:"14:00", emoji:"🌳", place:"I parken",
+    story:`Du sætter dig kort på en bænk i parken. Nogen ved siden af smiler og spørger: <span class="gl" data-da="woher kommst du?">«Hvor kommer du fra?»</span>`,
+    q:"Du bist Deutsche/r. Wie antwortest du?",
+    opts:[
+      {t:"Jeg kommer fra Tyskland.", ok:true, fb:"Richtig. Herkunft (Länder/Städte) → <b>fra</b>. <b>Tyskland</b> = Deutschland."},
+      {t:"Jeg kommer ud Tyskland.", ok:false, fb:"<b>ud</b> heißt 'raus/hinaus' (Bewegung). Herkunft: <b>fra</b>."},
+      {t:"Jeg er fra Tyskland kommet.", ok:false, fb:"Grammatisch denkbar, aber das heißt 'ich bin angekommen'. Für Herkunft: einfach Präsens <b>Jeg kommer fra…</b>"}
+    ],
+    gram:{tag:"Wortschatz", t:"Hvor fra? → fra", h:`<span class="da">Hvor kommer du fra?</span> wird mit <span class="da">fra</span> beantwortet: <span class="da">fra Tyskland, fra Berlin</span>. <span class="da">Hvor bor du?</span> → <span class="da">i</span>: <span class="da">i København</span>. Ländernamen ohne Artikel — wie im Deutschen.`},
+    loot:[["Hvor kommer du fra?","woher kommst du?"],["fra Tyskland","aus Deutschland"],["at sætte sig","sich setzen"]]
+  },
+  {
+    tm:"18:00", emoji:"🥘", place:"Supermarkedet",
+    story:`På vej hjem planlægger du aftensmaden. Du har lyst til at lave mad — måske en karry med kikærter.`,
+    q:"«Ich möchte heute Abend kochen.» Welcher Satz ist richtig?",
+    opts:[
+      {t:"Jeg vil gerne lave mad i aften.", ok:true, fb:"Richtig! <b>vil gerne</b> auf Position 2, dann Infinitiv <b>lave</b>. Zeitangabe am Ende: <em>i aften</em>."},
+      {t:"Jeg vil lave gerne mad i aften.", ok:false, fb:"<b>gerne</b> muss direkt nach <b>vil</b>. Reihenfolge: <em>vil gerne lave mad</em>."},
+      {t:"Jeg lave vil gerne mad i aften.", ok:false, fb:"Modalverb (<b>vil</b>) muss auf Position 2. Hauptverb (<b>lave</b>) folgt danach — NICHT am Ende wie im Deutschen!"}
+    ],
+    gram:{tag:"Modalverben", t:"Dänisch hat keine Satzklammer", h:`Im Deutschen: <em>Ich <b>möchte</b> heute Abend <b>kochen</b></em> — Hauptverb am Ende. Im Dänischen: <span class="da">Jeg <b>vil gerne lave</b> mad i aften</span> — Modal + Infinitiv stehen <b>zusammen</b>. Keine Satzklammer! Einfacher.`},
+    loot:[["at lave mad","kochen"],["vil gerne","möchte"],["aftensmaden","das Abendessen"]]
+  },
+  {
+    tm:"21:00", emoji:"🌙", place:"Derhjemme",
+    story:`Mæt og træt sidder du i sofaen. En veninde skriver: «Nå, hvordan var din dag?»`,
+    q:"Wie erzählst du, was du heute gemacht hast?",
+    opts:[
+      {t:"Jeg har lavet meget i dag.", ok:true, fb:"Richtig — Perfekt: <b>har</b> + Partizip <b>lavet</b>. Wie deutsches 'habe gemacht'."},
+      {t:"Jeg er lavet meget i dag.", ok:false, fb:"Falsches Hilfsverb. <b>lave</b> nimmt <b>har</b>, nicht <b>er</b>."},
+      {t:"Jeg har lave meget i dag.", ok:false, fb:"Es fehlt das Partizip. Nicht <b>lave</b>, sondern <b>lavet</b>."}
+    ],
+    gram:{tag:"Perfektum", t:"Vergangenheit in der gesprochenen Sprache", h:`<span class="da">har/er</span> + Partizip (oft <span class="da">-et</span> oder <span class="da">-t</span>): <span class="da">lave → lavet</span>. Die meisten Verben nehmen <b>har</b>; Bewegung/Zustandsänderung nimmt <b>er</b>: <span class="da">gå → jeg <b>er</b> gået</span>. Genau wie im Deutschen!`},
+    loot:[["Jeg har … lavet","ich habe … gemacht"],["Hvordan var din dag?","wie war dein Tag?"],["træt","müde"]]
+  }
+];
+
+let idx=0, right=0, answered=false;
+const collected=[];
+const $=s=>document.querySelector(s);
+
+function renderRoute(){
+  $('#route').innerHTML = SCENES.map((s,i)=>{
+    const cls = i<idx?'done':(i===idx?'cur':'');
+    return `<div class="stop ${cls}"><span class="dot"></span><span class="tm">${s.tm}</span></div>`;
+  }).join('');
+}
+function setSky(){ document.body.className = SKY[idx] || ''; }
+
+function renderScene(){
+  setSky(); renderRoute(); answered=false;
+  if(idx>=SCENES.length){ renderFinale(); return; }
+  const s=SCENES[idx];
+  $('#stage').innerHTML = `
+    <div class="card">
+      <div class="scene-head">
+        <span class="scene-emoji">${s.emoji}</span>
+        <div>
+          <div class="scene-meta">${s.tm} · Station ${idx+1}/${SCENES.length}</div>
+          <div class="scene-place">${s.place}</div>
+        </div>
+      </div>
+      <p class="story">${s.story}</p>
+      <p class="task"><span class="q">▸</span> ${s.q}</p>
+      <div class="opts" id="opts">
+        ${s.opts.map((o,i)=>`<button class="opt" data-i="${i}">${o.t}</button>`).join('')}
+      </div>
+      <div class="fb" id="fb"></div>
+      <div class="gram" id="gram">
+        <h4><span class="tag">${s.gram.tag}</span> ${s.gram.t}</h4>
+        <p>${s.gram.h}</p>
+      </div>
+      <div class="loot" id="loot"><span>🎒 I rygsækken:</span></div>
+      <button class="next" id="next">${idx===SCENES.length-1?'Dagen er slut 🌙':'Videre →'}</button>
+    </div>`;
+
+  $('#stage').querySelectorAll('.gl').forEach(g=>{
+    g.addEventListener('click',e=>{e.stopPropagation(); g.classList.toggle('open');
+      $('#stage').querySelectorAll('.gl').forEach(o=>{if(o!==g)o.classList.remove('open')});});
+  });
+
+  $('#opts').addEventListener('click',e=>{
+    const b=e.target.closest('.opt'); if(!b||answered) return;
+    answered=true;
+    const o=s.opts[+b.dataset.i];
+    $('#opts').querySelectorAll('.opt').forEach((x,xi)=>{
+      x.disabled=true; if(s.opts[xi].ok)x.classList.add('right');
+    });
+    if(!o.ok)b.classList.add('wrong');
+    const fb=$('#fb'); fb.className='fb show '+(o.ok?'ok':'no');
+    fb.innerHTML=`<span class="lab">${o.ok?'Rigtigt!':'Ups'}</span>${o.fb}`;
+    $('#gram').classList.add('show');
+    const loot=$('#loot');
+    s.loot.forEach(([de,da])=>{ collected.push([de,da]);
+      loot.insertAdjacentHTML('beforeend',`<span class="chip">${de}</span>`); });
+    loot.classList.add('show');
+    $('#packCnt').textContent=collected.length;
+    if(o.ok)right++;
+    $('#next').classList.add('show');
+  });
+  $('#next').onclick=()=>{ idx++; renderScene(); window.scrollTo({top:0,behavior:'smooth'}); };
+}
+
+function renderFinale(){
+  document.body.className='t-night';
+  $('#route').querySelectorAll('.stop').forEach(s=>{s.classList.remove('cur');s.classList.add('done')});
+  $('#stage').innerHTML=`
+    <div class="card finale">
+      <div class="em">🌃</div>
+      <h2>Færdig — en hel dag på dansk!</h2>
+      <div class="big">${right}/${SCENES.length}</div>
+      <p>richtige Antworten · ${collected.length} neue Wörter im Rucksack</p>
+      <p style="margin-top:6px">Godt klaret. Sov godt! 😴</p>
+      <button class="next show" id="again" style="margin:16px auto 0">Ny dag ↺</button>
+    </div>`;
+  $('#again').onclick=()=>{ idx=0;right=0;collected.length=0;$('#packCnt').textContent=0;
+    $('#vlist').innerHTML='<p class="empty">Noch leer — leg los mit dem Tag!</p>';
+    renderScene(); window.scrollTo({top:0,behavior:'smooth'}); };
+}
+
+$('#packBtn').onclick=()=>{
+  const list=$('#vlist');
+  list.innerHTML = collected.length
+    ? collected.map(([de,da])=>`<div class="vrow"><span class="de">${de}</span><span class="da">${da}</span></div>`).join('')
+    : '<p class="empty">Noch leer — leg los mit dem Tag!</p>';
+  $('#drawer').classList.add('show');
+};
+$('#closeDrawer').onclick=()=>$('#drawer').classList.remove('show');
+$('#drawer').addEventListener('click',e=>{ if(e.target.id==='drawer')$('#drawer').classList.remove('show'); });
+
+renderScene();
+</script>
+</body>
+</html>

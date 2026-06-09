@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deutsch für Dänen — interaktive Übungen</title>
-<meta name="description" content="Interaktive Tysk-øvelser for dansktalende: ordforråd, grammatik og en historie gennem Berlin. A2–B2.">
+<title>Dansk ↔ Deutsch — interaktive øvelser</title>
+<meta name="description" content="Interaktive sprogøvelser: tysk for dansktalende OG dansk for tysktalende. Ordforråd, grammatik og historier. A2–B2.">
 <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-<meta property="og:title" content="Deutsch für Dänen — interaktive Übungen">
-<meta property="og:description" content="To interaktive tysk-øvelser for dansktalende: vokabel- & grammatik-trainer og en historie gennem Berlin. A2–B2.">
+<meta property="og:title" content="Dansk ↔ Deutsch — interaktive øvelser">
+<meta property="og:description" content="Interaktive sprogøvelser begge veje: tysk for dansktalende og dansk for tysktalende. A2–B2.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kiki-learn.justusernst.de">
 <meta name="twitter:card" content="summary">
@@ -20,33 +20,37 @@
   body{margin:0;font-family:"Inter",system-ui,sans-serif;color:var(--ink);
     background:radial-gradient(120% 90% at 0% 0%,#FFE9C8 0%,#F7C7A8 40%,#A6C8EA 100%);
     min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 18px}
-  .wrap{max-width:640px;width:100%}
+  .wrap{max-width:680px;width:100%}
   .kick{font-family:"Space Grotesk";font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
   h1{font-family:"Space Grotesk";font-weight:700;font-size:clamp(30px,7vw,44px);line-height:1.04;margin:.2em 0 .15em;letter-spacing:-.02em}
   h1 .da{color:var(--rod)} h1 .de{color:var(--guld)}
-  .lead{color:var(--soft);font-size:15px;max-width:48ch;margin:0 0 26px}
-  .cards{display:grid;gap:14px}
+  .lead{color:var(--soft);font-size:15px;max-width:52ch;margin:0 0 22px}
+  .section-head{font-family:"Space Grotesk";font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin:18px 0 10px;display:flex;align-items:center;gap:10px}
+  .section-head .flag{font-size:15px}
+  .section-head .arrow-tag{font-family:"Space Grotesk";font-weight:500;color:var(--ink)}
+  .cards{display:grid;gap:12px}
   a.card{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);
-    border-radius:18px;padding:20px 22px;box-shadow:0 20px 44px -28px rgba(22,25,34,.5);transition:.15s}
+    border-radius:18px;padding:18px 20px;box-shadow:0 20px 44px -28px rgba(22,25,34,.5);transition:.15s}
   a.card:hover{transform:translateY(-2px);border-color:var(--ink)}
-  .card .em{font-size:26px}
-  .card h2{font-family:"Space Grotesk";font-size:20px;margin:8px 0 4px;display:flex;align-items:center;gap:10px}
+  .card .em{font-size:24px}
+  .card h2{font-family:"Space Grotesk";font-size:18px;margin:6px 0 4px;display:flex;align-items:center;gap:10px}
   .card h2 .arrow{margin-left:auto;color:var(--soft);transition:.15s}
   a.card:hover .arrow{transform:translateX(4px);color:var(--ink)}
-  .card p{margin:0;color:var(--soft);font-size:14px;line-height:1.5}
-  .tags{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
+  .card p{margin:0;color:var(--soft);font-size:13.5px;line-height:1.5}
+  .tags{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
   .tag{font-family:"Space Grotesk";font-size:10.5px;font-weight:500;letter-spacing:.04em;
     border:1px solid var(--line);border-radius:20px;padding:3px 10px;color:var(--soft)}
-  footer{margin-top:24px;color:var(--soft);font-size:12px;font-family:"Space Grotesk"}
+  footer{margin-top:22px;color:var(--soft);font-size:12px;font-family:"Space Grotesk"}
   @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="kick">Dansk → Deutsch · A2–B2</div>
+  <div class="kick">Dansk ↔ Deutsch · A2–B2</div>
   <h1><span class="da">Dansk</span> møder <span class="de">Deutsch</span></h1>
-  <p class="lead">To interaktive øvelser for dansktalende, der lærer tysk. Vælg din vej:</p>
+  <p class="lead">Interaktive øvelser begge veje. Vælg din retning og din vej:</p>
 
+  <div class="section-head"><span class="flag">🇩🇰→🇩🇪</span> <span class="arrow-tag">For dansktalende, der lærer tysk</span></div>
   <div class="cards">
     <a class="card" href="./a2-b2-trainer.html">
       <span class="em">📚</span>
@@ -62,7 +66,23 @@
     </a>
   </div>
 
-  <footer>Viel Spaß beim Lernen 🇩🇰🤝🇩🇪</footer>
+  <div class="section-head"><span class="flag">🇩🇪→🇩🇰</span> <span class="arrow-tag">Für Deutschsprachige, die Dänisch lernen</span></div>
+  <div class="cards">
+    <a class="card" href="./da-trainer.html">
+      <span class="em">📖</span>
+      <h2>Wortschatz- &amp; Grammatik-Trainer <span class="arrow">→</span></h2>
+      <p>Quiz dich durch Wortschatz, sieben Grammatikregeln, falsche Freunde und Satzbau. Mit Punkten und Streak.</p>
+      <div class="tags"><span class="tag">Wortschatz</span><span class="tag">Grammatik</span><span class="tag">en/et</span><span class="tag">V2</span></div>
+    </a>
+    <a class="card" href="./dag-i-kobenhavn.html">
+      <span class="em">🚲</span>
+      <h2>En dag i København <span class="arrow">→</span></h2>
+      <p>Eine Geschichte in 7 Stationen: triff die richtigen dänischen Entscheidungen durch einen Tag in der Stadt. Grammatik im Kontext, Wort-Rucksack.</p>
+      <div class="tags"><span class="tag">Story-mode</span><span class="tag">Kontekst</span><span class="tag">Negation</span><span class="tag">Perfektum</span></div>
+    </a>
+  </div>
+
+  <footer>Viel Spaß beim Lernen · god fornøjelse 🇩🇰🤝🇩🇪</footer>
 </div>
 </body>
 </html>
