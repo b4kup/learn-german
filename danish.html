@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danish Grammar for German Speakers &mdash; A1 to C2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FCFCFA;
+  --ink:#23262B;
+  --muted:#6A7078;
+  --line:#E5E3DC;
+  --accent:#9E3A3A;       /* Danish red - target language */
+  --accent-soft:#FAF2F1;
+  --german:#2C4E6E;       /* steel blue - German parallels */
+  --german-soft:#EEF3F7;
+  --trap:#8A6A1E;
+  --trap-soft:#FBF6E6;
+  --table-head:#F3F2ED;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Source Serif 4', Georgia, serif;
+  font-size:17px;
+  line-height:1.65;
+}
+.layout{
+  display:grid;
+  grid-template-columns:288px minmax(0,1fr);
+  max-width:1240px;
+  margin:0 auto;
+}
+nav{
+  border-right:1px solid var(--line);
+  position:sticky; top:0;
+  height:100vh; overflow-y:auto;
+  padding:28px 20px 48px 24px;
+  font-family:'Inter',sans-serif;
+  scrollbar-width:thin;
+}
+nav .brand{
+  font-family:'Source Serif 4',serif;
+  font-weight:700; font-size:17px; line-height:1.3;
+  margin-bottom:2px;
+}
+nav .brand-sub{font-size:12px;color:var(--muted);margin-bottom:20px;font-style:italic;font-family:'Source Serif 4',serif}
+nav .part{
+  font-size:10.5px; font-weight:700; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--muted);
+  margin:20px 0 6px;
+}
+nav a{
+  display:flex; align-items:baseline; gap:8px;
+  text-decoration:none; color:var(--muted);
+  font-size:12.5px; line-height:1.35;
+  padding:4px 8px; border-radius:5px;
+}
+nav a .n{color:#B4B0A6;font-variant-numeric:tabular-nums;min-width:16px}
+nav a:hover{color:var(--ink);background:#F2F1EC}
+nav a.active{color:var(--accent);background:var(--accent-soft);font-weight:600}
+nav a.active .n{color:var(--accent)}
+nav a .lv{margin-left:auto;font-size:9px;font-weight:600;letter-spacing:.04em;color:#9A968C}
+main{padding:56px 64px 120px;max-width:820px}
+header.hero{margin-bottom:56px;padding-bottom:36px;border-bottom:2px solid var(--ink)}
+header.hero .eyebrow{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--german);margin-bottom:14px;
+}
+h1{font-size:40px;line-height:1.15;font-weight:700;margin:0 0 10px}
+header.hero .subtitle{font-style:italic;font-size:19px;color:var(--muted);margin:0 0 22px}
+header.hero p{max-width:640px}
+h2{
+  font-size:25px;font-weight:700;line-height:1.25;
+  margin:0 0 4px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+h3{font-size:18px;font-weight:600;margin:28px 0 8px}
+section.chapter{margin-bottom:72px;scroll-margin-top:24px}
+section.part-head{
+  margin:88px 0 40px;padding-top:32px;border-top:2px solid var(--ink);
+  scroll-margin-top:24px;
+}
+section.part-head .part-label{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;
+}
+section.part-head h2{font-size:28px}
+.ch-meta{
+  font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);
+  margin-bottom:18px;
+}
+.lvl{
+  font-family:'Inter',sans-serif;font-size:10.5px;font-weight:700;
+  letter-spacing:.06em;padding:2.5px 9px;border-radius:20px;
+  border:1px solid;white-space:nowrap;
+}
+.lvl.a1{color:#3F6E50;border-color:#BCD4C4;background:#F0F6F1}
+.lvl.a2{color:#2F6E6A;border-color:#B7D3D1;background:#EEF6F5}
+.lvl.b1{color:#2C4E6E;border-color:#BCCDDD;background:#EEF3F7}
+.lvl.b2{color:#454A85;border-color:#C6C8E0;background:#F1F1F9}
+.lvl.c1{color:#6A4485;border-color:#D3C4DF;background:#F6F1F9}
+.lvl.c2{color:#4A4A4A;border-color:#CFCFCF;background:#F3F3F3}
+.box{
+  border-left:3px solid;border-radius:0 6px 6px 0;
+  padding:14px 18px 14px 16px;margin:20px 0;
+}
+.box .label{
+  font-family:'Inter',sans-serif;font-size:10.5px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  display:block;margin-bottom:6px;
+}
+.box p{margin:6px 0}
+.box.deutsch{border-color:var(--german);background:var(--german-soft)}
+.box.deutsch .label{color:var(--german)}
+.box.trap{border-color:var(--trap);background:var(--trap-soft)}
+.box.trap .label{color:var(--trap)}
+.box.note{border-color:var(--accent);background:var(--accent-soft)}
+.box.note .label{color:var(--accent)}
+.da{font-weight:600}
+.de{color:var(--german)}
+.tr{color:var(--muted);font-style:italic}
+table{
+  border-collapse:collapse;width:100%;margin:18px 0;
+  font-family:'Inter',sans-serif;font-size:13.5px;line-height:1.5;
+}
+th,td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+th{background:var(--table-head);font-weight:600;font-size:12.5px}
+td .de{color:var(--german)}
+tr:nth-child(even) td{background:#FAFAF7}
+details.qe{
+  border:1px solid var(--line);border-radius:8px;
+  margin:16px 0;background:#fff;
+}
+details.qe summary{
+  cursor:pointer;list-style:none;
+  padding:13px 18px;
+  font-family:'Inter',sans-serif;font-size:13.5px;font-weight:600;
+  color:var(--accent);
+  display:flex;align-items:center;gap:10px;
+}
+details.qe summary::before{
+  content:"+";font-weight:400;font-size:17px;color:var(--muted);
+  width:14px;display:inline-block;text-align:center;
+}
+details.qe[open] summary::before{content:"\2212"}
+details.qe summary::-webkit-details-marker{display:none}
+details.qe .qbody{padding:2px 22px 18px;border-top:1px solid var(--line)}
+details.qe ol{margin:12px 0;padding-left:22px}
+details.qe li{margin:7px 0}
+details.ans{margin:14px 0 4px;border:none;background:none}
+details.ans summary{
+  cursor:pointer;list-style:none;display:inline-block;
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+  color:var(--german);border:1px solid #C9D5E0;border-radius:20px;
+  padding:4px 14px;background:var(--german-soft);
+}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans .abody{
+  margin-top:10px;padding:12px 16px;background:#F7F6F2;
+  border-radius:6px;font-size:15px;
+}
+p{margin:12px 0}
+ul{padding-left:24px}
+li{margin:6px 0}
+hr.soft{border:none;border-top:1px solid var(--line);margin:36px 0}
+.appendix h2{font-size:22px}
+.kicker{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted)}
+footer{
+  margin-top:80px;padding-top:24px;border-top:1px solid var(--line);
+  font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);
+}
+@media (max-width:960px){
+  .layout{display:block}
+  nav{position:static;height:auto;border-right:none;border-bottom:1px solid var(--line);padding:20px}
+  nav .navlinks{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+  main{padding:40px 22px 100px}
+  h1{font-size:31px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav id="toc">
+  <div class="brand">Danish Grammar for German Speakers</div>
+  <div class="brand-sub">D&auml;nische Grammatik f&uuml;r Deutschsprachige</div>
+  <div class="navlinks">
+  <div class="part">Start here</div>
+  <a href="#intro"><span class="n">&mdash;</span>Introduction &amp; method</a>
+  <div class="part">Part A &middot; Foundations</div>
+  <a href="#ch1"><span class="n">1</span>Pronunciation: the real challenge<span class="lv">A1</span></a>
+  <a href="#ch2"><span class="n">2</span>Nouns &amp; two genders<span class="lv">A1</span></a>
+  <a href="#ch3"><span class="n">3</span>The suffixed article<span class="lv">A1</span></a>
+  <a href="#ch4"><span class="n">4</span>Pronouns &amp; present tense<span class="lv">A1</span></a>
+  <a href="#ch5"><span class="n">5</span>v&aelig;re, have, blive<span class="lv">A1</span></a>
+  <a href="#ch6"><span class="n">6</span>Word order: the V2 rule<span class="lv">A1</span></a>
+  <a href="#ch7"><span class="n">7</span>Questions<span class="lv">A1</span></a>
+  <a href="#ch8"><span class="n">8</span>Negation with ikke<span class="lv">A1</span></a>
+  <div class="part">Part B &middot; Core grammar</div>
+  <a href="#ch9"><span class="n">9</span>Where did the cases go?<span class="lv">A1&ndash;A2</span></a>
+  <a href="#ch10"><span class="n">10</span>Plurals<span class="lv">A2</span></a>
+  <a href="#ch11"><span class="n">11</span>Adjective agreement<span class="lv">A2</span></a>
+  <a href="#ch12"><span class="n">12</span>Possessives &amp; sin/sit/sine<span class="lv">A2&ndash;B1</span></a>
+  <a href="#ch13"><span class="n">13</span>Numbers &amp; counting<span class="lv">A2</span></a>
+  <a href="#ch14"><span class="n">14</span>Prepositions<span class="lv">A2&ndash;B1</span></a>
+  <a href="#ch15"><span class="n">15</span>Modal verbs &amp; their traps<span class="lv">A2&ndash;B1</span></a>
+  <a href="#ch16"><span class="n">16</span>Particle verbs<span class="lv">A2&ndash;B1</span></a>
+  <a href="#ch17"><span class="n">17</span>Past tenses<span class="lv">A2&ndash;B1</span></a>
+  <a href="#ch18"><span class="n">18</span>Comparative &amp; superlative<span class="lv">B1</span></a>
+  <a href="#ch19"><span class="n">19</span>Talking about the future<span class="lv">B1</span></a>
+  <a href="#ch20"><span class="n">20</span>Reflexives &amp; imperative<span class="lv">B1</span></a>
+  <a href="#ch21"><span class="n">21</span>Leds&aelig;tninger: adverb placement<span class="lv">B1</span></a>
+  <a href="#ch22"><span class="n">22</span>Relative clauses: der &amp; som<span class="lv">B1</span></a>
+  <a href="#ch23"><span class="n">23</span>der &amp; det constructions<span class="lv">B1&ndash;B2</span></a>
+  <div class="part">Part C &middot; Advanced</div>
+  <a href="#ch24"><span class="n">24</span>The two passives<span class="lv">B2</span></a>
+  <a href="#ch25"><span class="n">25</span>Conditionals &amp; hypotheticals<span class="lv">B2</span></a>
+  <a href="#ch26"><span class="n">26</span>Infinitive clauses: at, for at<span class="lv">B2</span></a>
+  <a href="#ch27"><span class="n">27</span>Pluskvamperfektum<span class="lv">B2</span></a>
+  <a href="#ch28"><span class="n">28</span>Reported speech<span class="lv">C1</span></a>
+  <a href="#ch29"><span class="n">29</span>Discourse particles: jo, da, nok<span class="lv">C1</span></a>
+  <a href="#ch30"><span class="n">30</span>Advanced style<span class="lv">C1&ndash;C2</span></a>
+  <div class="part">Reference</div>
+  <a href="#appa"><span class="n">A</span>Sound-shift cheat sheet</a>
+  <a href="#appb"><span class="n">B</span>False friends</a>
+  <a href="#appc"><span class="n">C</span>Near-identical cognates</a>
+  <a href="#plan"><span class="n">&mdash;</span>Study plan</a>
+  <a href="#caveats"><span class="n">&mdash;</span>Caveats</a>
+  </div>
+</nav>
+<main>
+<header class="hero" id="intro">
+  <div class="eyebrow">A complete course &middot; A1 to C2 &middot; Sister volume</div>
+  <h1>Danish Grammar for German Speakers</h1>
+  <p class="subtitle">D&auml;nische Grammatik f&uuml;r Deutschsprachige &mdash; von Anfang bis Fortgeschritten</p>
+  <p>The mirror of the Danish-to-German course. For a German native, Danish grammar is mostly a story of <strong>simplification</strong>: no case system, no person endings on verbs, only two genders. The real challenges lie elsewhere: <strong>pronunciation</strong> (st&oslash;d, soft d, silent letters), the <strong>suffixed definite article</strong>, the reflexive possessive <strong>sin/sit/sine</strong>, adverb placement in subordinate clauses, and the <strong>s-passive</strong>. Every chapter draws explicit parallels to German so you can move fast where the languages agree and slow down where they diverge.</p>
+</header>
+
+<section class="chapter" id="method">
+  <h2>How to use this course</h2>
+  <div class="ch-meta">Methodology &middot; read this first</div>
+  <h3>Why this order?</h3>
+  <p>The spine: sounds &rarr; nouns, gender, the suffixed article &rarr; pronouns and the one-form present tense &rarr; word order &rarr; agreement (plurals, adjectives, possessives) &rarr; the verb system &rarr; complex sentences &rarr; the s-passive, particles, and formal style. Unlike German, where the case system dominates everything, Danish front-loads its difficulty into sounds and small structural habits &mdash; so this course spends its time differently than its sister volume.</p>
+  <p>The design follows the same second-language-acquisition research: explicit grammar anchored in meaningful examples (Long&rsquo;s <em>Focus on Form</em>), graded examples recycling known material (comprehensible-input research: aim to understand 95&ndash;98% of each example), quizzes as retrieval practice (Roediger &amp; Karpicke: delayed recall of 61% for a tested group vs. 40% for re-study), and deliberate recycling of earlier grammar (the spacing effect).</p>
+  <h3>How the German parallels help</h3>
+  <p>Wherever Danish works like German, the course says so explicitly (positive transfer) &mdash; and that is often: V2 word order, modal verbs, particle verbs, perfect with have/be, compound nouns, even the habit of saying units before tens in numbers. Wherever Danish differs, a <strong>German trap</strong> box flags the spot where your German instinct produces a Danish error. Grammar terms used: <span class="da">f&aelig;llesk&oslash;n / intetk&oslash;n</span> (the two genders), <span class="da">hels&aelig;tning</span> (main clause), <span class="da">leds&aelig;tning</span> (subordinate clause), <span class="da">datid</span> (simple past), <span class="da">f&oslash;rnutid</span> (perfect).</p>
+  <h3>Quiz and exercise routine</h3>
+  <p>After each chapter: <strong>quiz</strong> (recognition) first, then <strong>exercise</strong> (production). Answers are hidden behind a button. Then re-do the exercise from two chapters back &mdash; spaced retrieval roughly halves forgetting.</p>
+  <div class="box note"><span class="label">Level tags</span>
+  <p>The A1&ndash;C2 tags show where each structure is normally introduced, so you can skip or prioritise. Heads-up: written Danish will feel easy fast; understanding <em>spoken</em> Danish is the long game. Pair this course with listening from day one.</p></div>
+</section>
+<!-- ================= PART A ================= -->
+<section class="part-head" id="parta">
+  <div class="part-label">Part A</div>
+  <h2>Foundations</h2>
+  <p class="kicker">Chapters 1&ndash;8 &middot; Level A1 &middot; Where Danish is easier than you fear &mdash; except Chapter 1</p>
+</section>
+
+<section class="chapter" id="ch1">
+  <h2>1 &middot; Pronunciation: the real challenge <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">St&oslash;d, soft d, silent letters &mdash; where all the difficulty lives</div>
+  <p>Here the tables turn completely. German is nearly phonetic; <strong>Danish is not</strong>. Written Danish will look almost familiar to you within weeks &mdash; spoken Danish is the actual mountain. Budget most of your listening effort here.</p>
+  <ul>
+    <li><strong>Three extra letters:</strong> <span class="da">&aelig;, &oslash;, &aring;</span>. Map them from German: <span class="da">&aelig;</span> &asymp; German <span class="de">&auml;</span> (<span class="da">l&aelig;se</span> &mdash; &ldquo;lesen&rdquo;), <span class="da">&oslash;</span> &asymp; German <span class="de">&ouml;</span> (<span class="da">&oslash;l</span> &mdash; sounds like &ldquo;&Ouml;l&rdquo; but means beer), <span class="da">&aring;</span> &asymp; a long open o, like the vowel in German <span class="de">Sohn</span> but more open (<span class="da">&aring;r</span> = Jahr). You can already pronounce all three &mdash; positive transfer.</li>
+    <li><strong>The soft d (bl&oslash;dt d):</strong> after a vowel, <span class="da">d</span> becomes a sound like a lazy English &ldquo;th&rdquo; with the tongue low: <span class="da">mad</span> (food), <span class="da">gade</span> (street), <span class="da">hedde</span> (hei&szlig;en). German has nothing like it; do not pronounce it as [d].</li>
+    <li><strong>St&oslash;d:</strong> a creaky glottal catch inside certain syllables, a bit like the catch in German <span class="de">be&rsquo;achten</span> between e and a &mdash; but inside a vowel. It distinguishes word pairs: <span class="da">hun</span> (she, no st&oslash;d) vs. <span class="da">hund</span> (dog, with st&oslash;d); <span class="da">l&aelig;ser</span> (reads, st&oslash;d) vs. <span class="da">l&aelig;ser</span> (reader, no st&oslash;d). At A1: learn to hear it; production comes later.</li>
+    <li><strong>Silent letters everywhere:</strong> final <span class="da">-e</span> is a schwa; <span class="da">d</span> and <span class="da">g</span> often vanish (<span class="da">dag</span> sounds like &ldquo;d&aelig;&rdquo;, <span class="da">meget</span> like &ldquo;majet&rdquo;); <span class="da">h</span> is silent before v/j (<span class="da">hvad, hjem</span>).</li>
+    <li><strong>r is vocalised</strong> after vowels, much like German final -r (<span class="de">Wetter</span> / <span class="da">vejret</span>) &mdash; your German habit helps here.</li>
+    <li><strong>y</strong> = German <span class="de">&uuml;</span> (<span class="da">ny</span> = neu, sounds like &ldquo;n&uuml;&rdquo;).</li>
+  </ul>
+  <div class="box deutsch"><span class="label">Deutsche Parallele &middot; the sound bridge, reversed</span>
+  <p>The High German consonant shift means <em>your</em> German predicts Danish spellings by shifting <em>backwards</em>: German <span class="de">t</span> &rarr; Danish <span class="da">d</span> (<span class="de">Tag</span>/<span class="da">dag</span>), German <span class="de">z/ss</span> &rarr; Danish <span class="da">t</span> (<span class="de">zwei</span>/<span class="da">to</span>, <span class="de">Wasser</span>/<span class="da">vand</span>), German <span class="de">ch</span> &rarr; Danish <span class="da">k</span> (<span class="de">Milch</span>/<span class="da">m&aelig;lk</span>), German <span class="de">sch</span> &rarr; Danish <span class="da">sk</span> (<span class="de">Schule</span>/<span class="da">skole</span>), German <span class="de">pf/f</span> &rarr; Danish <span class="da">b/p</span> (<span class="de">Apfel</span>/<span class="da">&aelig;ble</span>, <span class="de">helfen</span>/<span class="da">hj&aelig;lpe</span>). Full table in Appendix A.</p></div>
+  <details class="qe"><summary>Quiz 1</summary><div class="qbody">
+    <ol>
+      <li>Danish <span class="da">&oslash;</span> sounds like German: (a) &auml;&nbsp; (b) &ouml;&nbsp; (c) &uuml;</li>
+      <li>The soft d in <span class="da">mad</span> is pronounced: (a) like German d&nbsp; (b) like a lazy English th&nbsp; (c) silent t</li>
+      <li>St&oslash;d distinguishes: (a) spelling variants&nbsp; (b) word pairs like hun/hund&nbsp; (c) nothing</li>
+      <li>German <span class="de">Schule</span> &rarr; Danish: (a) schole&nbsp; (b) skole&nbsp; (c) sjole</li>
+      <li>Which language is more phonetic? (a) Danish&nbsp; (b) German</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 1 &mdash; predict the Danish cognate from German</summary><div class="qbody">
+    <ol>
+      <li><span class="de">Tag</span> &rarr; ___</li>
+      <li><span class="de">Wort</span> &rarr; ___</li>
+      <li><span class="de">Schiff</span> &rarr; ___</li>
+      <li><span class="de">Salz</span> &rarr; ___</li>
+      <li><span class="de">waschen</span> &rarr; ___</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;dag &middot; 2&nbsp;ord &middot; 3&nbsp;skib &middot; 4&nbsp;salt &middot; 5&nbsp;vaske</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch2">
+  <h2>2 &middot; Nouns &amp; two genders <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">Your three genders collapse into two &mdash; but not predictably</div>
+  <p>Good news first: Danish nouns are <strong>not capitalised</strong> (except names), and there are only <strong>two genders</strong>:</p>
+  <table>
+    <tr><th>Danish gender</th><th>Article</th><th>Share</th><th>Corresponds to German</th></tr>
+    <tr><td><span class="da">f&aelig;llesk&oslash;n</span> (common, &ldquo;n-words&rdquo;)</td><td class="da">en</td><td>about 75%</td><td class="de">der + die merged</td></tr>
+    <tr><td><span class="da">intetk&oslash;n</span> (neuter, &ldquo;t-words&rdquo;)</td><td class="da">et</td><td>about 25%</td><td class="de">roughly das</td></tr>
+  </table>
+  <div class="box trap"><span class="label">German trap &middot; do not project your der/die/das</span>
+  <p>German gender does <strong>not</strong> reliably predict Danish gender: <span class="de">das Haus</span> &rarr; <span class="da">et hus</span> works, but <span class="de">das Kind</span> &rarr; <span class="da">et barn</span> while <span class="de">die Zeit</span> &rarr; <span class="da">en tid</span> and <span class="de">der L&ouml;ffel</span> &rarr; <span class="da">en ske</span>. Since ~75% of nouns are n-words, when in doubt guess <span class="da">en</span> &mdash; but learn each noun with its article, exactly as you would tell a Dane learning German.</p></div>
+  <p>Useful signposts: living beings are usually <span class="da">en</span> (<span class="da">en mand, en kvinde, en hund</span> &mdash; but <span class="da">et barn, et dyr</span>); substances and many abstract categories lean <span class="da">et</span> (<span class="da">et &aring;r, et sprog</span>). Suffix parallels transfer nicely: German <span class="de">-heit/-keit</span> &rarr; Danish <span class="da">-hed</span> (<span class="de">Freiheit</span>/<span class="da">frihed</span>, both common gender), German <span class="de">-ung</span> &rarr; Danish <span class="da">-(n)ing</span> (<span class="de">Regierung</span>/<span class="da">regering</span>, both common gender).</p>
+  <details class="qe"><summary>Quiz 2</summary><div class="qbody">
+    <ol>
+      <li>Danish has how many genders? (a) two&nbsp; (b) three</li>
+      <li>Danish nouns are capitalised: (a) yes&nbsp; (b) no</li>
+      <li>About what share of Danish nouns are en-words? (a) 25%&nbsp; (b) 50%&nbsp; (c) 75%</li>
+      <li><span class="de">Freiheit</span> &rarr; Danish <span class="da">frihed</span> takes: (a) en&nbsp; (b) et</li>
+      <li>&ldquo;a child&rdquo;: (a) en barn&nbsp; (b) et barn</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;a &middot; 2&nbsp;b &middot; 3&nbsp;c &middot; 4&nbsp;a &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 2 &mdash; en or et?</summary><div class="qbody">
+    <ol>
+      <li>___ mand (Mann)</li>
+      <li>___ hus (Haus)</li>
+      <li>___ avis (Zeitung)</li>
+      <li>___ &aring;r (Jahr)</li>
+      <li>___ regering (Regierung)</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;en &middot; 2&nbsp;et &middot; 3&nbsp;en &middot; 4&nbsp;et &middot; 5&nbsp;en</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch3">
+  <h2>3 &middot; The suffixed definite article <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">huset, not &ldquo;det hus&rdquo; &mdash; the mirror of the German trap</div>
+  <p>This is the structural surprise for a German. Danish attaches &ldquo;the&rdquo; as a <strong>suffix</strong>:</p>
+  <table>
+    <tr><th></th><th>indefinite</th><th>definite</th><th>German</th></tr>
+    <tr><td>common</td><td class="da">en mand</td><td class="da">mand<strong>en</strong></td><td class="de">der Mann</td></tr>
+    <tr><td>neuter</td><td class="da">et hus</td><td class="da">hus<strong>et</strong></td><td class="de">das Haus</td></tr>
+    <tr><td>plural</td><td class="da">biler</td><td class="da">biler<strong>ne</strong></td><td class="de">die Autos</td></tr>
+  </table>
+  <div class="box trap"><span class="label">German trap &middot; the article switches sides with adjectives</span>
+  <p>As soon as an <strong>adjective</strong> is added, the suffix disappears and a free-standing article appears in front, German-style: <span class="da"><strong>den</strong> store bil</span>, <span class="da"><strong>det</strong> store hus</span>, <span class="da"><strong>de</strong> store biler</span>. Never both: <span class="da">den store bilen</span> is wrong in Danish (that is Swedish/Norwegian &ldquo;double definiteness&rdquo;). Rule of thumb: no adjective &rarr; suffix; adjective &rarr; den/det/de in front.</p></div>
+  <div class="box deutsch"><span class="label">Deutsche Parallele</span>
+  <p>The indefinite articles map directly: <span class="de">ein/eine</span> &asymp; <span class="da">en/et</span>. And <span class="da">den/det/de</span> before adjectives behaves exactly like your <span class="de">der/die/das</span> &mdash; a free-standing definite article. The only new habit is the suffix in the plain case.</p></div>
+  <details class="qe"><summary>Quiz 3</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;the house&rdquo;: (a) det hus&nbsp; (b) huset&nbsp; (c) hus-det</li>
+      <li>&ldquo;the big house&rdquo;: (a) store huset&nbsp; (b) det store hus&nbsp; (c) det store huset</li>
+      <li>Definite plural of <span class="da">biler</span>: (a) bilerne&nbsp; (b) de biler&nbsp; (c) bilers</li>
+      <li>Danish uses double definiteness like Swedish: (a) yes&nbsp; (b) no</li>
+      <li>&ldquo;a man&rdquo;: (a) en mand&nbsp; (b) et mand</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 3 &mdash; translate</summary><div class="qbody">
+    <ol>
+      <li>the man</li>
+      <li>the house</li>
+      <li>the newspaper (en avis)</li>
+      <li>the big (stor) car (en bil)</li>
+      <li>the houses (huse)</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;manden &middot; 2&nbsp;huset &middot; 3&nbsp;avisen &middot; 4&nbsp;den store bil &middot; 5&nbsp;husene</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch4">
+  <h2>4 &middot; Pronouns &amp; the present tense <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">One verb form for everyone &mdash; enjoy the liberation</div>
+  <p><strong>Personal pronouns (subject):</strong> <span class="da">jeg</span> (ich), <span class="da">du</span> (du), <span class="da">han / hun / den / det</span> (er / sie / es &mdash; <span class="da">den</span> for common-gender things, <span class="da">det</span> for neuter things), <span class="da">vi</span> (wir), <span class="da">I</span> (ihr &mdash; note the capital I!), <span class="da">de</span> (sie/pl), <span class="da">De</span> (formal Sie, today archaic).</p>
+  <p><strong>Present tense:</strong> infinitive + <span class="da">-r</span>, one form for all persons:</p>
+  <table>
+    <tr><th>Danish</th><th>German</th></tr>
+    <tr><td class="da">jeg spiller, du spiller, han spiller, vi spiller, I spiller, de spiller</td><td class="de">ich spiele, du spielst, er spielt, wir spielen, ihr spielt, sie spielen</td></tr>
+  </table>
+  <div class="box deutsch"><span class="label">Deutsche Parallele &middot; one present tense</span>
+  <p>Like German, Danish has no progressive: <span class="da">jeg spiller</span> = &ldquo;ich spiele&rdquo; and &ldquo;ich spiele gerade&rdquo;. Your instinct transfers directly.</p></div>
+  <div class="box trap"><span class="label">German trap &middot; du vs. De</span>
+  <p>Modern Danish uses <span class="da">du</span> with practically everyone &mdash; strangers, bosses, officials. The formal <span class="da">De</span> survives only in very formal letters and with the royal family. Suppress your Sie-reflex: saying <span class="da">De</span> to a shop assistant sounds stiff, not polite. Also: never conjugate for person &mdash; <span class="da">du spillerst</span> does not exist.</p></div>
+  <details class="qe"><summary>Quiz 4</summary><div class="qbody">
+    <ol>
+      <li><span class="da">du</span> form of <span class="da">at spille</span>: (a) spiller&nbsp; (b) spillerst&nbsp; (c) spillst</li>
+      <li>&ldquo;ihr&rdquo; (you plural) in Danish: (a) i&nbsp; (b) I&nbsp; (c) De</li>
+      <li>How many present-tense forms does a Danish verb have? (a) one&nbsp; (b) three&nbsp; (c) six</li>
+      <li>Addressing a stranger in a shop, you say: (a) De&nbsp; (b) du</li>
+      <li>&ldquo;it&rdquo; for <span class="da">en bil</span>: (a) det&nbsp; (b) den</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;a &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 4 &mdash; put into the present tense</summary><div class="qbody">
+    <ol>
+      <li>jeg (at bo &mdash; wohnen) ___ i Berlin</li>
+      <li>du (at l&aelig;se &mdash; lesen) ___ en bog</li>
+      <li>vi (at arbejde &mdash; arbeiten) ___ i dag</li>
+      <li>de (at komme) ___ nu</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;bor &middot; 2&nbsp;l&aelig;ser &middot; 3&nbsp;arbejder &middot; 4&nbsp;kommer</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch5">
+  <h2>5 &middot; v&aelig;re, have, blive <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">sein, haben, werden &mdash; one form each</div>
+  <table>
+    <tr><th></th><th>v&aelig;re <span class="tr">(sein)</span></th><th>have <span class="tr">(haben)</span></th><th>blive <span class="tr">(werden)</span></th></tr>
+    <tr><td>present, all persons</td><td class="da">er</td><td class="da">har</td><td class="da">bliver</td></tr>
+    <tr><td>past</td><td class="da">var</td><td class="da">havde</td><td class="da">blev</td></tr>
+    <tr><td>participle</td><td class="da">v&aelig;ret</td><td class="da">haft</td><td class="da">blevet</td></tr>
+  </table>
+  <p><span class="da">Jeg er tr&aelig;t.</span> <span class="tr">(Ich bin m&uuml;de.)</span> &middot; <span class="da">Hun har en bil.</span> <span class="tr">(Sie hat ein Auto.)</span> &middot; <span class="da">Vi bliver gamle.</span> <span class="tr">(Wir werden alt.)</span></p>
+  <div class="box deutsch"><span class="label">Deutsche Parallele &middot; blive = werden, twice over</span>
+  <p>Exactly like <span class="de">werden</span>, <span class="da">blive</span> is both &ldquo;to become&rdquo; and the passive auxiliary (Ch.&nbsp;24): <span class="da">bilen bliver solgt</span> = <span class="de">das Auto wird verkauft</span>. Your double-duty intuition transfers one-to-one. (Etymology bonus: <span class="da">blive</span> is cognate with German <span class="de">bleiben</span> &mdash; but means werden, not bleiben. &ldquo;Bleiben&rdquo; is <span class="da">at blive</span> too in some contexts (<span class="da">bliv her!</span> = bleib hier!) &mdash; context decides.)</p></div>
+  <details class="qe"><summary>Quiz 5</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;wir sind&rdquo;: (a) vi er&nbsp; (b) vi v&aelig;re&nbsp; (c) vi bliver</li>
+      <li>&ldquo;sie hat&rdquo;: (a) hun haver&nbsp; (b) hun har&nbsp; (c) hun havde</li>
+      <li><span class="da">blive</span> corresponds to German: (a) bleiben only&nbsp; (b) werden (and sometimes bleiben)&nbsp; (c) blasen</li>
+      <li>Past of <span class="da">v&aelig;re</span>: (a) var&nbsp; (b) v&aelig;rte&nbsp; (c) blev</li>
+      <li>&ldquo;du bist m&uuml;de&rdquo;: (a) du er tr&aelig;t&nbsp; (b) du bist tr&aelig;t&nbsp; (c) du har tr&aelig;t</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;a &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 5 &mdash; translate</summary><div class="qbody">
+    <ol>
+      <li>Ich bin m&uuml;de (tr&aelig;t).</li>
+      <li>Sie hat ein Auto (en bil).</li>
+      <li>Wir werden alte (gamle).</li>
+      <li>Bist du gl&uuml;cklich (glad)?</li>
+      <li>Sie (pl) sind hier (her).</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Jeg er tr&aelig;t. &middot; 2&nbsp;Hun har en bil. &middot; 3&nbsp;Vi bliver gamle. &middot; 4&nbsp;Er du glad? &middot; 5&nbsp;De er her.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch6">
+  <h2>6 &middot; Word order: the V2 rule <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">Your biggest head start &mdash; identical in both languages</div>
+  <p>Danish main clauses (<span class="da">hels&aelig;tninger</span>) obey the same <strong>verb-second rule</strong> as German: finite verb second, one constituent in front, inversion when something else is fronted.</p>
+  <ul>
+    <li><span class="da">Jeg <strong>drikker</strong> kaffe i dag.</span> / <span class="de">Ich <strong>trinke</strong> heute Kaffee.</span></li>
+    <li><span class="da">I dag <strong>drikker</strong> jeg kaffe.</span> / <span class="de">Heute <strong>trinke</strong> ich Kaffee.</span> &mdash; identical inversion.</li>
+  </ul>
+  <div class="box trap"><span class="label">German trap &middot; the bracket is weaker</span>
+  <p>German loves the Satzklammer with the infinitive at the very end after long middles. Danish also sends non-finite verbs toward the end (<span class="da">jeg vil gerne <strong>spise</strong></span> = <span class="de">ich m&ouml;chte gern <strong>essen</strong></span>), but the middle field is shorter and objects normally follow the verb cluster more tightly. Danish also never does verb-final subordinate clauses &mdash; see Ch.&nbsp;21, the biggest word-order difference for you.</p></div>
+  <details class="qe"><summary>Quiz 6</summary><div class="qbody">
+    <ol>
+      <li>In a Danish main clause the finite verb is in position: (a) 1&nbsp; (b) 2&nbsp; (c) last</li>
+      <li>&ldquo;Morgen komme ich&rdquo;: (a) I morgen jeg kommer&nbsp; (b) I morgen kommer jeg</li>
+      <li>Danish has the same V2 rule as German: (a) true&nbsp; (b) false</li>
+      <li>Fronting an adverbial triggers: (a) inversion&nbsp; (b) nothing</li>
+      <li>&ldquo;ich m&ouml;chte gern essen&rdquo;: (a) jeg vil gerne spise&nbsp; (b) jeg vil spise gerne</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 6 &mdash; build the sentence, starting with the bracketed element</summary><div class="qbody">
+    <ol>
+      <li>[I dag] / jeg / spiller / fodbold.</li>
+      <li>[P&aring; mandag] / vi / g&aring;r / i biografen.</li>
+      <li>[Nu] / du / skal / l&aelig;re.</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;I dag spiller jeg fodbold. &middot; 2&nbsp;P&aring; mandag g&aring;r vi i biografen. &middot; 3&nbsp;Nu skal du l&aelig;re.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch7">
+  <h2>7 &middot; Questions <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">Inversion and hv-words &mdash; your w-words in disguise</div>
+  <ul>
+    <li><strong>Yes/no questions:</strong> verb first, exactly like German: <span class="da">Drikker du kaffe?</span> = <span class="de">Trinkst du Kaffee?</span></li>
+    <li><strong>Hv-questions:</strong> Danish question words start with <span class="da">hv-</span> (your <span class="de">w-</span>): <span class="da">hvem</span> <span class="de">(wer)</span>, <span class="da">hvad</span> <span class="de">(was)</span>, <span class="da">hvor</span> <span class="de">(wo)</span>, <span class="da">hvorn&aring;r</span> <span class="de">(wann)</span>, <span class="da">hvorfor</span> <span class="de">(warum)</span>, <span class="da">hvordan</span> <span class="de">(wie)</span>, <span class="da">hvilken</span> <span class="de">(welcher)</span>. The <span class="da">h</span> is silent: hvad sounds like &ldquo;vað&rdquo;.</li>
+    <li>Note <span class="da">hvor</span> also means &ldquo;how&rdquo; before adjectives: <span class="da">hvor gammel er du?</span> = <span class="de">wie alt bist du?</span></li>
+  </ul>
+  <details class="qe"><summary>Quiz 7</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;Sprichst du D&auml;nisch?&rdquo;: (a) Du taler dansk?&nbsp; (b) Taler du dansk?</li>
+      <li>&ldquo;wo&rdquo; = (a) hvem&nbsp; (b) hvor&nbsp; (c) hvad</li>
+      <li>&ldquo;wann&rdquo; = (a) hvorn&aring;r&nbsp; (b) hvorfor&nbsp; (c) hvordan</li>
+      <li>The h in hv-words is: (a) pronounced&nbsp; (b) silent</li>
+      <li>&ldquo;wie alt bist du?&rdquo;: (a) hvordan gammel er du?&nbsp; (b) hvor gammel er du?</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 7 &mdash; translate</summary><div class="qbody">
+    <ol>
+      <li>Was machst du? (at lave)</li>
+      <li>Wo wohnt ihr? (at bo)</li>
+      <li>Kommst du?</li>
+      <li>Warum weint er? (at gr&aelig;de)</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Hvad laver du? &middot; 2&nbsp;Hvor bor I? &middot; 3&nbsp;Kommer du? &middot; 4&nbsp;Hvorfor gr&aelig;der han?</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch8">
+  <h2>8 &middot; Negation with ikke <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">One negator instead of two &mdash; nicht and kein merge</div>
+  <p>Danish uses <strong>one word</strong>, <span class="da">ikke</span>, for nearly everything German splits into <span class="de">nicht</span> and <span class="de">kein</span>:</p>
+  <ul>
+    <li><span class="da">Jeg arbejder <strong>ikke</strong>.</span> = <span class="de">Ich arbeite nicht.</span></li>
+    <li><span class="da">Jeg har <strong>ikke</strong> en bil</span> / more idiomatic: <span class="da">Jeg har <strong>ingen</strong> bil.</span> = <span class="de">Ich habe kein Auto.</span> (<span class="da">ingen/intet</span> = kein, optional but common.)</li>
+    <li>Placement in main clauses: after the finite verb (and after object pronouns): <span class="da">Jeg kender ham <strong>ikke</strong></span> = <span class="de">Ich kenne ihn nicht</span>.</li>
+  </ul>
+  <div class="box trap"><span class="label">German trap &middot; ikke moves in leds&aelig;tninger</span>
+  <p>In subordinate clauses, <span class="da">ikke</span> jumps <em>before</em> the finite verb: <span class="da">&hellip;fordi jeg <strong>ikke arbejder</strong></span> (&hellip;weil ich nicht arbeite). This placement shift is the single most persistent Danish word-order error for foreigners &mdash; preview here, full treatment in Ch.&nbsp;21.</p></div>
+  <details class="qe"><summary>Quiz 8</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;Er kommt nicht&rdquo;: (a) Han kommer ikke&nbsp; (b) Han ikke kommer</li>
+      <li>&ldquo;Ich habe kein Geld&rdquo;: (a) Jeg har ikke penge / ingen penge&nbsp; (b) Jeg har kein penge</li>
+      <li>Danish splits negation into two words like nicht/kein: (a) yes&nbsp; (b) no</li>
+      <li>In a main clause, ikke stands: (a) before the finite verb&nbsp; (b) after it</li>
+      <li>In a leds&aelig;tning (fordi&hellip;), ikke stands: (a) before the finite verb&nbsp; (b) after it</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;a &middot; 2&nbsp;a &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 8 &mdash; negate the sentence</summary><div class="qbody">
+    <ol>
+      <li>Jeg drikker &oslash;l. &rarr;</li>
+      <li>Hun er tr&aelig;t. &rarr;</li>
+      <li>Vi har penge. &rarr; (use ingen)</li>
+      <li>Han kommer i dag. &rarr;</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Jeg drikker ikke &oslash;l. &middot; 2&nbsp;Hun er ikke tr&aelig;t. &middot; 3&nbsp;Vi har ingen penge. &middot; 4&nbsp;Han kommer ikke i dag.</div></details>
+  </div></details>
+</section>
+<!-- ================= PART B ================= -->
+<section class="part-head" id="partb">
+  <div class="part-label">Part B</div>
+  <h2>Core grammar</h2>
+  <p class="kicker">Chapters 9&ndash;23 &middot; A2 to B1 &middot; Agreement, verbs, and the small structural habits</p>
+</section>
+
+<section class="chapter" id="ch9">
+  <h2>9 &middot; Where did the cases go? <span class="lvl a1">A1&ndash;A2</span></h2>
+  <div class="ch-meta">No Akkusativ, no Dativ &mdash; word order and prepositions do the work</div>
+  <p>Danish has essentially <strong>abolished the case system</strong> on nouns and articles. <span class="da">Manden ser hunden</span> &mdash; subject and object look identical; only <strong>word order</strong> tells you who does what (like English). No preposition governs a case: <span class="da">med manden, til manden, for manden</span> &mdash; the noun never changes.</p>
+  <ul>
+    <li><strong>Pronouns keep a two-way case distinction</strong> (subject vs. object), like your er/ihn: <span class="da">jeg/mig, du/dig, han/ham, hun/hende, den/den, det/det, vi/os, I/jer, de/dem</span>. There is <strong>no dative</strong>: <span class="da">ham</span> covers both ihn and ihm.</li>
+    <li><strong>Genitive:</strong> a simple <span class="da">-s</span> on anything, no article change: <span class="da">mandens bil</span> = <span class="de">das Auto des Mannes</span>. Even whole phrases: <span class="da">kongen af Danmarks slot</span> (the King of Denmark&rsquo;s castle). Alternative with preposition: <span class="da">bilen <strong>til</strong> manden</span>.</li>
+  </ul>
+  <div class="box trap"><span class="label">German trap &middot; stop declining</span>
+  <p>Your instinct to mark den/dem will produce non-existent forms. There is no <span class="da">*mandem</span>, no case after prepositions, no adjective case endings. The flip side: because case no longer disambiguates, Danish word order is <em>less free</em> than German &mdash; fronting an object (<span class="da">Manden ser hunden</span> vs. <span class="da">Hunden ser manden</span>) changes the meaning.</p></div>
+  <details class="qe"><summary>Quiz 9</summary><div class="qbody">
+    <ol>
+      <li>Danish nouns decline for case: (a) yes&nbsp; (b) no</li>
+      <li>&ldquo;ihm&rdquo; and &ldquo;ihn&rdquo; both translate as: (a) han&nbsp; (b) ham&nbsp; (c) hans</li>
+      <li>&ldquo;das Auto des Mannes&rdquo;: (a) bilen mandens&nbsp; (b) mandens bil&nbsp; (c) manden bils</li>
+      <li>After <span class="da">med</span>, the noun: (a) takes dative&nbsp; (b) never changes</li>
+      <li>In Danish, who-does-what is shown by: (a) case endings&nbsp; (b) word order</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 9 &mdash; translate</summary><div class="qbody">
+    <ol>
+      <li>Ich sehe ihn.</li>
+      <li>Sie hilft mir. (at hj&aelig;lpe)</li>
+      <li>das Buch des Kindes (et barn)</li>
+      <li>Wir sprechen mit ihnen. (at tale med)</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Jeg ser ham. &middot; 2&nbsp;Hun hj&aelig;lper mig. &middot; 3&nbsp;barnets bog &middot; 4&nbsp;Vi taler med dem.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch10">
+  <h2>10 &middot; Plurals <span class="lvl a2">A2</span></h2>
+  <div class="ch-meta">Three patterns: -er, -e, zero</div>
+  <table>
+    <tr><th>Pattern</th><th>Examples</th><th>German comparison</th></tr>
+    <tr><td><span class="da">-er / -r</span> (most common)</td><td class="da">bil &rarr; biler, avis &rarr; aviser, uge &rarr; uger</td><td class="de">like -en: Autos, Zeitungen</td></tr>
+    <tr><td><span class="da">-e</span></td><td class="da">dag &rarr; dage, hund &rarr; hunde, hus &rarr; huse</td><td class="de">like Tage, Hunde</td></tr>
+    <tr><td>zero</td><td class="da">et &aring;r &rarr; to &aring;r, en fisk &rarr; to fisk, et barn &rarr; b&oslash;rn (umlaut)</td><td class="de">like Jahr(e), Fisch(e); Kind &rarr; Kinder</td></tr>
+  </table>
+  <p>Umlaut plurals exist just like in German: <span class="da">mand &rarr; m&aelig;nd</span> (Mann &rarr; M&auml;nner), <span class="da">barn &rarr; b&oslash;rn</span>, <span class="da">fod &rarr; f&oslash;dder</span> (Fu&szlig; &rarr; F&uuml;&szlig;e), <span class="da">bog &rarr; b&oslash;ger</span>. The concept is fully familiar; the assignments must be memorised per noun &mdash; learn noun, article and plural as one unit: <span class="da">en bil, bilen, biler</span>.</p>
+  <details class="qe"><summary>Quiz 10</summary><div class="qbody">
+    <ol>
+      <li>Plural of <span class="da">bil</span>: (a) bile&nbsp; (b) biler&nbsp; (c) bils</li>
+      <li>Plural of <span class="da">dag</span>: (a) dage&nbsp; (b) dager&nbsp; (c) dag</li>
+      <li>Plural of <span class="da">barn</span>: (a) barner&nbsp; (b) b&oslash;rn&nbsp; (c) barne</li>
+      <li>Plural of <span class="da">&aring;r</span>: (a) &aring;rer&nbsp; (b) &aring;re&nbsp; (c) &aring;r</li>
+      <li>Danish has umlaut plurals like German: (a) yes&nbsp; (b) no</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;a &middot; 3&nbsp;b &middot; 4&nbsp;c &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 10 &mdash; give the plural, then the definite plural</summary><div class="qbody">
+    <ol>
+      <li>en hund &rarr; ___ / ___</li>
+      <li>et hus &rarr; ___ / ___</li>
+      <li>en mand &rarr; ___ / ___</li>
+      <li>en avis &rarr; ___ / ___</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;hunde / hundene &middot; 2&nbsp;huse / husene &middot; 3&nbsp;m&aelig;nd / m&aelig;ndene &middot; 4&nbsp;aviser / aviserne</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch11">
+  <h2>11 &middot; Adjective agreement <span class="lvl a2">A2</span></h2>
+  <div class="ch-meta">Only three forms &mdash; but they also apply after &ldquo;to be&rdquo;</div>
+  <p>Danish adjectives have three forms &mdash; no case dimension at all:</p>
+  <table>
+    <tr><th>Form</th><th>Used with</th><th>Example</th></tr>
+    <tr><td>base</td><td>common gender singular</td><td class="da">en stor bil &middot; bilen er stor</td></tr>
+    <tr><td><span class="da">-t</span></td><td>neuter singular</td><td class="da">et stort hus &middot; huset er stort</td></tr>
+    <tr><td><span class="da">-e</span></td><td>all plurals and all definite forms</td><td class="da">store biler &middot; den store bil &middot; min store bil</td></tr>
+  </table>
+  <div class="box trap"><span class="label">German trap &middot; predicative adjectives agree!</span>
+  <p>In German, adjectives after sein are uninflected: <span class="de">das Haus ist gro&szlig;</span>. In Danish they <strong>agree</strong>: <span class="da">huset er stor<strong>t</strong></span>, <span class="da">bilerne er stor<strong>e</strong></span>. Forgetting the -t/-e after &ldquo;er&rdquo; is a classic German-speaker error. Second trap: after a possessive or genitive, the definite <span class="da">-e</span> form appears even without den/det/de: <span class="da">min store bil</span>, <span class="da">Kristines gamle hus</span>.</p></div>
+  <div class="box deutsch"><span class="label">Deutsche Parallele</span>
+  <p>The attributive system is a radically simplified version of yours: think of <span class="da">-t</span> as the neuter marker (like <span class="de">ein gro&szlig;<strong>es</strong> Haus</span> &rarr; <span class="da">et stor<strong>t</strong> hus</span>) and <span class="da">-e</span> as the weak ending after definite articles (<span class="de">der gro&szlig;<strong>e</strong> Mann</span> &rarr; <span class="da">den stor<strong>e</strong> mand</span>). Same logic, three forms instead of dozens.</p></div>
+  <details class="qe"><summary>Quiz 11</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;ein gro&szlig;es Haus&rdquo;: (a) et stor hus&nbsp; (b) et stort hus</li>
+      <li>&ldquo;das Haus ist gro&szlig;&rdquo;: (a) huset er stor&nbsp; (b) huset er stort</li>
+      <li>&ldquo;die gro&szlig;en Autos&rdquo;: (a) de store biler&nbsp; (b) de stort biler</li>
+      <li>&ldquo;mein altes Haus&rdquo; (gammel): (a) mit gammelt hus&nbsp; (b) mit gamle hus</li>
+      <li>Danish adjectives inflect for case: (a) yes&nbsp; (b) no</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;b (definite -e form after possessive) &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 11 &mdash; add the right form of the adjective</summary><div class="qbody">
+    <ol>
+      <li>en (ny) ___ bil</li>
+      <li>et (ny) ___ hus</li>
+      <li>huset er (gammel) ___</li>
+      <li>de (r&oslash;d) ___ biler</li>
+      <li>min (lille/sm&aring;) ___ hund</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;ny &middot; 2&nbsp;nyt &middot; 3&nbsp;gammelt &middot; 4&nbsp;r&oslash;de &middot; 5&nbsp;lille (irregular: lille sg, sm&aring; pl)</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch12">
+  <h2>12 &middot; Possessives &amp; sin / sit / sine <span class="lvl a2">A2&ndash;B1</span></h2>
+  <div class="ch-meta">The reflexive possessive German lost &mdash; the classic trap</div>
+  <p>Possessives: <span class="da">min/mit/mine</span> (mein), <span class="da">din/dit/dine</span> (dein), <span class="da">hans</span> (sein &mdash; his), <span class="da">hendes</span> (ihr &mdash; her), <span class="da">dens/dets</span> (its), <span class="da">vores</span> (unser), <span class="da">jeres</span> (euer), <span class="da">deres</span> (ihr/pl). <span class="da">min/mit/mine</span> agree like adjectives (common/neuter/plural); the -s forms never change.</p>
+  <div class="box trap"><span class="label">German trap &middot; sin, sit, sine</span>
+  <p>Danish has a <strong>reflexive</strong> 3rd-person possessive that German lacks. When the possessor is the <em>subject of the same clause</em>, you must use <span class="da">sin/sit/sine</span>; <span class="da">hans/hendes</span> then means <em>someone else&rsquo;s</em>:</p>
+  <p><span class="da">Han tager <strong>sin</strong> bil.</span> = Er nimmt <strong>sein eigenes</strong> Auto.<br>
+  <span class="da">Han tager <strong>hans</strong> bil.</span> = Er nimmt <strong>dessen</strong> Auto (das eines anderen Mannes).</p>
+  <p>German <span class="de">sein</span> covers both, so you must learn to ask: same subject? &rarr; sin/sit/sine. This distinction is meaning-changing and Danes notice the error immediately.</p></div>
+  <details class="qe"><summary>Quiz 12</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;Er liebt seine (eigene) Frau&rdquo;: (a) Han elsker hans kone&nbsp; (b) Han elsker sin kone</li>
+      <li>&ldquo;Er liebt dessen Frau (die eines anderen)&rdquo;: (a) Han elsker hans kone&nbsp; (b) Han elsker sin kone</li>
+      <li>&ldquo;mein Haus&rdquo;: (a) min hus&nbsp; (b) mit hus</li>
+      <li>&ldquo;ihre B&uuml;cher (her books, own)&rdquo;: Hun l&aelig;ser ___ b&oslash;ger &rarr; (a) sine&nbsp; (b) hendes</li>
+      <li><span class="da">vores</span> changes for gender: (a) yes&nbsp; (b) no</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;a &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 12 &mdash; sin/sit/sine or hans/hendes?</summary><div class="qbody">
+    <ol>
+      <li>Peter vasker ___ bil. (his own)</li>
+      <li>Peter vasker ___ bil. (Lars&rsquo;s car)</li>
+      <li>Anna elsker ___ b&oslash;rn. (her own)</li>
+      <li>Anna taler med ___ mor. (Maria&rsquo;s mother)</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;sin &middot; 2&nbsp;hans &middot; 3&nbsp;sine &middot; 4&nbsp;hendes</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch13">
+  <h2>13 &middot; Numbers &amp; counting <span class="lvl a2">A2</span></h2>
+  <div class="ch-meta">halvtreds: the famous vigesimal system</div>
+  <p>1&ndash;20 are familiar cousins: <span class="da">en/et, to, tre, fire, fem, seks, syv, otte, ni, ti, elleve, tolv, tretten &hellip; tyve</span>. Then: <span class="da">tredive</span> (30), <span class="da">fyrre</span> (40) &mdash; and from 50, Danish counts in <strong>twenties</strong>:</p>
+  <table>
+    <tr><th>Number</th><th>Danish</th><th>Literal logic</th></tr>
+    <tr><td>50</td><td class="da">halvtreds</td><td>half-third (2&frac12;) times 20</td></tr>
+    <tr><td>60</td><td class="da">tres</td><td>3 &times; 20</td></tr>
+    <tr><td>70</td><td class="da">halvfjerds</td><td>3&frac12; &times; 20</td></tr>
+    <tr><td>80</td><td class="da">firs</td><td>4 &times; 20</td></tr>
+    <tr><td>90</td><td class="da">halvfems</td><td>4&frac12; &times; 20</td></tr>
+  </table>
+  <div class="box deutsch"><span class="label">Deutsche Parallele &middot; units first, like at home</span>
+  <p>Compound numbers put the unit first with <span class="da">og</span> (und), exactly like German: <span class="da">femoghalvtreds</span> (55) = <span class="de">f&uuml;nfundf&uuml;nfzig</span>. That habit transfers one-to-one &mdash; only the decade names are opaque. Treat halvtreds&ndash;halvfems as vocabulary, not arithmetic; even Danes do not compute them.</p></div>
+  <details class="qe"><summary>Quiz 13</summary><div class="qbody">
+    <ol>
+      <li>50 = (a) femti&nbsp; (b) halvtreds&nbsp; (c) femtyve</li>
+      <li>90 = (a) halvfems&nbsp; (b) nitti&nbsp; (c) firs</li>
+      <li>55 = (a) halvtredsogfem&nbsp; (b) femoghalvtreds</li>
+      <li>The unit-before-ten order matches German: (a) yes&nbsp; (b) no</li>
+      <li>60 = (a) tres&nbsp; (b) seksti&nbsp; (c) halvtres</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;a &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 13 &mdash; write out in Danish</summary><div class="qbody">
+    <ol>
+      <li>21</li>
+      <li>47</li>
+      <li>68</li>
+      <li>99</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;enogtyve &middot; 2&nbsp;syvogfyrre &middot; 3&nbsp;otteogtres &middot; 4&nbsp;nioghalvfems</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch14">
+  <h2>14 &middot; Prepositions <span class="lvl a2">A2&ndash;B1</span></h2>
+  <div class="ch-meta">No case to govern &mdash; but i, p&aring; and til follow their own logic</div>
+  <p>Danish prepositions never change the noun. The difficulty is idiomatic <em>choice</em>, especially <span class="da">i</span> vs. <span class="da">p&aring;</span>:</p>
+  <ul>
+    <li><span class="da">i</span> (in): <span class="da">i Berlin, i huset, i januar</span> &mdash; but also <span class="da">i skole, i biografen</span> (institutions).</li>
+    <li><span class="da">p&aring;</span> (auf/an): <span class="da">p&aring; bordet</span> (auf dem Tisch), but idiomatically <span class="da">p&aring; arbejde</span> (auf der Arbeit), <span class="da">p&aring; hotel, p&aring; Fyn</span> (islands!), <span class="da">p&aring; universitetet</span>.</li>
+    <li><span class="da">til</span> (zu/nach + destination, and possession): <span class="da">jeg tager til K&oslash;benhavn</span> (ich fahre nach Kopenhagen), <span class="da">en gave til dig</span>.</li>
+    <li><span class="da">hos</span> = French &ldquo;chez&rdquo;, German <span class="de">bei</span>: <span class="da">hos l&aelig;gen</span> (beim Arzt), <span class="da">hos os</span> (bei uns).</li>
+    <li><span class="da">om</span> (about; also &ldquo;in&rdquo; for future time): <span class="da">om to timer</span> (in zwei Stunden) &mdash; vs. <span class="da">for to timer siden</span> (vor zwei Stunden).</li>
+    <li>Movement vs. location is expressed with adverb pairs, not case: <span class="da">ind i / inde i</span> (hinein/drinnen), <span class="da">op / oppe</span>, <span class="da">ud / ude</span>, <span class="da">hen / henne</span>. Compare your wohin/wo distinction &mdash; the concept is identical, the mechanism is adverb form instead of Akkusativ/Dativ.</li>
+  </ul>
+  <div class="box trap"><span class="label">German trap</span>
+  <p>Do not translate <span class="de">nach</span> blindly: destinations take <span class="da">til</span> (<span class="da">til Danmark</span>), never <span class="da">*nach</span>. And islands take <span class="da">p&aring;</span>: <span class="da">p&aring; Sj&aelig;lland, p&aring; Bornholm</span>.</p></div>
+  <details class="qe"><summary>Quiz 14</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;beim Arzt&rdquo;: (a) ved l&aelig;gen&nbsp; (b) hos l&aelig;gen</li>
+      <li>&ldquo;nach Kopenhagen&rdquo;: (a) nach K&oslash;benhavn&nbsp; (b) til K&oslash;benhavn</li>
+      <li>&ldquo;in zwei Stunden&rdquo; (future): (a) i to timer&nbsp; (b) om to timer</li>
+      <li>&ldquo;auf Fünen&rdquo; (island): (a) i Fyn&nbsp; (b) p&aring; Fyn</li>
+      <li>Danish prepositions govern case: (a) yes&nbsp; (b) no</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 14 &mdash; insert the preposition</summary><div class="qbody">
+    <ol>
+      <li>Jeg bor ___ Berlin.</li>
+      <li>Bogen ligger ___ bordet.</li>
+      <li>Vi tager ___ Danmark ___ sommer. (nach / im)</li>
+      <li>Hun er ___ arbejde.</li>
+      <li>Vi spiser ___ mine for&aelig;ldre. (bei)</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;i &middot; 2&nbsp;p&aring; &middot; 3&nbsp;til &hellip; til (til sommer) &middot; 4&nbsp;p&aring; &middot; 5&nbsp;hos</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch15">
+  <h2>15 &middot; Modal verbs &amp; their traps <span class="lvl a2">A2&ndash;B1</span></h2>
+  <div class="ch-meta">Same system, shifted meanings: m&aring;, skal, vil</div>
+  <p>Structure is identical to German: modal in position 2, bare infinitive at the end. <span class="da">Jeg <strong>skal</strong> arbejde i dag</span> = <span class="de">Ich muss heute arbeiten</span>. But the meanings have shifted:</p>
+  <table>
+    <tr><th>Danish</th><th>Core meaning</th><th>Watch out</th></tr>
+    <tr><td class="da">kan</td><td>k&ouml;nnen</td><td>direct match</td></tr>
+    <tr><td class="da">skal</td><td>m&uuml;ssen / sollen / (planned future)</td><td>much broader than German sollen: obligation, plans, arrangements</td></tr>
+    <tr><td class="da">vil</td><td>wollen / werden (future)</td><td>doubles as future auxiliary, like English will</td></tr>
+    <tr><td class="da">m&aring;</td><td>d&uuml;rfen AND m&uuml;ssen</td><td><span class="da">m&aring; godt</span> = darf; <span class="da">m&aring; ikke</span> = darf nicht; <span class="da">m&aring;</span> + stress/context = muss</td></tr>
+    <tr><td class="da">b&oslash;r</td><td>sollte (advice)</td><td>cognate of German geb&uuml;hren</td></tr>
+    <tr><td class="da">t&oslash;r</td><td>sich trauen (dare)</td><td>no direct German modal</td></tr>
+  </table>
+  <div class="box trap"><span class="label">German trap &middot; m&uuml;ssen is usually skal</span>
+  <p>The false cognate pair: Danish <span class="da">m&aring;</span> looks like a shortened &ldquo;muss&rdquo; but usually means <strong>d&uuml;rfen</strong>. Everyday &ldquo;m&uuml;ssen&rdquo; is <span class="da">skal</span>: <span class="da">Jeg skal g&aring; nu</span> = Ich muss jetzt gehen. And <span class="da">Du m&aring; ikke ryge her</span> = Du darfst hier nicht rauchen (not &ldquo;musst nicht&rdquo;!).</p></div>
+  <details class="qe"><summary>Quiz 15</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;Ich muss jetzt gehen&rdquo;: (a) Jeg m&aring; g&aring; nu&nbsp; (b) Jeg skal g&aring; nu</li>
+      <li>&ldquo;Du darfst hier nicht rauchen&rdquo;: (a) Du m&aring; ikke ryge her&nbsp; (b) Du skal ikke ryge her</li>
+      <li>After a modal, the main verb is: (a) at + infinitive&nbsp; (b) bare infinitive</li>
+      <li>&ldquo;d&uuml;rfen&rdquo; (permission) &asymp; (a) m&aring; (godt)&nbsp; (b) b&oslash;r</li>
+      <li>&ldquo;sollte&rdquo; (advice) &asymp; (a) skal&nbsp; (b) b&oslash;r</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;a &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 15 &mdash; translate</summary><div class="qbody">
+    <ol>
+      <li>Ich muss heute arbeiten.</li>
+      <li>Sie will schlafen (at sove).</li>
+      <li>Darf ich hier sitzen (at sidde)?</li>
+      <li>Wir k&ouml;nnen kommen.</li>
+      <li>Du solltest mehr schlafen.</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Jeg skal arbejde i dag. &middot; 2&nbsp;Hun vil sove. &middot; 3&nbsp;M&aring; jeg sidde her? &middot; 4&nbsp;Vi kan komme. &middot; 5&nbsp;Du b&oslash;r sove mere.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch16">
+  <h2>16 &middot; Particle verbs <span class="lvl a2">A2&ndash;B1</span></h2>
+  <div class="ch-meta">Your trennbare Verben, Danish style &mdash; stress decides meaning</div>
+  <p>Danish <span class="da">partikelverber</span> work like your separable verbs: <span class="da">at st&aring; <strong>op</strong></span> (aufstehen): <span class="da">Jeg st&aring;r op klokken 7</span> = <span class="de">Ich stehe um 7 Uhr auf</span>. The particle goes toward the end of the clause &mdash; a completely familiar mechanism.</p>
+  <ul>
+    <li>Common pairs: <span class="da">st&aring; op</span> (aufstehen), <span class="da">tage af sted</span> (losfahren), <span class="da">holde op</span> (aufh&ouml;ren), <span class="da">finde ud af</span> (herausfinden), <span class="da">se ud</span> (aussehen), <span class="da">g&aring; ud</span> (ausgehen).</li>
+    <li>Like German, Danish also has inseparable prefix verbs (<span class="da">be-, for-, und-</span>: <span class="da">betale</span> = bezahlen, <span class="da">forst&aring;</span> = verstehen, <span class="da">unders&oslash;ge</span> = untersuchen) &mdash; the prefixes are even cognates of yours (be-, ver-, unter-).</li>
+    <li>Sometimes both exist with different meanings, distinguished by stress and position: <span class="da">at overs&aelig;tte</span> (&uuml;bersetzen, translate, inseparable) vs. <span class="da">at s&aelig;tte over</span> (&uuml;bersetzen im Boot, separable) &mdash; the exact same &Uuml;BERsetzen/&uuml;berSETZen game German plays.</li>
+  </ul>
+  <details class="qe"><summary>Quiz 16</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;Ich stehe um 7 auf&rdquo;: (a) Jeg opst&aring;r klokken 7&nbsp; (b) Jeg st&aring;r op klokken 7</li>
+      <li><span class="da">forst&aring;</span> is: (a) separable&nbsp; (b) inseparable</li>
+      <li>Danish <span class="da">be-</span> corresponds to German: (a) be-&nbsp; (b) ent-</li>
+      <li>&ldquo;aussehen&rdquo;: (a) udse&nbsp; (b) se ud</li>
+      <li>The &uuml;bersetzen ambiguity (stress game) exists in Danish too: (a) yes&nbsp; (b) no</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 16 &mdash; translate</summary><div class="qbody">
+    <ol>
+      <li>Ich stehe fr&uuml;h (tidligt) auf.</li>
+      <li>Er sieht m&uuml;de aus.</li>
+      <li>Wir m&uuml;ssen das herausfinden.</li>
+      <li>Ich verstehe die Frage (sp&oslash;rgsm&aring;let).</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Jeg st&aring;r tidligt op. &middot; 2&nbsp;Han ser tr&aelig;t ud. &middot; 3&nbsp;Vi skal finde ud af det. &middot; 4&nbsp;Jeg forst&aring;r sp&oslash;rgsm&aring;let.</div></details>
+  </div></details>
+</section>
+<section class="chapter" id="ch17">
+  <h2>17 &middot; Past tenses: datid &amp; f&oslash;rnutid <span class="lvl a2">A2&ndash;B1</span></h2>
+  <div class="ch-meta">-ede/-te and har/er &mdash; but the register split runs the other way</div>
+  <p><strong>Datid (simple past):</strong> weak verbs add <span class="da">-ede</span> or <span class="da">-te</span>: <span class="da">spillede</span> (spielte), <span class="da">l&aelig;ste</span> (las); strong verbs change the vowel: <span class="da">gik</span> (ging), <span class="da">s&aring;</span> (sah), <span class="da">kom</span> (kam), <span class="da">drak</span> (trank) &mdash; often the same ablaut families as German.</p>
+  <p><strong>F&oslash;rnutid (perfect):</strong> <span class="da">har/er</span> + participle (<span class="da">-et/-t</span>): <span class="da">Jeg <strong>har</strong> spillet fodbold</span> = <span class="de">Ich habe Fu&szlig;ball gespielt</span>. Motion and change-of-state verbs take <span class="da">er</span>, exactly like your sein-verbs: <span class="da">Jeg <strong>er</strong> k&oslash;rt til Berlin</span> = <span class="de">Ich bin nach Berlin gefahren</span>. The haben/sein split maps almost one-to-one onto <span class="da">have/v&aelig;re</span>.</p>
+  <div class="box trap"><span class="label">German trap &middot; speak in datid</span>
+  <p>In spoken German you say <span class="de">ich habe gespielt</span>; Pr&auml;teritum sounds literary. Danish is the opposite of your habit: the simple past (<span class="da">jeg spillede</span>) is completely normal in speech for completed past events, while <span class="da">f&oslash;rnutid</span> is reserved for present relevance (like English). Saying <span class="da">jeg har spillet fodbold i g&aring;r</span> is off; with a past time adverbial use datid: <span class="da">jeg spillede fodbold i g&aring;r</span>.</p></div>
+  <details class="qe"><summary>Quiz 17</summary><div class="qbody">
+    <ol>
+      <li>Datid of <span class="da">at spille</span>: (a) spillede&nbsp; (b) har spillet&nbsp; (c) spillte</li>
+      <li>&ldquo;Ich bin nach Berlin gefahren&rdquo; uses which auxiliary in Danish? (a) have&nbsp; (b) v&aelig;re</li>
+      <li>&ldquo;Gestern spielte ich Fu&szlig;ball&rdquo; &mdash; in spoken Danish you use: (a) datid&nbsp; (b) f&oslash;rnutid</li>
+      <li>Participle of <span class="da">at l&aelig;se</span>: (a) l&aelig;set&nbsp; (b) l&aelig;st</li>
+      <li>Danish strong verbs with vowel change parallel German: (a) yes&nbsp; (b) no</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;a &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 17 &mdash; put into datid AND f&oslash;rnutid</summary><div class="qbody">
+    <ol>
+      <li>jeg (at arbejde) &rarr; ___ / ___</li>
+      <li>vi (at k&oslash;re til Hamburg) &rarr; ___ / ___</li>
+      <li>hun (at synge en sang) &rarr; ___ / ___</li>
+      <li>han (at forst&aring; sp&oslash;rgsm&aring;let) &rarr; ___ / ___</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;jeg arbejdede / jeg har arbejdet &middot; 2&nbsp;vi k&oslash;rte til Hamburg / vi er k&oslash;rt til Hamburg &middot; 3&nbsp;hun sang en sang / hun har sunget en sang &middot; 4&nbsp;han forstod sp&oslash;rgsm&aring;let / han har forst&aring;et sp&oslash;rgsm&aring;let</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch18">
+  <h2>18 &middot; Comparative &amp; superlative <span class="lvl b1">B1</span></h2>
+  <div class="ch-meta">-ere / -est &mdash; even the irregulars match yours</div>
+  <ul>
+    <li><span class="da">hurtig &rarr; hurtigere &rarr; hurtigst</span>, like <span class="de">schnell &rarr; schneller &rarr; am schnellsten</span>.</li>
+    <li>Irregulars mirror German: <span class="da">god &rarr; bedre &rarr; bedst</span> (gut/besser/am besten), <span class="da">mange &rarr; flere &rarr; flest</span>, <span class="da">gerne &rarr; hellere &rarr; helst</span> (gern/lieber/am liebsten &mdash; yes, Danish has gerne!).</li>
+    <li>Longer adjectives use <span class="da">mere / mest</span>: <span class="da">mere interessant, mest interessant</span> &mdash; unlike German, which suffixes everything.</li>
+    <li>&ldquo;than&rdquo; = <span class="da">end</span> (als): <span class="da">Han er st&oslash;rre <strong>end</strong> mig.</span> &ldquo;as &hellip; as&rdquo; = <span class="da">lige s&aring; &hellip; som</span>.</li>
+  </ul>
+  <details class="qe"><summary>Quiz 18</summary><div class="qbody">
+    <ol>
+      <li>Comparative of <span class="da">lille</span>: (a) lillere&nbsp; (b) mindre</li>
+      <li><span class="da">god</span> &rarr; (a) godere&nbsp; (b) bedre</li>
+      <li>&ldquo;gr&ouml;&szlig;er als ich&rdquo;: st&oslash;rre ___ mig &rarr; (a) som&nbsp; (b) end</li>
+      <li>&ldquo;mehr interessant&rdquo; style with mere is used for: (a) short adjectives&nbsp; (b) longer adjectives</li>
+      <li>&ldquo;am liebsten&rdquo; = (a) helst&nbsp; (b) hellere</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 18 &mdash; translate</summary><div class="qbody">
+    <ol>
+      <li>Mein Auto ist schneller als dein Auto.</li>
+      <li>Sie ist die beste Studentin (studerende).</li>
+      <li>Dieses Buch ist interessanter als das da.</li>
+      <li>Er ist &auml;lter (gammel) als sein Bruder.</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Min bil er hurtigere end din bil. &middot; 2&nbsp;Hun er den bedste studerende. &middot; 3&nbsp;Denne bog er mere interessant end den der. &middot; 4&nbsp;Han er &aelig;ldre end sin bror.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch19">
+  <h2>19 &middot; Talking about the future <span class="lvl b1">B1</span></h2>
+  <div class="ch-meta">Present + time word, vil, skal &mdash; no dedicated future tense</div>
+  <p>Danish has no Futur I. Three everyday strategies:</p>
+  <ul>
+    <li><strong>Present + time word</strong> (the default, same as your habit): <span class="da">Jeg kommer i morgen</span> = <span class="de">Ich komme morgen</span>.</li>
+    <li><strong>vil + infinitive</strong> for predictions and intentions: <span class="da">Det vil regne</span> (es wird regnen).</li>
+    <li><strong>skal + infinitive</strong> for plans and arrangements: <span class="da">Vi skal spise hos mine for&aelig;ldre p&aring; l&oslash;rdag</span> (wir essen am Samstag bei meinen Eltern &mdash; fest geplant). This planned-future <span class="da">skal</span> has no direct German equivalent; it is extremely common.</li>
+  </ul>
+  <details class="qe"><summary>Quiz 19</summary><div class="qbody">
+    <ol>
+      <li>Danish has a dedicated future tense like &ldquo;werden + Infinitiv&rdquo;: (a) yes&nbsp; (b) no</li>
+      <li>&ldquo;Ich komme morgen&rdquo;: (a) Jeg vil komme i morgen&nbsp; (b) Jeg kommer i morgen</li>
+      <li>Planned arrangement (&ldquo;wir essen am Samstag bei&hellip;&rdquo;): (a) vil&nbsp; (b) skal</li>
+      <li>Prediction (&ldquo;es wird regnen&rdquo;): (a) det vil regne&nbsp; (b) det skal regne</li>
+      <li>The present-for-future habit matches German: (a) yes&nbsp; (b) no</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 19 &mdash; translate</summary><div class="qbody">
+    <ol>
+      <li>Ich lerne morgen D&auml;nisch.</li>
+      <li>Wir besuchen euch n&auml;chste Woche (i n&aelig;ste uge). (planned)</li>
+      <li>Es wird schneien (at sne). (prediction)</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Jeg l&aelig;rer dansk i morgen. &middot; 2&nbsp;Vi skal bes&oslash;ge jer i n&aelig;ste uge. &middot; 3&nbsp;Det vil sne.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch20">
+  <h2>20 &middot; Reflexives &amp; imperative <span class="lvl b1">B1</span></h2>
+  <div class="ch-meta">sig = sich &mdash; and the shortest imperatives in Europe</div>
+  <p><strong>Reflexive pronoun:</strong> <span class="da">mig, dig, sig, os, jer, sig</span> &mdash; a perfect mirror of <span class="de">mich, dich, sich, uns, euch, sich</span>. <span class="da">Han vasker <strong>sig</strong></span> = <span class="de">Er w&auml;scht sich</span>. Many reflexive verbs match: <span class="da">at gl&aelig;de sig</span> (sich freuen), <span class="da">at skynde sig</span> (sich beeilen). Verify each &mdash; not all German reflexives are reflexive in Danish and vice versa.</p>
+  <p><strong>Imperative:</strong> the bare stem, even shorter than German: <span class="da">Kom! Spis! L&aelig;s!</span> (Komm! Iss! Lies!). For -e verbs, drop the -e: <span class="da">at k&oslash;be &rarr; k&oslash;b!</span> One form for du and I alike &mdash; no Kommt!/Kommen Sie! distinction.</p>
+  <details class="qe"><summary>Quiz 20</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;Er freut sich&rdquo;: (a) Han gl&aelig;der ham&nbsp; (b) Han gl&aelig;der sig</li>
+      <li>Imperative of <span class="da">at k&oslash;be</span>: (a) k&oslash;be!&nbsp; (b) k&oslash;b!</li>
+      <li>Danish distinguishes du/ihr/Sie imperatives: (a) yes&nbsp; (b) no</li>
+      <li>Reflexive for &ldquo;wir&rdquo;: (a) os&nbsp; (b) sig</li>
+      <li><span class="da">sig</span> corresponds to German: (a) sich&nbsp; (b) sie</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 20 &mdash; translate</summary><div class="qbody">
+    <ol>
+      <li>Wasch dich! (at vaske)</li>
+      <li>Komm her!</li>
+      <li>Sie beeilt sich. (at skynde sig)</li>
+      <li>Setz dich! (at s&aelig;tte sig)</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Vask dig! &middot; 2&nbsp;Kom her! &middot; 3&nbsp;Hun skynder sig. &middot; 4&nbsp;S&aelig;t dig!</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch21">
+  <h2>21 &middot; Leds&aelig;tninger: adverb placement <span class="lvl b1">B1</span></h2>
+  <div class="ch-meta">The big word-order difference &mdash; the verb does NOT go to the end</div>
+  <p>Here your German instinct betrays you most. Danish subordinate clauses (<span class="da">leds&aelig;tninger</span>, after <span class="da">at, fordi, hvis, n&aring;r, om, selvom, mens</span>) do <strong>not</strong> send the verb to the end. Instead, the rule is: <strong>Subject &ndash; sentence adverb &ndash; finite verb</strong>:</p>
+  <table>
+    <tr><th></th><th>Main clause</th><th>Subordinate clause</th></tr>
+    <tr><td>Danish</td><td class="da">Jeg kommer <strong>ikke</strong>.</td><td class="da">&hellip;fordi jeg <strong>ikke</strong> kommer.</td></tr>
+    <tr><td>German</td><td class="de">Ich komme <strong>nicht</strong>.</td><td class="de">&hellip;weil ich <strong>nicht</strong> komme<strong>.</strong> (verb final)</td></tr>
+  </table>
+  <p>So the diagnostic word is <span class="da">ikke</span> (and its siblings <span class="da">altid, aldrig, ogs&aring;, nok, jo</span>): main clause &rarr; after the verb; leds&aelig;tning &rarr; <strong>before</strong> the verb. Objects and complements follow the verb as usual &mdash; Danish never piles them up before it.</p>
+  <div class="box trap"><span class="label">German trap &middot; resist verb-final</span>
+  <p>Producing <span class="da">*fordi jeg kommer ikke</span> (main-clause order) or trying to build German-style verb-final chains are the two classic errors. Drill the pattern: <span class="da">fordi jeg <strong>ikke</strong> kommer</span>, <span class="da">at hun <strong>altid</strong> arbejder</span>, <span class="da">hvis du <strong>ikke</strong> vil</span>. Coordinating conjunctions (<span class="da">og, men, eller, for</span>) keep main-clause order &mdash; same as your und/aber/oder/denn.</p></div>
+  <p>Fronted subordinate clauses trigger inversion in the main clause, exactly like German: <span class="da">Hvis det regner, <strong>bliver</strong> vi hjemme</span> = <span class="de">Wenn es regnet, <strong>bleiben</strong> wir zu Hause</span>.</p>
+  <details class="qe"><summary>Quiz 21</summary><div class="qbody">
+    <ol>
+      <li>In a leds&aelig;tning, the finite verb goes: (a) to the end&nbsp; (b) after subject and sentence adverb</li>
+      <li>&ldquo;&hellip;weil ich nicht arbeite&rdquo;: (a) fordi jeg arbejder ikke&nbsp; (b) fordi jeg ikke arbejder</li>
+      <li><span class="da">og</span> changes word order: (a) yes&nbsp; (b) no</li>
+      <li>&ldquo;&hellip;dass sie immer kommt&rdquo;: (a) at hun altid kommer&nbsp; (b) at hun kommer altid</li>
+      <li>A fronted hvis-clause triggers inversion in the main clause: (a) yes&nbsp; (b) no</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 21 &mdash; join with the conjunction, placing ikke correctly</summary><div class="qbody">
+    <ol>
+      <li>Jeg bliver hjemme. + fordi + Jeg er ikke rask.</li>
+      <li>Jeg ved (wei&szlig;). + at + Han kommer ikke.</li>
+      <li>(front the clause) Hvis + det regner ikke + , g&aring;r vi en tur.</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Jeg bliver hjemme, fordi jeg ikke er rask. &middot; 2&nbsp;Jeg ved, at han ikke kommer. &middot; 3&nbsp;Hvis det ikke regner, g&aring;r vi en tur.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch22">
+  <h2>22 &middot; Relative clauses: der &amp; som <span class="lvl b1">B1</span></h2>
+  <div class="ch-meta">Two little uninflected words replace your whole der/den/dem paradigm</div>
+  <ul>
+    <li><span class="da">som</span> works for subject or object: <span class="da">manden, <strong>som</strong> jeg ser</span> (der Mann, den ich sehe).</li>
+    <li><span class="da">der</span> works <strong>only as subject</strong>: <span class="da">manden, <strong>der</strong> st&aring;r der</span> (der Mann, der dort steht). As subject, der and som are interchangeable.</li>
+    <li>As an <strong>object</strong>, the pronoun can be dropped entirely, like English: <span class="da">manden, jeg ser</span> &mdash; impossible in German, completely normal in Danish.</li>
+    <li>No case, no gender, no number on the relative pronoun. Possessive relative (&ldquo;dessen/deren&rdquo;) = <span class="da">hvis</span>: <span class="da">manden, hvis bil&hellip;</span></li>
+    <li>Word order inside the relative clause is leds&aelig;tning order (Ch.&nbsp;21): <span class="da">manden, som <strong>ikke</strong> kommer</span>.</li>
+  </ul>
+  <div class="box trap"><span class="label">German trap</span>
+  <p>Do not hunt for a case-marked pronoun &mdash; there is none. And when the relative pronoun is the <em>subject</em>, you cannot drop it (<span class="da">manden, der st&aring;r der</span> &mdash; der/som obligatory); dropping is only allowed for objects.</p></div>
+  <details class="qe"><summary>Quiz 22</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;der Mann, den ich sehe&rdquo;: (a) manden, som jeg ser&nbsp; (b) manden, den jeg ser</li>
+      <li><span class="da">der</span> as a relative pronoun can be: (a) subject only&nbsp; (b) subject or object</li>
+      <li>&ldquo;die Frau, die ich liebe&rdquo; with dropped pronoun: (a) kvinden, jeg elsker&nbsp; (b) impossible</li>
+      <li>&ldquo;dessen&rdquo; = (a) hvis&nbsp; (b) hvem</li>
+      <li>&ldquo;manden, som ikke kommer&rdquo; &mdash; ikke stands before the verb because: (a) relative clauses are leds&aelig;tninger&nbsp; (b) som requires it</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;a &middot; 2&nbsp;a &middot; 3&nbsp;a &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 22 &mdash; translate</summary><div class="qbody">
+    <ol>
+      <li>Das ist der Hund, der mich gebissen hat (at bide, bed).</li>
+      <li>Die Frau, die ich kenne (at kende), ist krank (syg).</li>
+      <li>Das Buch, das ich lese, ist spannende (sp&aelig;ndende).</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Det er hunden, der/som bed mig. &middot; 2&nbsp;Kvinden, (som) jeg kender, er syg. &middot; 3&nbsp;Bogen, (som) jeg l&aelig;ser, er sp&aelig;ndende.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch23">
+  <h2>23 &middot; der &amp; det constructions <span class="lvl b1">B1&ndash;B2</span></h2>
+  <div class="ch-meta">es gibt, es regnet &mdash; and the formal subject Danish loves</div>
+  <ul>
+    <li><strong>der er</strong> = &ldquo;es gibt / da ist&rdquo;: <span class="da"><strong>Der er</strong> et problem</span> = <span class="de">Es gibt ein Problem</span>. <span class="da"><strong>Der bor</strong> mange mennesker i Berlin</span> = In Berlin wohnen viele Menschen. Danish uses this existential <span class="da">der</span> far more than German uses &ldquo;es&rdquo;.</li>
+    <li><strong>det</strong> as weather/impersonal subject: <span class="da">Det regner. Det sner. Det er koldt.</span> = <span class="de">Es regnet. Es schneit. Es ist kalt.</span> Direct match.</li>
+    <li><strong>det</strong> as anticipatory subject: <span class="da">Det er vigtigt at l&aelig;re dansk</span> = <span class="de">Es ist wichtig, D&auml;nisch zu lernen</span>.</li>
+    <li>Answering with <span class="da">det</span>: Danes answer yes/no questions by echoing with det + verb: <span class="da">Er du tr&aelig;t? &mdash; Ja, det er jeg.</span> (literally &ldquo;yes, that am I&rdquo; = Ja, bin ich.) A charming pattern German lacks; learn it as a chunk.</li>
+  </ul>
+  <details class="qe"><summary>Quiz 23</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;Es gibt ein Problem&rdquo;: (a) Det giver et problem&nbsp; (b) Der er et problem</li>
+      <li>&ldquo;Es regnet&rdquo;: (a) Der regner&nbsp; (b) Det regner</li>
+      <li>&ldquo;Es ist wichtig, D&auml;nisch zu lernen&rdquo;: (a) Det er vigtigt at l&aelig;re dansk&nbsp; (b) Der er vigtigt at l&aelig;re dansk</li>
+      <li>&ldquo;Bist du m&uuml;de?&rdquo; &mdash; &ldquo;Ja, ___&rdquo;: (a) jeg er&nbsp; (b) det er jeg</li>
+      <li>Existential sentences (&ldquo;da wohnen viele&hellip;&rdquo;) use: (a) der&nbsp; (b) det</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 23 &mdash; translate</summary><div class="qbody">
+    <ol>
+      <li>Es gibt viele Caf&eacute;s in Kopenhagen.</li>
+      <li>Es schneit heute.</li>
+      <li>Es ist sch&ouml;n, hier zu wohnen (at bo her).</li>
+      <li>&ldquo;Kommst du?&rdquo; &mdash; &ldquo;Ja, (das tue ich).&rdquo;</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Der er mange caf&eacute;er i K&oslash;benhavn. &middot; 2&nbsp;Det sner i dag. &middot; 3&nbsp;Det er dejligt at bo her. &middot; 4&nbsp;Ja, det g&oslash;r jeg.</div></details>
+  </div></details>
+</section>
+<!-- ================= PART C ================= -->
+<section class="part-head" id="partc">
+  <div class="part-label">Part C</div>
+  <h2>Upper-intermediate &amp; advanced</h2>
+  <p class="kicker">Chapters 24&ndash;30 &middot; B2 to C2 &middot; The s-passive, hypotheticals, particles, and style</p>
+</section>
+
+<section class="chapter" id="ch24">
+  <h2>24 &middot; The two passives <span class="lvl b2">B2</span></h2>
+  <div class="ch-meta">blive-passive (familiar) and the s-passive (new)</div>
+  <ul>
+    <li><strong>blive-passive:</strong> <span class="da">blive</span> + participle &mdash; a perfect mirror of your werden-passive: <span class="da">Brevet <strong>bliver skrevet</strong></span> = <span class="de">Der Brief wird geschrieben</span>. Tends to describe single, concrete events.</li>
+    <li><strong>s-passive:</strong> add <span class="da">-s</span> to the verb &mdash; no auxiliary at all: <span class="da">Brevet <strong>skrives</strong></span>. Tends to describe habitual, general or normative statements: <span class="da">D&oslash;ren <strong>&aring;bnes</strong> klokken 8</span> (Die T&uuml;r wird um 8 ge&ouml;ffnet &mdash; regelm&auml;&szlig;ig), <span class="da">dansk <strong>tales</strong> i Danmark</span>. Very common after modals: <span class="da">Det kan <strong>ses</strong></span> (das kann man sehen / das ist zu sehen).</li>
+    <li><strong>State passive:</strong> <span class="da">v&aelig;re</span> + participle, like your sein-Passiv: <span class="da">D&oslash;ren <strong>er &aring;bnet</strong></span> = <span class="de">Die T&uuml;r ist ge&ouml;ffnet</span>.</li>
+    <li>Agent with <span class="da">af</span> (= von): <span class="da">Bogen blev skrevet <strong>af</strong> en dansker.</span></li>
+    <li>Bonus: some verbs exist only in s-form with non-passive meaning (deponent verbs): <span class="da">findes</span> (existieren &mdash; <span class="da">der findes mange muligheder</span>), <span class="da">synes</span> (finden/meinen), <span class="da">m&oslash;des</span> (sich treffen), <span class="da">lykkes</span> (gelingen).</li>
+  </ul>
+  <div class="box trap"><span class="label">German trap</span>
+  <p>The s-passive has no German counterpart &mdash; do not try to force werden into every passive. Rule of thumb: specific event &rarr; blive; general rule, habit, instruction, or after a modal &rarr; -s. In formal writing the s-passive dominates.</p></div>
+  <details class="qe"><summary>Quiz 24</summary><div class="qbody">
+    <ol>
+      <li>The blive-passive corresponds to the German: (a) werden-Passiv&nbsp; (b) sein-Passiv</li>
+      <li>&ldquo;Die T&uuml;r wird (jeden Tag) um 8 ge&ouml;ffnet&rdquo;: (a) D&oslash;ren bliver &aring;bnet klokken 8&nbsp; (b) D&oslash;ren &aring;bnes klokken 8</li>
+      <li>&ldquo;das kann gesehen werden&rdquo;: (a) det kan blive set&nbsp; (b) det kan ses</li>
+      <li><span class="da">findes</span> means: (a) is found/exists&nbsp; (b) finds</li>
+      <li>Agent &ldquo;von&rdquo; = (a) af&nbsp; (b) fra</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;a &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 24 &mdash; make passive (choose blive- or s-passive sensibly)</summary><div class="qbody">
+    <ol>
+      <li>Man bygger huset. (single project, ongoing)</li>
+      <li>Man taler dansk i Danmark. (general fact)</li>
+      <li>Man kan k&oslash;be billetter online. (general possibility, modal)</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Huset bliver bygget. &middot; 2&nbsp;Dansk tales i Danmark. &middot; 3&nbsp;Billetter kan k&oslash;bes online.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch25">
+  <h2>25 &middot; Conditionals &amp; hypotheticals <span class="lvl b2">B2</span></h2>
+  <div class="ch-meta">No Konjunktiv &mdash; datid does the job</div>
+  <p>Danish has <strong>no subjunctive mood</strong>. Where German reaches for Konjunktiv II, Danish uses <strong>past-tense forms</strong> plus <span class="da">ville</span>:</p>
+  <ul>
+    <li><span class="da">Hvis jeg <strong>havde</strong> tid, <strong>ville</strong> jeg l&aelig;se mere.</span> = <span class="de">Wenn ich Zeit h&auml;tte, w&uuml;rde ich mehr lesen.</span> Structure identical; Danish just uses plain havde instead of h&auml;tte.</li>
+    <li><span class="da">Hvis jeg <strong>var</strong> rig&hellip;</span> = <span class="de">Wenn ich reich w&auml;re&hellip;</span></li>
+    <li>Past hypotheticals: <span class="da">Hvis jeg havde vidst det, <strong>ville</strong> jeg <strong>v&aelig;re blevet</strong> hjemme</span> / colloquially <span class="da">var jeg blevet hjemme</span>. = <span class="de">&hellip;w&auml;re ich zu Hause geblieben.</span></li>
+    <li>Politeness: <span class="da">ville</span> and <span class="da">kunne</span> soften requests exactly like w&uuml;rde/k&ouml;nnte: <span class="da">Kunne du hj&aelig;lpe mig?</span> = K&ouml;nntest du mir helfen? <span class="da">Jeg ville gerne have en kaffe</span> = Ich h&auml;tte gern einen Kaffee.</li>
+  </ul>
+  <div class="box deutsch"><span class="label">Deutsche Parallele</span>
+  <p>Because German Konjunktiv II forms (h&auml;tte, w&auml;re, k&ouml;nnte) are historically just umlauted past forms, the Danish system will feel like German with the umlauts removed: havde &asymp; h&auml;tte, var &asymp; w&auml;re, kunne &asymp; k&ouml;nnte, ville &asymp; w&uuml;rde. The mapping is nearly mechanical.</p></div>
+  <details class="qe"><summary>Quiz 25</summary><div class="qbody">
+    <ol>
+      <li>Danish has a Konjunktiv like German: (a) yes&nbsp; (b) no</li>
+      <li>&ldquo;wenn ich reich w&auml;re&rdquo;: (a) hvis jeg var rig&nbsp; (b) hvis jeg v&aelig;re rig</li>
+      <li>&ldquo;ich w&uuml;rde dir helfen&rdquo;: (a) jeg ville hj&aelig;lpe dig&nbsp; (b) jeg vil hj&aelig;lpe dig</li>
+      <li>&ldquo;K&ouml;nntest du&hellip;?&rdquo;: (a) Kunne du&hellip;?&nbsp; (b) Kan du&hellip;?</li>
+      <li>&ldquo;Ich h&auml;tte gern einen Kaffee&rdquo;: (a) Jeg ville gerne have en kaffe&nbsp; (b) Jeg har gerne en kaffe</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;a &middot; 3&nbsp;a &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 25 &mdash; translate</summary><div class="qbody">
+    <ol>
+      <li>Ich w&uuml;rde dir helfen.</li>
+      <li>Wenn ich Geld h&auml;tte, w&uuml;rde ich ein Auto kaufen.</li>
+      <li>K&ouml;nnten Sie mir helfen? (use du &mdash; remember Ch. 4)</li>
+      <li>Wenn ich das gewusst h&auml;tte, w&auml;re ich zu Hause geblieben.</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Jeg ville hj&aelig;lpe dig. &middot; 2&nbsp;Hvis jeg havde penge, ville jeg k&oslash;be en bil. &middot; 3&nbsp;Kunne du hj&aelig;lpe mig? &middot; 4&nbsp;Hvis jeg havde vidst det, var jeg blevet hjemme.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch26">
+  <h2>26 &middot; Infinitive clauses: at, for at <span class="lvl b2">B2</span></h2>
+  <div class="ch-meta">at = zu, for at = um zu &mdash; near-perfect transfer</div>
+  <ul>
+    <li><strong>at + infinitive</strong> after verbs and adjectives: <span class="da">Jeg pr&oslash;ver <strong>at</strong> l&aelig;re dansk</span> = <span class="de">Ich versuche, D&auml;nisch <strong>zu</strong> lernen</span>. Note: <span class="da">at</span> stays before particle verbs as a separate word: <span class="da">at st&aring; op</span> (aufzustehen) &mdash; no infixing like German auf<em>zu</em>stehen.</li>
+    <li><strong>for at</strong> = &ldquo;um &hellip; zu&rdquo;: <span class="da">Jeg l&aelig;rer dansk <strong>for at</strong> tale med familien</span> = <span class="de">Ich lerne D&auml;nisch, <strong>um</strong> mit der Familie <strong>zu</strong> sprechen</span>.</li>
+    <li>Modals take the bare infinitive, as in German: <span class="da">jeg kan sv&oslash;mme</span>.</li>
+    <li>Careful: <span class="da">at</span> is also the conjunction &ldquo;dass&rdquo; (<span class="da">jeg ved, at&hellip;</span>). In speech both are reduced; in writing, keep them apart by function.</li>
+  </ul>
+  <details class="qe"><summary>Quiz 26</summary><div class="qbody">
+    <ol>
+      <li>Danish <span class="da">at</span> + infinitive &asymp; German: (a) zu&nbsp; (b) um</li>
+      <li>&ldquo;um zu arbeiten&rdquo;: (a) at arbejde&nbsp; (b) for at arbejde</li>
+      <li>&ldquo;aufzustehen&rdquo;: (a) at opst&aring;&nbsp; (b) at st&aring; op</li>
+      <li>After modals: (a) at + infinitive&nbsp; (b) bare infinitive</li>
+      <li><span class="da">at</span> can also mean: (a) dass&nbsp; (b) ob</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;a &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 26 &mdash; translate</summary><div class="qbody">
+    <ol>
+      <li>Ich hoffe, dich bald zu sehen (at h&aring;be, snart).</li>
+      <li>Sie f&auml;hrt nach D&auml;nemark, um zu studieren (at studere).</li>
+      <li>Es ist wichtig, D&auml;nisch zu lernen.</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Jeg h&aring;ber at se dig snart. &middot; 2&nbsp;Hun tager til Danmark for at studere. &middot; 3&nbsp;Det er vigtigt at l&aelig;re dansk.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch27">
+  <h2>27 &middot; Pluskvamperfektum &amp; tense sequence <span class="lvl b2">B2</span></h2>
+  <div class="ch-meta">havde / var + participle &mdash; identical to German</div>
+  <p><span class="da">havde / var</span> + participle: <span class="da">Jeg <strong>havde</strong> allerede <strong>spist</strong>, da han kom</span> = <span class="de">Ich hatte schon gegessen, als er kam</span>. Motion/change verbs take <span class="da">var</span>: <span class="da">Han <strong>var</strong> allerede <strong>g&aring;et</strong></span> = Er war schon gegangen. Typical with <span class="da">efter at</span> (nachdem): <span class="da">Efter at jeg havde spist, gik jeg</span>.</p>
+  <div class="box deutsch"><span class="label">Deutsche Parallele &middot; also note da vs. n&aring;r</span>
+  <p>The system is a one-to-one copy of Plusquamperfekt. Related tense-habit worth learning here: German als/wenn maps to Danish <span class="da">da</span> (single past event: <span class="da">da han kom</span> = als er kam) vs. <span class="da">n&aring;r</span> (repeated or future: <span class="da">n&aring;r han kommer</span> = wenn er kommt) &mdash; the same als/wenn logic you already own.</p></div>
+  <details class="qe"><summary>Quiz 27</summary><div class="qbody">
+    <ol>
+      <li>Pluskvamperfektum = (a) havde/var + participle&nbsp; (b) vil + infinitive</li>
+      <li>&ldquo;er war schon gegangen&rdquo;: (a) han havde allerede g&aring;et&nbsp; (b) han var allerede g&aring;et</li>
+      <li>&ldquo;als er kam&rdquo; (single past event): (a) n&aring;r han kom&nbsp; (b) da han kom</li>
+      <li>&ldquo;wenn er kommt&rdquo; (future): (a) n&aring;r han kommer&nbsp; (b) da han kommer</li>
+      <li>&ldquo;nachdem&rdquo; = (a) efter at&nbsp; (b) f&oslash;r</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;a &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 27 &mdash; put the first clause into pluskvamperfektum</summary><div class="qbody">
+    <ol>
+      <li>Efter at han (at ankomme), ringede han.</li>
+      <li>Jeg (allerede at spise), da hun kom.</li>
+      <li>Vi (at se filmen), f&oslash;r vi l&aelig;ste bogen.</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Efter at han var ankommet, ringede han. &middot; 2&nbsp;Jeg havde allerede spist, da hun kom. &middot; 3&nbsp;Vi havde set filmen, f&oslash;r vi l&aelig;ste bogen.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch28">
+  <h2>28 &middot; Reported speech <span class="lvl c1">C1</span></h2>
+  <div class="ch-meta">No Konjunktiv I &mdash; tense shift and word order do the work</div>
+  <p>German marks reported speech with a mood (Konjunktiv I: er <span class="de">sei</span> krank). Danish has no such mood; instead:</p>
+  <ul>
+    <li>Use <span class="da">at</span> + indicative, usually with <strong>tense backshift</strong> after a past reporting verb (like English): <span class="da">Han sagde, at han <strong>var</strong> syg</span> = <span class="de">Er sagte, er <strong>sei</strong> krank</span>.</li>
+    <li>Remember leds&aelig;tning word order in the at-clause: <span class="da">Han sagde, at han <strong>ikke</strong> kom</span>.</li>
+    <li>Reported questions: <span class="da">om</span> (= ob): <span class="da">Hun spurgte, <strong>om</strong> jeg kom</span>; hv-questions keep the hv-word: <span class="da">Hun spurgte, <strong>hvorn&aring;r</strong> jeg kom</span>. Note: when the hv-word is the subject, insert <span class="da">der</span>: <span class="da">Hun spurgte, hvem <strong>der</strong> kom</span>.</li>
+    <li>Commands: <span class="da">at</span> + <span class="da">skulle</span>: <span class="da">Han sagde, at jeg skulle vente</span> (er sagte, ich solle warten).</li>
+  </ul>
+  <div class="box trap"><span class="label">German trap</span>
+  <p>Do not import Konjunktiv: there is no Danish &ldquo;sei/h&auml;tten&rdquo; equivalent, and inventing one is impossible &mdash; the temptation is rather to forget the backshift or the ikke-placement. Drill: reporting verb in past &rarr; shift the clause verb one step back; adverb before the verb.</p></div>
+  <details class="qe"><summary>Quiz 28</summary><div class="qbody">
+    <ol>
+      <li>Danish marks reported speech with a special mood: (a) yes&nbsp; (b) no</li>
+      <li>&ldquo;Er sagte, er sei krank&rdquo;: (a) Han sagde, at han er syg&nbsp; (b) Han sagde, at han var syg</li>
+      <li>&ldquo;ob&rdquo; = (a) om&nbsp; (b) at</li>
+      <li>&ldquo;Sie fragte, wer kommt&rdquo;: (a) Hun spurgte, hvem kom&nbsp; (b) Hun spurgte, hvem der kom</li>
+      <li>In the at-clause, ikke stands: (a) before the finite verb&nbsp; (b) after it</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 28 &mdash; turn into reported speech (reporting verb: Han sagde / Hun spurgte)</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Jeg er syg.&ldquo; (Han sagde&hellip;)</li>
+      <li>&bdquo;Jeg har ikke tid.&ldquo; (Hun sagde&hellip;)</li>
+      <li>&bdquo;Kommer du i morgen?&ldquo; (Hun spurgte&hellip;)</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Han sagde, at han var syg. &middot; 2&nbsp;Hun sagde, at hun ikke havde tid. &middot; 3&nbsp;Hun spurgte, om jeg kom i morgen.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch29">
+  <h2>29 &middot; Discourse particles: jo, da, nok, vel <span class="lvl c1">C1</span></h2>
+  <div class="ch-meta">Denmark&rsquo;s Modalpartikeln &mdash; your secret German superpower</div>
+  <p>Danish, like German, seasons every sentence with small untranslatable particles &mdash; the famous <span class="de">doch/ja/wohl/mal/schon</span> game. Most learners suffer here; <strong>you already think in Modalpartikeln</strong>, so map them:</p>
+  <table>
+    <tr><th>Danish</th><th>German feel</th><th>Example</th></tr>
+    <tr><td class="da">jo</td><td class="de">doch / ja (shared knowledge)</td><td class="da">Det ved du jo. <span class="tr">(Das wei&szlig;t du ja/doch.)</span></td></tr>
+    <tr><td class="da">da</td><td class="de">doch (insistence, contrast)</td><td class="da">Kom da ind! <span class="tr">(Komm doch rein!)</span></td></tr>
+    <tr><td class="da">nok</td><td class="de">wohl / schon (assumption, reassurance)</td><td class="da">Det g&aring;r nok. <span class="tr">(Das wird schon.)</span></td></tr>
+    <tr><td class="da">vel</td><td class="de">wohl / oder? (seeking agreement)</td><td class="da">Du kommer vel? <span class="tr">(Du kommst doch, oder?)</span></td></tr>
+    <tr><td class="da">vist</td><td class="de">wohl (hearsay/uncertainty)</td><td class="da">Han er vist syg. <span class="tr">(Er ist wohl krank.)</span></td></tr>
+    <tr><td class="da">lige</td><td class="de">mal / eben</td><td class="da">Kan du lige hj&aelig;lpe? <span class="tr">(Kannst du mal helfen?)</span></td></tr>
+    <tr><td class="da">godt</td><td class="de">schon / durchaus</td><td class="da">Jeg kan godt lide det. <span class="tr">(Ich mag es durchaus / ich mag es.)</span></td></tr>
+  </table>
+  <p>Also <span class="da">jo</span> as an answer = your <span class="de">doch</span> after negative questions: <span class="da">Kommer du ikke? &mdash; Jo!</span> (Kommst du nicht? &mdash; Doch!). A perfect one-to-one match English speakers can only envy.</p>
+  <details class="qe"><summary>Quiz 29</summary><div class="qbody">
+    <ol>
+      <li>Answer-&ldquo;doch&rdquo; after a negative question: (a) ja&nbsp; (b) jo</li>
+      <li>&ldquo;Komm doch rein!&rdquo;: (a) Kom da ind!&nbsp; (b) Kom nok ind!</li>
+      <li>&ldquo;Das wird schon&rdquo;: (a) Det g&aring;r vel&nbsp; (b) Det g&aring;r nok</li>
+      <li>&ldquo;Kannst du mal helfen?&rdquo;: (a) Kan du lige hj&aelig;lpe?&nbsp; (b) Kan du vist hj&aelig;lpe?</li>
+      <li>&ldquo;Er ist wohl krank (hab ich geh&ouml;rt)&rdquo;: (a) Han er vist syg&nbsp; (b) Han er da syg</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;a &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 29 &mdash; add the fitting particle (jo, da, nok, vel, lige)</summary><div class="qbody">
+    <ol>
+      <li>Det ved du ___. (das wei&szlig;t du ja)</li>
+      <li>Du kommer ___? (du kommst doch, oder?)</li>
+      <li>Kan du ___ &aring;bne d&oslash;ren? (mal)</li>
+      <li>Det skal ___ g&aring;. (das wird schon gehen)</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;jo &middot; 2&nbsp;vel &middot; 3&nbsp;lige &middot; 4&nbsp;nok</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch30">
+  <h2>30 &middot; Advanced style <span class="lvl c1">C1&ndash;C2</span></h2>
+  <div class="ch-meta">Compounds, formal Danish, adverb formation, and idiomatic polish</div>
+  <ul>
+    <li><strong>Compounding:</strong> Danish builds compounds exactly like German, with linking -s- and -e-: <span class="da">hastighedsbegr&aelig;nsning</span> = <span class="de">Geschwindigkeitsbegrenzung</span>, <span class="da">arbejdsmarked</span> = Arbeitsmarkt. Writing compounds as two words (<span class="da">*hastigheds begr&aelig;nsning</span>) is a real orthographic error in Danish too &mdash; your German one-word instinct is correct.</li>
+    <li><strong>Adverbs from adjectives:</strong> add <span class="da">-t</span>: <span class="da">han k&oslash;rer hurtig<strong>t</strong></span> (er f&auml;hrt schnell). German leaves adjectives bare as adverbs; Danish marks them &mdash; forgetting the -t is a giveaway German accent in writing.</li>
+    <li><strong>Formal/written style:</strong> official Danish favours the s-passive (Ch.&nbsp;24), nominalisations in <span class="da">-else, -ning, -hed</span> (<span class="da">beslutning</span> = Entscheidung, <span class="da">unders&oslash;gelse</span> = Untersuchung), and light-verb chunks: <span class="da">tr&aelig;ffe en beslutning</span> (eine Entscheidung treffen &mdash; the same idiom!), <span class="da">st&aring; til r&aring;dighed</span> (zur Verf&uuml;gung stehen), <span class="da">tage afsked</span> (Abschied nehmen). Amtssprache habits transfer almost embarrassingly well.</li>
+    <li><strong>&ldquo;man&rdquo;</strong> exists and works like yours: <span class="da">man kan ikke vide det</span> = man kann es nicht wissen. Object form: <span class="da">en</span>; possessive: <span class="da">ens</span>.</li>
+    <li><strong>Register:</strong> spoken Danish contracts aggressively (<span class="da">det er &rarr; det&rsquo;</span>, <span class="da">ikke &rarr; ik&rsquo;</span>); written Danish stays close to what this course teaches. Expect the gap between the two to be far larger than in German.</li>
+  </ul>
+  <details class="qe"><summary>Quiz 30</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;eine Entscheidung treffen&rdquo;: (a) tr&aelig;ffe en beslutning&nbsp; (b) tage en beslutning traf</li>
+      <li>&ldquo;er f&auml;hrt schnell&rdquo;: (a) han k&oslash;rer hurtig&nbsp; (b) han k&oslash;rer hurtigt</li>
+      <li>Danish compounds are written: (a) as one word&nbsp; (b) as separate words</li>
+      <li>&ldquo;man&rdquo; exists in Danish: (a) yes&nbsp; (b) no</li>
+      <li>Formal written Danish favours: (a) the s-passive&nbsp; (b) the blive-passive</li>
+    </ol>
+    <details class="ans"><summary>Show answer key</summary><div class="abody">1&nbsp;a &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>Exercise 30 &mdash; translate, using the advanced structures</summary><div class="qbody">
+    <ol>
+      <li>Wir m&uuml;ssen eine Entscheidung treffen.</li>
+      <li>Man kann Tickets online kaufen. (rewrite in s-passive, Ch. 24)</li>
+      <li>Sie singt sch&ouml;n (smuk). (adverb!)</li>
+    </ol>
+    <details class="ans"><summary>Show solutions</summary><div class="abody">1&nbsp;Vi skal tr&aelig;ffe en beslutning. &middot; 2&nbsp;Billetter kan k&oslash;bes online. &middot; 3&nbsp;Hun synger smukt.</div></details>
+  </div></details>
+</section>
+<!-- ================= REFERENCE ================= -->
+<section class="part-head" id="reference">
+  <div class="part-label">Reference</div>
+  <h2>Appendices, study plan &amp; caveats</h2>
+</section>
+
+<section class="chapter appendix" id="appa">
+  <h2>Appendix A &middot; German&ndash;Danish sound-shift cheat sheet</h2>
+  <p>Shift your German backwards through the High German consonant shift to guess Danish words:</p>
+  <ul>
+    <li>German <strong>t</strong> &rarr; Danish <strong>d</strong>: <span class="de">kalt</span>/<span class="da">kold</span>, <span class="de">Tag</span>/<span class="da">dag</span>, <span class="de">Wort</span>/<span class="da">ord</span>, <span class="de">rot</span>/<span class="da">r&oslash;d</span>, <span class="de">T&uuml;r</span>/<span class="da">d&oslash;r</span></li>
+    <li>German <strong>z/ss</strong> &rarr; Danish <strong>t</strong>: <span class="de">Herz</span>/<span class="da">hjerte</span>, <span class="de">zwei</span>/<span class="da">to</span>, <span class="de">zehn</span>/<span class="da">ti</span>, <span class="de">Salz</span>/<span class="da">salt</span>, <span class="de">Wasser</span>/<span class="da">vand</span></li>
+    <li>German <strong>ch</strong> &rarr; Danish <strong>k</strong>: <span class="de">Milch</span>/<span class="da">m&aelig;lk</span>, <span class="de">falsch</span>/<span class="da">falsk</span>, <span class="de">waschen</span>/<span class="da">vaske</span>, <span class="de">sechs</span>/<span class="da">seks</span></li>
+    <li>German <strong>sch</strong> &rarr; Danish <strong>sk</strong>: <span class="de">Schule</span>/<span class="da">skole</span>, <span class="de">Schuh</span>/<span class="da">sko</span>, <span class="de">Schiff</span>/<span class="da">skib</span></li>
+    <li>German <strong>pf/f</strong> &rarr; Danish <strong>b/p</strong>: <span class="de">Apfel</span>/<span class="da">&aelig;ble</span>, <span class="de">Pfeife</span>/<span class="da">pibe</span>, <span class="de">helfen</span>/<span class="da">hj&aelig;lpe</span>, <span class="de">Seife</span>/<span class="da">s&aelig;be</span></li>
+  </ul>
+  <p>Both languages prefer k over c: <span class="de">Kultur</span>/<span class="da">kultur</span>, <span class="de">Kaffee</span>/<span class="da">kaffe</span>, <span class="de">Musik</span>/<span class="da">musik</span>.</p>
+</section>
+
+<section class="chapter appendix" id="appb">
+  <h2>Appendix B &middot; False friends (falsche Freunde)</h2>
+  <table>
+    <tr><th>Word</th><th>German reading</th><th>Actual Danish meaning</th></tr>
+    <tr><td class="da">&oslash;l</td><td class="de">&Ouml;l (oil)</td><td>beer &mdash; oil is <span class="da">olie</span></td></tr>
+    <tr><td class="da">bl&oslash;d</td><td class="de">bl&ouml;d (stupid)</td><td>soft &mdash; stupid is <span class="da">dum</span></td></tr>
+    <tr><td class="da">ost</td><td class="de">Ost (east)</td><td>cheese &mdash; east is <span class="da">&oslash;st</span></td></tr>
+    <tr><td class="da">dom</td><td class="de">Dom (cathedral)</td><td>judgment / verdict &mdash; cathedral is <span class="da">domkirke</span></td></tr>
+    <tr><td class="da">flink</td><td class="de">flink (quick)</td><td>kind / nice &mdash; quick is <span class="da">hurtig</span></td></tr>
+    <tr><td class="da">gift</td><td class="de">Gift (poison)</td><td>married &mdash; and poison too; context decides (<span class="da">at v&aelig;re gift</span> = verheiratet sein)</td></tr>
+    <tr><td class="da">m&aring;</td><td class="de">muss?</td><td>usually darf (Ch. 15) &mdash; muss is <span class="da">skal</span></td></tr>
+    <tr><td class="da">blive</td><td class="de">bleiben?</td><td>usually werden (Ch. 5) &mdash; though &ldquo;bliv her&rdquo; = bleib hier</td></tr>
+    <tr><td class="da">time</td><td class="de">?</td><td>Stunde (hour/lesson), not &ldquo;Zeit&rdquo; &mdash; Zeit is <span class="da">tid</span></td></tr>
+    <tr><td class="da">&oslash;ve</td><td class="de">&uuml;ben</td><td>true friend! practise &mdash; some look-alikes do match</td></tr>
+  </table>
+  <p class="kicker">For a fully vetted list, Eckhard Bodenstein&rsquo;s <em>Falske venner &amp; Co</em> (Sankt Petri Skole, Copenhagen) reportedly catalogues around 2,000 Danish&ndash;German false-friend pairs.</p>
+</section>
+
+<section class="chapter appendix" id="appc">
+  <h2>Appendix C &middot; Near-identical cognates</h2>
+  <p>Learn these with the Danish article and plural: <span class="de">der Arm</span>/<span class="da">en arm</span>, <span class="de">die Hand</span>/<span class="da">en h&aring;nd</span>, <span class="de">das Haus</span>/<span class="da">et hus</span>, <span class="de">der Finger</span>/<span class="da">en finger</span>, <span class="de">das Land</span>/<span class="da">et land</span>, <span class="de">der Mann</span>/<span class="da">en mand</span>, <span class="de">der Winter</span>/<span class="da">en vinter</span>, <span class="de">der Sommer</span>/<span class="da">en sommer</span>, <span class="de">der Morgen</span>/<span class="da">en morgen</span>, <span class="de">der Ring</span>/<span class="da">en ring</span>.</p>
+</section>
+
+<section class="chapter" id="plan">
+  <h2>Study plan for a German-speaking beginner</h2>
+  <div class="ch-meta">Staged recommendations with thresholds and benchmarks</div>
+  <ol>
+    <li><strong>Weeks 1&ndash;2 &mdash; Foundations (Ch. 1&ndash;8).</strong> Grammar-wise these are fast for you; spend the saved time on Chapter 1 and raw listening (slow Danish podcasts, DR with subtitles). Threshold: you can read simple sentences aloud with soft d and roughly correct vowels, and score 90% on the exercises.</li>
+    <li><strong>Weeks 3&ndash;8 &mdash; Core (Ch. 9&ndash;23).</strong> One chapter per 2&ndash;3 days: read &rarr; quiz &rarr; exercise &rarr; re-do the exercise from two chapters back. Give double time to the four German-trap zones: predicative adjective agreement (Ch. 11), sin/sit/sine (Ch. 12), m&aring;/skal (Ch. 15), and adverb placement in leds&aelig;tninger (Ch. 21). Benchmark: you can say fordi-sentences with correct ikke-placement in speech without pausing.</li>
+    <li><strong>Weeks 9&ndash;14 &mdash; Push on (Ch. 24&ndash;27).</strong> The s-passive is the one genuinely new system; the conditionals and pluskvamperfektum are nearly free for a German. Benchmark: you can read a DR news article and correctly parse every -s verb form as passive, deponent, or genitive.</li>
+    <li><strong>Months 4+ &mdash; Polish (Ch. 28&ndash;30).</strong> Reported speech, particles, style. The particle chapter (29) is your unfair advantage &mdash; drill it early if you enjoy it; nothing makes you sound more native faster. Benchmark: you can use jo, nok, vel and lige naturally.</li>
+    <li><strong>Throughout &mdash; listening above all.</strong> Written Danish will surrender quickly to a German speaker; spoken Danish will not. Make listening a daily habit from week 1, use the sound-shift table (Appendix A) to guess vocabulary, and keep the false-friends list (Appendix B) visible.</li>
+  </ol>
+  <div class="box note"><span class="label">Signals that should change your plan</span>
+  <p>If Danes switch to English when you speak: work on prosody and the soft d, not grammar. If you keep saying &ldquo;m&aring;&rdquo; for m&uuml;ssen: re-drill Ch. 15 immediately &mdash; it is meaning-changing. If your ikke keeps landing after the verb in fordi-clauses: do daily transformation drills (main clause &rarr; leds&aelig;tning) for a week.</p></div>
+</section>
+
+<section class="chapter" id="caveats">
+  <h2>Caveats</h2>
+  <ul>
+    <li><strong>Grammar level is not the same as CEFR skill level.</strong> The tags show where a structure is typically taught. In Danish specifically, listening comprehension will lag your grammar level by a wide margin &mdash; that is normal and expected.</li>
+    <li><strong>The contrastive method has limits.</strong> Contrastive analysis over-predicts some errors and misses others; use the German parallels as scaffolding, not a guarantee. Some Danish difficulties (st&oslash;d, vowel inventory) have nothing to do with German interference.</li>
+    <li><strong>Gender is only partly rule-governed.</strong> The en/et assignment must be memorised per noun; German gender is not a reliable predictor.</li>
+    <li><strong>Register and regional variation.</strong> Spoken Danish reduces heavily and varies (Jutland vs. Copenhagen); the course teaches the written standard (rigsdansk). The du/De guidance reflects mainstream usage; a few formal contexts still use De.</li>
+    <li><strong>This is a grammar course, not a complete language course.</strong> It deliberately omits systematic vocabulary building and &mdash; critically for Danish &mdash; extensive pronunciation and listening training. Pair it with daily audio input from day one.</li>
+  </ul>
+</section>
+
+<footer>
+  Danish Grammar for German Speakers &middot; A1&ndash;C2 &middot; Sister volume to &ldquo;German Grammar for Danish Speakers&rdquo; &middot; Built on contrastive analysis (Lado), focus-on-form (Long), retrieval practice (Roediger &amp; Karpicke) and the spacing effect.
+</footer>
+</main>
+</div>
+<script>
+(function(){
+  var links = document.querySelectorAll('nav a[href^="#"]');
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var targets = document.querySelectorAll('section[id], header[id]');
+  var current = null;
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var id = e.target.id;
+        if(map[id]){
+          if(current) current.classList.remove('active');
+          current = map[id];
+          current.classList.add('active');
+        }
+      }
+    });
+  },{rootMargin:'-10% 0px -70% 0px'});
+  targets.forEach(function(t){ obs.observe(t); });
+})();
+</script>
+</body>
+</html>
