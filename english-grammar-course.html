@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Englische Grammatik f&uuml;r Deutschsprachige &mdash; A1 bis C2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FCFCFA;
+  --ink:#23262B;
+  --muted:#6A7078;
+  --line:#E5E3DC;
+  --accent:#2F5D50;       /* deep green - English, target language */
+  --accent-soft:#EEF4F1;
+  --german:#2C4E6E;       /* steel blue - German parallels (series colour) */
+  --german-soft:#EEF3F7;
+  --trap:#8A6A1E;
+  --trap-soft:#FBF6E6;
+  --table-head:#F3F2ED;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Source Serif 4', Georgia, serif;
+  font-size:17px;
+  line-height:1.65;
+}
+.layout{
+  display:grid;
+  grid-template-columns:288px minmax(0,1fr);
+  max-width:1240px;
+  margin:0 auto;
+}
+nav{
+  border-right:1px solid var(--line);
+  position:sticky; top:0;
+  height:100vh; overflow-y:auto;
+  padding:28px 20px 48px 24px;
+  font-family:'Inter',sans-serif;
+  scrollbar-width:thin;
+}
+nav .brand{
+  font-family:'Source Serif 4',serif;
+  font-weight:700; font-size:17px; line-height:1.3;
+  margin-bottom:2px;
+}
+nav .brand-sub{font-size:12px;color:var(--muted);margin-bottom:20px;font-style:italic;font-family:'Source Serif 4',serif}
+nav .part{
+  font-size:10.5px; font-weight:700; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--muted);
+  margin:20px 0 6px;
+}
+nav a{
+  display:flex; align-items:baseline; gap:8px;
+  text-decoration:none; color:var(--muted);
+  font-size:12.5px; line-height:1.35;
+  padding:4px 8px; border-radius:5px;
+}
+nav a .n{color:#B4B0A6;font-variant-numeric:tabular-nums;min-width:16px}
+nav a:hover{color:var(--ink);background:#F2F1EC}
+nav a.active{color:var(--accent);background:var(--accent-soft);font-weight:600}
+nav a.active .n{color:var(--accent)}
+nav a .lv{margin-left:auto;font-size:9px;font-weight:600;letter-spacing:.04em;color:#9A968C}
+main{padding:56px 64px 120px;max-width:820px}
+header.hero{margin-bottom:56px;padding-bottom:36px;border-bottom:2px solid var(--ink)}
+header.hero .eyebrow{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--german);margin-bottom:14px;
+}
+h1{font-size:40px;line-height:1.15;font-weight:700;margin:0 0 10px}
+header.hero .subtitle{font-style:italic;font-size:19px;color:var(--muted);margin:0 0 22px}
+header.hero p{max-width:640px}
+h2{
+  font-size:25px;font-weight:700;line-height:1.25;
+  margin:0 0 4px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+h3{font-size:18px;font-weight:600;margin:28px 0 8px}
+section.chapter{margin-bottom:72px;scroll-margin-top:24px}
+section.part-head{
+  margin:88px 0 40px;padding-top:32px;border-top:2px solid var(--ink);
+  scroll-margin-top:24px;
+}
+section.part-head .part-label{
+  font-family:'Inter',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;
+}
+section.part-head h2{font-size:28px}
+.ch-meta{
+  font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);
+  margin-bottom:18px;
+}
+.lvl{
+  font-family:'Inter',sans-serif;font-size:10.5px;font-weight:700;
+  letter-spacing:.06em;padding:2.5px 9px;border-radius:20px;
+  border:1px solid;white-space:nowrap;
+}
+.lvl.a1{color:#3F6E50;border-color:#BCD4C4;background:#F0F6F1}
+.lvl.a2{color:#2F6E6A;border-color:#B7D3D1;background:#EEF6F5}
+.lvl.b1{color:#2C4E6E;border-color:#BCCDDD;background:#EEF3F7}
+.lvl.b2{color:#454A85;border-color:#C6C8E0;background:#F1F1F9}
+.lvl.c1{color:#6A4485;border-color:#D3C4DF;background:#F6F1F9}
+.lvl.c2{color:#4A4A4A;border-color:#CFCFCF;background:#F3F3F3}
+.box{
+  border-left:3px solid;border-radius:0 6px 6px 0;
+  padding:14px 18px 14px 16px;margin:20px 0;
+}
+.box .label{
+  font-family:'Inter',sans-serif;font-size:10.5px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  display:block;margin-bottom:6px;
+}
+.box p{margin:6px 0}
+.box.deutsch{border-color:var(--german);background:var(--german-soft)}
+.box.deutsch .label{color:var(--german)}
+.box.trap{border-color:var(--trap);background:var(--trap-soft)}
+.box.trap .label{color:var(--trap)}
+.box.note{border-color:var(--accent);background:var(--accent-soft)}
+.box.note .label{color:var(--accent)}
+.en{font-weight:600}
+.de{color:var(--german)}
+.tr{color:var(--muted);font-style:italic}
+.bad{color:#9E3A3A;text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:#C99}
+table{
+  border-collapse:collapse;width:100%;margin:18px 0;
+  font-family:'Inter',sans-serif;font-size:13.5px;line-height:1.5;
+}
+th,td{border:1px solid var(--line);padding:7px 12px;text-align:left;vertical-align:top}
+th{background:var(--table-head);font-weight:600;font-size:12.5px}
+td .de{color:var(--german)}
+tr:nth-child(even) td{background:#FAFAF7}
+details.qe{
+  border:1px solid var(--line);border-radius:8px;
+  margin:16px 0;background:#fff;
+}
+details.qe summary{
+  cursor:pointer;list-style:none;
+  padding:13px 18px;
+  font-family:'Inter',sans-serif;font-size:13.5px;font-weight:600;
+  color:var(--accent);
+  display:flex;align-items:center;gap:10px;
+}
+details.qe summary::before{
+  content:"+";font-weight:400;font-size:17px;color:var(--muted);
+  width:14px;display:inline-block;text-align:center;
+}
+details.qe[open] summary::before{content:"\2212"}
+details.qe summary::-webkit-details-marker{display:none}
+details.qe .qbody{padding:2px 22px 18px;border-top:1px solid var(--line)}
+details.qe ol{margin:12px 0;padding-left:22px}
+details.qe li{margin:7px 0}
+details.ans{margin:14px 0 4px;border:none;background:none}
+details.ans summary{
+  cursor:pointer;list-style:none;display:inline-block;
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+  color:var(--german);border:1px solid #C9D5E0;border-radius:20px;
+  padding:4px 14px;background:var(--german-soft);
+}
+details.ans summary::-webkit-details-marker{display:none}
+details.ans .abody{
+  margin-top:10px;padding:12px 16px;background:#F7F6F2;
+  border-radius:6px;font-size:15px;
+}
+p{margin:12px 0}
+ul{padding-left:24px}
+li{margin:6px 0}
+.appendix h2{font-size:22px}
+.kicker{font-family:'Inter',sans-serif;font-size:12px;color:var(--muted)}
+footer{
+  margin-top:80px;padding-top:24px;border-top:1px solid var(--line);
+  font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);
+}
+@media (max-width:960px){
+  .layout{display:block}
+  nav{position:static;height:auto;border-right:none;border-bottom:1px solid var(--line);padding:20px}
+  nav .navlinks{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+  main{padding:40px 22px 100px}
+  h1{font-size:31px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== v2 enhancements: progress, search, interactive quizzes, print ===== */
+#navsearch{
+  width:100%;box-sizing:border-box;margin:0 0 6px;padding:7px 10px;
+  border:1px solid var(--line);border-radius:6px;background:#fff;
+  font:inherit;font-size:12.5px;color:var(--ink);
+}
+#navsearch:focus{outline:none;border-color:var(--accent)}
+#progress{margin:0 0 6px}
+#progress .bar{height:4px;background:#ECEAE3;border-radius:2px;overflow:hidden}
+#progress .bar span{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+#progress .txt{font-size:11px;color:var(--muted);margin-top:5px;display:flex;justify-content:space-between}
+#progress .txt a{color:var(--muted);text-decoration:none;cursor:pointer}
+#progress .txt a:hover{color:var(--accent)}
+nav a.done .n{color:var(--accent)}
+nav a.done::after{content:"\2713";margin-left:6px;font-size:10px;color:var(--accent);font-weight:700}
+nav a.done .lv{display:none}
+nav a.hidden,nav .part.hidden{display:none}
+.done-toggle{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);
+  margin:-8px 0 18px;cursor:pointer;user-select:none;
+}
+.done-toggle input{accent-color:var(--accent);width:14px;height:14px;margin:0}
+.tools{
+  font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);
+  display:flex;gap:14px;margin:0 0 8px;
+}
+.tools a{color:var(--muted);text-decoration:none;cursor:pointer;border-bottom:1px dotted #bbb}
+.tools a:hover{color:var(--accent)}
+/* interactive quiz */
+.qitem{margin:14px 0}
+.qitem .stem{margin-bottom:6px}
+.qopts{display:flex;flex-direction:column;gap:6px}
+.qopt{
+  text-align:left;font:inherit;font-size:15px;line-height:1.45;
+  padding:8px 12px;border:1px solid var(--line);border-radius:6px;
+  background:#fff;color:var(--ink);cursor:pointer;
+}
+.qopt:hover{border-color:var(--accent);background:var(--accent-soft)}
+.qopt[disabled]{cursor:default}
+.qopt.correct{border-color:#3F6E50;background:#F0F6F1;font-weight:600}
+.qopt.wrong{border-color:#9E3A3A;background:#FAF2F1;opacity:.85}
+.qopt.dim{opacity:.55}
+.qfeedback{font-family:'Inter',sans-serif;font-size:12.5px;margin:6px 0 0;color:var(--muted)}
+.qfeedback.ok{color:#3F6E50}
+.qfeedback.ko{color:#9E3A3A}
+.qscore{margin-left:auto;font-size:11.5px;font-weight:600;color:var(--muted)}
+.qscore.full{color:#3F6E50}
+.qretry{
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+  color:var(--accent);background:var(--accent-soft);border:1px solid var(--line);
+  border-radius:20px;padding:4px 14px;cursor:pointer;margin-top:8px;
+}
+details.ans.print-only{display:none}
+/* print */
+@media print{
+  nav,.done-toggle,.tools,.qretry,.qfeedback,#navsearch,#progress{display:none !important}
+  .layout{display:block}
+  main{padding:0;max-width:none}
+  body{font-size:11pt;line-height:1.45;background:#fff}
+  h1{font-size:24pt}
+  h2{font-size:15pt;page-break-after:avoid}
+  section.chapter{page-break-inside:auto;margin-bottom:28pt}
+  section.part-head{page-break-before:always;border-top:none;margin-top:0}
+  details.qe{border:1px solid #ccc;page-break-inside:avoid}
+  details.qe summary::before{content:""}
+  .qopts{flex-direction:row;flex-wrap:wrap;gap:4px 14px}
+  .qopt{border:none;padding:0;background:none !important;font-weight:400 !important;opacity:1 !important}
+  .qopt::before{content:"\25A1  ";color:#888}
+  details.ans.print-only{display:block}
+  details.ans summary{border:none;background:none;padding:0;color:#555}
+  .box{border:1px solid #ddd;border-left-width:3px;background:none !important}
+  a.inline{color:inherit;text-decoration:none}
+  footer{page-break-before:avoid}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<nav id="toc">
+  <div class="brand">Englische Grammatik f&uuml;r Deutschsprachige</div>
+  <div class="brand-sub">English Grammar for German Speakers</div>
+  <div class="navlinks">
+  <div class="part">Einstieg</div>
+  <a href="#intro"><span class="n">&mdash;</span>Einf&uuml;hrung &amp; Methode</a>
+  <div class="part">Teil A &middot; Grundlagen</div>
+  <a href="#ch1"><span class="n">1</span>Aussprache: th, w/v, Auslaut<span class="lv">A1</span></a>
+  <a href="#ch2"><span class="n">2</span>Nomen: kein Genus, kein Kasus<span class="lv">A1</span></a>
+  <a href="#ch3"><span class="n">3</span>Artikel: a, an, the, Nullartikel<span class="lv">A1</span></a>
+  <a href="#ch4"><span class="n">4</span>Pronomen &amp; Present Simple<span class="lv">A1</span></a>
+  <a href="#ch5"><span class="n">5</span>be, have, do<span class="lv">A1</span></a>
+  <a href="#ch6"><span class="n">6</span>Wortstellung: SVO statt V2<span class="lv">A1</span></a>
+  <a href="#ch7"><span class="n">7</span>Fragen &amp; do-Umschreibung<span class="lv">A1</span></a>
+  <a href="#ch8"><span class="n">8</span>Verneinung<span class="lv">A1</span></a>
+  <div class="part">Teil B &middot; Kerngrammatik</div>
+  <a href="#ch9"><span class="n">9</span>Present Continuous<span class="lv">A2</span></a>
+  <a href="#ch10"><span class="n">10</span>Simple Past<span class="lv">A2</span></a>
+  <a href="#ch11"><span class="n">11</span>Present Perfect vs. Simple Past<span class="lv">A2&ndash;B1</span></a>
+  <a href="#ch12"><span class="n">12</span>since, for, ago<span class="lv">B1</span></a>
+  <a href="#ch13"><span class="n">13</span>Zukunft<span class="lv">A2&ndash;B1</span></a>
+  <a href="#ch14"><span class="n">14</span>Modalverben<span class="lv">A2&ndash;B1</span></a>
+  <a href="#ch15"><span class="n">15</span>Adjektiv &amp; Adverb<span class="lv">A2</span></a>
+  <a href="#ch16"><span class="n">16</span>Z&auml;hlbar &amp; unz&auml;hlbar<span class="lv">A2</span></a>
+  <a href="#ch17"><span class="n">17</span>Pr&auml;positionen<span class="lv">A2&ndash;B1</span></a>
+  <a href="#ch18"><span class="n">18</span>Gerund vs. Infinitiv<span class="lv">B1</span></a>
+  <a href="#ch19"><span class="n">19</span>Adverbstellung &amp; Satzbau<span class="lv">B1</span></a>
+  <a href="#ch20"><span class="n">20</span>Besitz &amp; Apostroph<span class="lv">A2&ndash;B1</span></a>
+  <a href="#ch21"><span class="n">21</span>Nebens&auml;tze &amp; Kommas<span class="lv">B1</span></a>
+  <a href="#ch22"><span class="n">22</span>Relativs&auml;tze<span class="lv">B1</span></a>
+  <a href="#ch23"><span class="n">23</span>Question Tags &amp; Kurzantworten<span class="lv">B1</span></a>
+  <div class="part">Teil C &middot; Fortgeschritten</div>
+  <a href="#ch24"><span class="n">24</span>Passiv<span class="lv">B2</span></a>
+  <a href="#ch25"><span class="n">25</span>Bedingungss&auml;tze<span class="lv">B2</span></a>
+  <a href="#ch26"><span class="n">26</span>Erz&auml;hlzeiten<span class="lv">B2</span></a>
+  <a href="#ch27"><span class="n">27</span>Indirekte Rede<span class="lv">B2</span></a>
+  <a href="#ch28"><span class="n">28</span>Phrasal Verbs<span class="lv">B2&ndash;C1</span></a>
+  <a href="#ch29"><span class="n">29</span>Inversion, Betonung, Spaltsatz<span class="lv">C1</span></a>
+  <a href="#ch30"><span class="n">30</span>Stil f&uuml;r Fortgeschrittene<span class="lv">C1&ndash;C2</span></a>
+  <div class="part">Nachschlagen</div>
+  <a href="#appa"><span class="n">A</span>Laut- &amp; Schreibhilfe</a>
+  <a href="#appb"><span class="n">B</span>Falsche Freunde</a>
+  <a href="#appc"><span class="n">C</span>make / do &amp; Kollokationen</a>
+  <a href="#plan"><span class="n">&mdash;</span>Lernplan</a>
+  <a href="#caveats"><span class="n">&mdash;</span>Einschr&auml;nkungen</a>
+  </div>
+</nav>
+<main>
+<header class="hero" id="intro">
+  <div class="eyebrow">Vollst&auml;ndiger Kurs &middot; A1 bis C2 &middot; Band 3</div>
+  <h1>Englische Grammatik f&uuml;r Deutschsprachige</h1>
+  <p class="subtitle">English Grammar for German Speakers &mdash; von Anfang bis Fortgeschritten</p>
+  <p>Dritter Band der Reihe. F&uuml;r Deutschsprachige ist Englisch formal fast geschenkt: keine F&auml;lle, kein grammatisches Geschlecht, kaum Endungen. Die Schwierigkeit sitzt an vier anderen Stellen: im <strong>Verbsystem</strong> (Verlaufsform, Present Perfect vs. Perfekt, will-Futur, Umschreibung mit do), in der <strong>Wortstellung</strong> (keine V2-Inversion, Verb und Objekt bleiben zusammen, Ort vor Zeit), bei <strong>Artikeln, Zeichensetzung und Apostroph</strong> sowie in der <strong>Aussprache</strong> (th, w vs. v, stimmhafter Auslaut). Jedes Kapitel zeigt, wo das Deutsche hilft &mdash; und wo es den klassischen &bdquo;Denglisch&ldquo;-Fehler erzeugt.</p>
+</header>
+
+<section class="chapter" id="method">
+  <h2>So arbeitest du mit diesem Kurs</h2>
+  <div class="ch-meta">Methode &middot; zuerst lesen</div>
+  <h3>Warum diese Reihenfolge?</h3>
+  <p>Das R&uuml;ckgrat: Laute &rarr; Nomen, Artikel, Pronomen &rarr; die drei Hilfsverben und die Umschreibung mit do &rarr; Wortstellung &rarr; das Zeiten- und Aspektsystem, eine Zeitform nach der anderen, mit dem Present Perfect als zentralem Kapitel &rarr; Modalverben, Adjektive, Mengenw&ouml;rter, Pr&auml;positionen &rarr; Satzgrammatik (Nebens&auml;tze, Relativs&auml;tze, Tags) &rarr; Passiv, Bedingungss&auml;tze, Erz&auml;hlzeiten, indirekte Rede &rarr; Phrasal Verbs, Inversion und Stil. Anders als der Deutsch-Band, der um das Kasussystem herum gebaut ist, ist dieser Kurs um das <strong>Verb</strong> gebaut &mdash; denn dort machen Deutschsprachige die Fehler, die wirklich auffallen.</p>
+  <p>Der Aufbau folgt derselben Spracherwerbsforschung wie die anderen B&auml;nde: explizite Regeln an sinnvollen Beispielen (Longs <em>Focus on Form</em>), Beispiele, die Bekanntes wiederverwenden (Ziel: 95&ndash;98 % jedes Beispiels verstehen), Quizzes als Abrufpraxis (Roediger &amp; Karpicke: 61 % Behaltensleistung mit Test gegen&uuml;ber 40 % bei reinem Wiederlesen) und bewusstes Wiederaufgreifen fr&uuml;herer Grammatik (Spacing-Effekt). Das Fehlerinventar stammt aus ver&ouml;ffentlichten kontrastiven Analysen deutscher Englischlerner &mdash; Interferenz bei Verbgrammatik, Wortstellung, Artikeln, Rechtschreibung/Zeichensetzung, Adverbien, Numerus und Relativpronomen &mdash; und aus korpusbasierten CEFR-Grammatikprofilen f&uuml;r die Niveaustufen.</p>
+  <h3>Wie die deutschen Parallelen helfen</h3>
+  <p>Wo Englisch wie Deutsch funktioniert, steht es ausdr&uuml;cklich da (positiver Transfer): der gemeinsame germanische Wortschatz, Modalverben, Perfekt mit have, Komposita, Partikelverben. Wo Englisch abweicht, markiert ein Kasten <strong>Typischer Fehler</strong> genau die Stelle, an der eine w&ouml;rtliche &Uuml;bersetzung Denglisch erzeugt.</p>
+  <h3>Quiz- und &Uuml;bungsroutine</h3>
+  <p>Nach jedem Kapitel: erst das <strong>Quiz</strong> (Erkennen &mdash; interaktiv, mit sofortiger R&uuml;ckmeldung), dann die <strong>&Uuml;bung</strong> (Produzieren &mdash; L&ouml;sung hinter einem Button). Danach die &Uuml;bung von zwei Kapiteln zuvor noch einmal machen &mdash; verteiltes Abrufen halbiert das Vergessen ungef&auml;hr. Beispiele, die <span class="bad">so aussehen</span>, sind der typische Fehler Deutschsprachiger; sie stehen da, damit du sie in deinem eigenen Englisch wiedererkennst.</p>
+  <div class="box note"><span class="label">Niveaustufen</span>
+  <p>Die Kennzeichnungen A1&ndash;C2 zeigen, auf welchem Niveau eine Struktur &uuml;blicherweise eingef&uuml;hrt wird. Die meisten Deutschsprachigen erreichen B1 beim Grammatikwissen schnell; was B1 von C1 trennt, ist die sichere Beherrschung von Present Perfect, Verlaufsformen, Bedingungss&auml;tzen und nat&uuml;rlicher Wortstellung &mdash; die Kapitel 9, 11, 12, 19 und 25 muss man beherrschen, nicht nur gelesen haben.</p></div>
+</section>
+
+<!-- ================= TEIL A ================= -->
+<section class="part-head" id="parta">
+  <div class="part-label">Teil A</div>
+  <h2>Grundlagen</h2>
+  <p class="kicker">Kapitel 1&ndash;8 &middot; Niveau A1 &middot; Wenig zu lernen &mdash; aber drei Gewohnheiten zu verlernen</p>
+</section>
+
+<section class="chapter" id="ch1">
+  <h2>1 &middot; Aussprache: th, w/v, stimmhafter Auslaut <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">Die f&uuml;nf Lautgewohnheiten, die einen deutschen Akzent verraten</div>
+  <p>Die englische Rechtschreibung ist weit weniger lauttreu als die deutsche (<span class="en">though, through, tough, thought</span> teilen Buchstaben und sonst fast nichts) &mdash; W&ouml;rter also immer auch mit dem Ohr lernen. F&uuml;nf deutsche Gewohnheiten verursachen den Gro&szlig;teil der Probleme:</p>
+  <table>
+    <tr><th>Gewohnheit</th><th>Deutsch macht</th><th>Englisch braucht</th><th>Minimalpaare zum &Uuml;ben</th></tr>
+    <tr><td><strong>th</strong></td><td>kein /&theta;/ oder /&eth;/; Lerner ersetzen durch s/z oder t/d</td><td>Zungenspitze an die oberen Z&auml;hne: <span class="en">think, this</span></td><td>think/sink, three/tree, this/zis, then/den</td></tr>
+    <tr><td><strong>w vs. v</strong></td><td>deutsches <span class="de">w</span> = englisches v</td><td>englisches <span class="en">w</span> mit gerundeten Lippen, ohne Z&auml;hne: <span class="en">we, wine, very</span></td><td>wine/vine, west/vest, wet/vet</td></tr>
+    <tr><td><strong>Auslautverh&auml;rtung</strong></td><td><span class="de">Tag</span> endet auf [k], <span class="de">Bad</span> auf [t]</td><td>stimmhafte Endungen bleiben stimmhaft, der Vokal davor ist l&auml;nger: <span class="en">bad, dog, serve</span></td><td>bad/bat, dog/dock, pub/pup, serve/surf, pens/pence</td></tr>
+    <tr><td><strong>&aelig; vs. e</strong></td><td>kein /&aelig;/; <span class="en">man</span> und <span class="en">men</span> fallen zusammen</td><td>Kiefer weiter &ouml;ffnen f&uuml;r <span class="en">man, bad, cat</span></td><td>man/men, bad/bed, bat/bet</td></tr>
+    <tr><td><strong>r</strong></td><td>Zungen- oder Z&auml;pfchen-r, immer gesprochen</td><td>weich, Zunge ber&uuml;hrt nichts; im britischen Englisch vor Konsonant stumm: <span class="en">car, March</span></td><td>&mdash;</td></tr>
+  </table>
+  <p>Au&szlig;erdem: Englisch ist <strong>akzentz&auml;hlend</strong> &mdash; unbetonte Silben schrumpfen zum Schwa (<span class="en">a-BOUT, PHO-to-graph, pho-TO-gra-phy</span>). Deutsch gewichtet Silben gleichm&auml;&szlig;iger, deshalb klingt deutsch gef&auml;rbtes Englisch &bdquo;abgehackt&ldquo;. Und <span class="en">s</span> vor Vokal am Wortanfang ist im Englischen stimmlos (<span class="en">sun</span>), im Deutschen stimmhaft (<span class="de">Sonne</span>).</p>
+  <div class="box deutsch"><span class="label">Deutsche Parallele &middot; was du schon mitbringst</span>
+  <p>Vokall&auml;ngen-Unterschiede (<span class="en">ship/sheep</span> &asymp; <span class="de">Schiff/schief</span>), der sch-Laut, der Knacklaut und der germanische Stammakzent &uuml;bertragen sich alle. Und der Wortschatz-Vorsprung ist enorm: <span class="en">house/Haus, water/Wasser, book/Buch, drink/trinken</span>.</p></div>
+  <details class="qe"><summary>Quiz 1</summary><div class="qbody">
+    <ol>
+      <li>Englisches <span class="en">w</span> (<span class="en">we</span>) spricht man: (a) wie deutsches w&nbsp; (b) mit gerundeten Lippen, ohne Z&auml;hne</li>
+      <li>Das d am Ende von <span class="en">bad</span> ist: (a) verh&auml;rtet wie im Deutschen&nbsp; (b) stimmhaft, mit l&auml;ngerem Vokal</li>
+      <li><span class="en">think</span> und <span class="en">sink</span> unterscheiden sich: (a) im Vokal&nbsp; (b) im Konsonanten th/s</li>
+      <li><span class="en">man</span> vs. <span class="en">men</span>: (a) gleicher Vokal&nbsp; (b) verschiedene Vokale</li>
+      <li>Der englische Sprechrhythmus ist: (a) silbenz&auml;hlend&nbsp; (b) akzentz&auml;hlend</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 1 &mdash; laut lesen und die Falle benennen</summary><div class="qbody">
+    <ol>
+      <li>We went to the west.</li>
+      <li>The dog ran to the dock.</li>
+      <li>I think this is the third one.</li>
+      <li>The men met the man.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;w/v (we, went, west &mdash; alle mit gerundetem w) &middot; 2&nbsp;Auslaut (dog stimmhaftes g, dock stimmloses k) &middot; 3&nbsp;th in think/this/third (stimmlos, stimmhaft, stimmlos) &middot; 4&nbsp;&aelig;/e (men vs. man)</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch2">
+  <h2>2 &middot; Nomen: kein Genus, kein Kasus <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">Die Befreiung &mdash; und zwei kleine Reflexe, die weg m&uuml;ssen</div>
+  <ul>
+    <li><strong>Kein grammatisches Geschlecht.</strong> Jede Sache ist <span class="en">it</span>; nur Personen (und Haustiere) sind <span class="en">he/she</span>. <span class="bad">Jane took the spoon and threw him on the floor</span> &rarr; <span class="en">threw <strong>it</strong></span>.</li>
+    <li><strong>Keine F&auml;lle</strong> an Nomen oder Artikeln: <span class="en">the man</span> bleibt <span class="en">the man</span>, ob Subjekt, Objekt oder nach Pr&auml;position. Nur Pronomen haben Subjekt-/Objektform (<span class="en">I/me, he/him</span>), wie <span class="de">ich/mich</span>.</li>
+    <li><strong>Plural</strong> fast immer <span class="en">-s/-es</span>: <span class="en">cars, houses, buses</span>. Wenige Unregelm&auml;&szlig;ige: <span class="en">man/men, child/children, mouse/mice, foot/feet</span> &mdash; dieselben Umlautfamilien wie <span class="de">Mann/M&auml;nner, Fu&szlig;/F&uuml;&szlig;e</span>.</li>
+    <li><strong>Keine Gro&szlig;schreibung von Nomen.</strong> Nur Namen, <span class="en">I</span>, Wochentage, Monate, Sprachen, Nationalit&auml;ten: <span class="bad">She came with the Bus to the School</span> &rarr; <span class="en">she came to school by bus</span>.</li>
+  </ul>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; zwei Reflexe</span>
+  <p>Der Gro&szlig;schreib-Reflex bei Nomen und der <span class="en">he/she</span>-Reflex bei Gegenst&auml;nden (<span class="de">der L&ouml;ffel &rarr; er</span>) laufen im Deutschen automatisch &mdash; im Englischen sind beide falsch. Umgekehrt: Deutsch schreibt <span class="de">Sie</span> gro&szlig;, Englisch schreibt <span class="en">I</span> gro&szlig; &mdash; immer.</p></div>
+  <details class="qe"><summary>Quiz 2</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;der Tisch&ldquo; als Pronomen: (a) he&nbsp; (b) it&nbsp; (c) she</li>
+      <li>Englische Nomen schreibt man gro&szlig;: (a) immer&nbsp; (b) nur Namen und wenige Kategorien</li>
+      <li>Plural von <span class="en">child</span>: (a) childs&nbsp; (b) children</li>
+      <li>Englische Nomen &auml;ndern ihre Form je nach Fall: (a) ja&nbsp; (b) nein</li>
+      <li>Was wird immer gro&szlig;geschrieben? (a) you&nbsp; (b) I&nbsp; (c) we</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 2 &mdash; S&auml;tze korrigieren</summary><div class="qbody">
+    <ol>
+      <li>My Sister has a new Car. She loves him.</li>
+      <li>There are three Childs in the Garden.</li>
+      <li>i speak english and german.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;My sister has a new car. She loves it. &middot; 2&nbsp;There are three children in the garden. &middot; 3&nbsp;I speak English and German.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch3">
+  <h2>3 &middot; Artikel: a, an, the, Nullartikel <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">Dasselbe System wie im Deutschen &mdash; mit vier systematischen Abweichungen</div>
+  <p>Englische Artikel werden nicht gebeugt: <span class="en">a/an</span> (an vor Vokal<em>laut</em>: <span class="en">an apple, an hour</span>) und <span class="en">the</span>. Das deutsche und das englische System liegen nah beieinander &mdash; die Probleme russischer oder japanischer Lerner hast du nicht. Vier Abweichungen sind aber systematisch:</p>
+  <table>
+    <tr><th>Kontext</th><th>Deutsch</th><th>Englisch</th></tr>
+    <tr><td>Berufe</td><td class="de">Er ist Lehrer.</td><td><span class="en">He is <strong>a</strong> teacher.</span> <span class="bad">He is teacher</span></td></tr>
+    <tr><td>Verallgemeinerungen / Abstrakta</td><td class="de">Das Leben ist schwer. Die Liebe ist blind.</td><td><span class="en"><strong>Life</strong> is hard. <strong>Love</strong> is blind.</span> <span class="bad">The life is hard</span></td></tr>
+    <tr><td>Institutionen als T&auml;tigkeit</td><td class="de">Sie geht in die Schule / ins Bett / zur Arbeit.</td><td><span class="en">She goes to <strong>school</strong> / to <strong>bed</strong> / to <strong>work</strong>.</span> <span class="bad">to the school</span></td></tr>
+    <tr><td>Nach &bdquo;ohne / als&ldquo; + Singular</td><td class="de">ohne Auto; als Kind</td><td><span class="en">without <strong>a</strong> car; as <strong>a</strong> child</span></td></tr>
+  </table>
+  <p>Faustregel: Ein z&auml;hlbares Nomen im Singular steht im Englischen fast nie allein &mdash; es braucht <span class="en">a, the, my, this</span> oder den Plural. Abstrakta und Stoffbezeichnungen in allgemeiner Bedeutung stehen <strong>ohne</strong> Artikel.</p>
+  <details class="qe"><summary>Quiz 3</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Ich bin Ingenieurin&ldquo;: (a) I am engineer&nbsp; (b) I am an engineer</li>
+      <li>&bdquo;Das Leben ist sch&ouml;n&ldquo;: (a) The life is beautiful&nbsp; (b) Life is beautiful</li>
+      <li>&bdquo;Sie geht in die Schule&ldquo;: (a) She goes to the school&nbsp; (b) She goes to school</li>
+      <li>Vor <span class="en">hour</span> steht: (a) a&nbsp; (b) an</li>
+      <li>&bdquo;ohne Auto&ldquo;: (a) without car&nbsp; (b) without a car</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b (Vokallaut) &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 3 &mdash; a / an / the oder nichts einsetzen</summary><div class="qbody">
+    <ol>
+      <li>My brother is ___ doctor.</li>
+      <li>___ money doesn&rsquo;t buy ___ happiness.</li>
+      <li>I usually go to ___ bed at eleven.</li>
+      <li>She is ___ honest person.</li>
+      <li>We visited ___ museum you recommended.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;a &middot; 2&nbsp;&mdash; / &mdash; (Money doesn&rsquo;t buy happiness) &middot; 3&nbsp;&mdash; (to bed) &middot; 4&nbsp;an &middot; 5&nbsp;the</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch4">
+  <h2>4 &middot; Pronomen &amp; Present Simple <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">Eine einzige Endung: das -s der dritten Person</div>
+  <p><strong>Pronomen:</strong> Subjekt <span class="en">I, you, he, she, it, we, you, they</span>; Objekt <span class="en">me, you, him, her, it, us, you, them</span>. Ein <span class="en">you</span> f&uuml;r du, ihr und Sie &mdash; es gibt keine H&ouml;flichkeitsform und keine eigene Pluralform (umgangssprachlich <span class="en">you guys / you all</span>).</p>
+  <p><strong>Present Simple:</strong> der blo&szlig;e Verbstamm f&uuml;r alle au&szlig;er <span class="en">he/she/it</span>, die <span class="en">-s</span> anh&auml;ngen: <span class="en">I work, you work, she work<strong>s</strong>, we work</span>. Dieses eine -s ist die am h&auml;ufigsten vergessene Endung auf A1&ndash;A2 (<span class="bad">she go to school</span>). Schreibung: <span class="en">watch&rarr;watches, study&rarr;studies, go&rarr;goes, have&rarr;has</span>.</p>
+  <p><strong>Gebrauch:</strong> Gewohnheiten, Routinen, Fakten, dauerhafte Zust&auml;nde &mdash; <span class="en">I work in Berlin. Water boils at 100 degrees.</span> <strong>Nicht</strong> f&uuml;r das, was gerade passiert (Kap.&nbsp;9), und <strong>nicht</strong> f&uuml;r die Zukunft (Kap.&nbsp;13).</p>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; das Present Simple ist enger als das Pr&auml;sens</span>
+  <p>Das deutsche Pr&auml;sens deckt &bdquo;jetzt gerade&ldquo;, Gewohnheiten und Zukunft ab. Das englische Present Simple deckt <em>nur</em> Gewohnheiten und Fakten ab. <span class="bad">I work now</span> &rarr; <span class="en">I am working now</span>; <span class="bad">I call you tomorrow</span> &rarr; <span class="en">I&rsquo;ll call you tomorrow</span>. Von Tag eins im Kopf behalten &mdash; hier beginnt das ganze Aspektsystem.</p></div>
+  <details class="qe"><summary>Quiz 4</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;sie arbeitet&ldquo;: (a) she work&nbsp; (b) she works</li>
+      <li>Englische H&ouml;flichkeitsform (Sie): (a) You (gro&szlig;)&nbsp; (b) gibt es nicht &mdash; you</li>
+      <li>Dritte Person von <span class="en">study</span>: (a) studys&nbsp; (b) studies</li>
+      <li>&bdquo;Ich arbeite jeden Tag&ldquo;: (a) I work every day&nbsp; (b) I am working every day</li>
+      <li>Das Present Simple steht f&uuml;r: (a) Gewohnheiten und Fakten&nbsp; (b) Handlungen im Moment</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 4 &mdash; Verb ins Present Simple setzen</summary><div class="qbody">
+    <ol>
+      <li>My mother (live) ___ in Hamburg.</li>
+      <li>They (play) ___ tennis on Sundays.</li>
+      <li>He (watch) ___ a lot of films.</li>
+      <li>The shop (open) ___ at nine.</li>
+      <li>We (have) ___ two cats; she (have) ___ one.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;lives &middot; 2&nbsp;play &middot; 3&nbsp;watches &middot; 4&nbsp;opens &middot; 5&nbsp;have / has</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch5">
+  <h2>5 &middot; be, have, do <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">sein, haben &mdash; und ein drittes Hilfsverb, das es im Deutschen nicht gibt</div>
+  <table>
+    <tr><th></th><th>be <span class="tr">(sein)</span></th><th>have <span class="tr">(haben)</span></th><th>do <span class="tr">(tun &mdash; vor allem aber Hilfsverb)</span></th></tr>
+    <tr><td>I</td><td class="en">am</td><td class="en">have</td><td class="en">do</td></tr>
+    <tr><td>you / we / they</td><td class="en">are</td><td class="en">have</td><td class="en">do</td></tr>
+    <tr><td>he / she / it</td><td class="en">is</td><td class="en">has</td><td class="en">does</td></tr>
+    <tr><td>Vergangenheit</td><td class="en">was / were</td><td class="en">had</td><td class="en">did</td></tr>
+  </table>
+  <ul>
+    <li><span class="en">be</span> ist zugleich Hilfsverb der Verlaufsform (<span class="en">I <strong>am</strong> working</span>) und des Passivs (<span class="en">it <strong>is</strong> made</span>); <span class="en">have</span> das des Perfekts (<span class="en">I <strong>have</strong> worked</span>) &mdash; beides vertraut.</li>
+    <li><span class="en">do</span> ist neu: das &bdquo;leere&ldquo; Hilfsverb, das Englisch f&uuml;r Fragen und Verneinungen braucht, wenn kein anderes Hilfsverb da ist (Kap.&nbsp;7&ndash;8): <span class="en"><strong>Do</strong> you smoke? I <strong>don&rsquo;t</strong> smoke.</span></li>
+    <li>Kurzformen sind in Sprache und informellem Schreiben Standard: <span class="en">I&rsquo;m, you&rsquo;re, he&rsquo;s, isn&rsquo;t, don&rsquo;t, doesn&rsquo;t, haven&rsquo;t</span>.</li>
+  </ul>
+  <div class="box deutsch"><span class="label">Deutsche Parallele &middot; und ein falscher Freund</span>
+  <p><span class="en">be/have</span> entsprechen <span class="de">sein/haben</span> fast eins zu eins. Aber Englisch hat kein <span class="de">werden</span> als Hilfsverb: das Futur bildet <span class="en">will</span> (Kap.&nbsp;13), das Passiv <span class="en">be</span> (Kap.&nbsp;24). Und <span class="en">become</span> hei&szlig;t <span class="de">werden</span>, niemals <span class="de">bekommen</span>: <span class="bad">Can I become a coffee?</span> &rarr; <span class="en">Can I <strong>get</strong> a coffee?</span></p></div>
+  <details class="qe"><summary>Quiz 5</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;sie hat&ldquo;: (a) she have&nbsp; (b) she has</li>
+      <li>Hilfsverb f&uuml;r Fragen ohne anderes Hilfsverb: (a) be&nbsp; (b) do</li>
+      <li>&bdquo;Ich habe ein Geschenk bekommen&ldquo;: (a) I became a present&nbsp; (b) I got a present</li>
+      <li>Vergangenheit von <span class="en">be</span> f&uuml;r &bdquo;they&ldquo;: (a) was&nbsp; (b) were</li>
+      <li>Das Passiv-Hilfsverb im Englischen ist: (a) be&nbsp; (b) will</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 5 &mdash; &uuml;bersetzen</summary><div class="qbody">
+    <ol>
+      <li>Ich bin m&uuml;de.</li>
+      <li>Sie hat ein Auto.</li>
+      <li>Wir waren gestern zu Hause.</li>
+      <li>Er ist Arzt geworden.</li>
+      <li>Hast du meine E-Mail bekommen?</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;I am (I&rsquo;m) tired. &middot; 2&nbsp;She has a car. &middot; 3&nbsp;We were at home yesterday. &middot; 4&nbsp;He became a doctor. &middot; 5&nbsp;Did you get my email?</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch6">
+  <h2>6 &middot; Wortstellung: SVO statt V2 <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">Das Verb bleibt am Subjekt kleben &mdash; keine Inversion, kein Verb am Ende</div>
+  <p>Beide Sprachen sind im Kern <strong>Subjekt &ndash; Verb &ndash; Objekt</strong>: <span class="en">My sister plays the piano</span> = <span class="de">Meine Schwester spielt Klavier</span>. Der Unterschied zeigt sich, sobald etwas anderes vorne steht:</p>
+  <table>
+    <tr><th></th><th>Deutsch (V2: Verb bleibt an zweiter Stelle)</th><th>Englisch (SVO: Subjekt bleibt vor dem Verb)</th></tr>
+    <tr><td>Vorangestellte Angabe</td><td class="de">Jeden Abend <strong>&uuml;bt meine Schwester</strong> Klavier.</td><td><span class="en">Every evening <strong>my sister practises</strong> the piano.</span> <span class="bad">Every evening practises my sister</span></td></tr>
+    <tr><td>Nebensatz</td><td class="de">&hellip;weil sie Klavier <strong>&uuml;bt</strong>. (Verb am Ende)</td><td><span class="en">&hellip;because she <strong>practises</strong> the piano.</span> (wie im Hauptsatz)</td></tr>
+    <tr><td>Infinite Verbteile</td><td class="de">Ich <strong>will</strong> heute Klavier <strong>&uuml;ben</strong>. (Satzklammer)</td><td><span class="en">I <strong>want to practise</strong> the piano today.</span> (Verben bleiben zusammen)</td></tr>
+  </table>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; V2-Inversion</span>
+  <p>Untersuchungen deutscher Lerner zeigen: Das Verb am Satzende kommt kaum vor (es f&uuml;hlt sich zu fremd an), aber <strong>die Inversion nach vorangestellter Zeit- oder Ortsangabe ist h&auml;ufig</strong>: <span class="bad">Yesterday went I to the cinema</span>, <span class="bad">Then came the police</span>. Regel: Im Englischen invertiert nur die Frage. Alles andere beh&auml;lt Subjekt vor Verb, egal wie lang der vorangestellte Teil ist.</p></div>
+  <div class="box note"><span class="label">Die eine gro&szlig;e Konsequenz</span>
+  <p>Weil Englisch keinen Kasus hat, m&uuml;ssen Verb und Objekt zusammenbleiben; Angaben wandern an den Rand: <span class="en">I drink a cup of tea every morning</span>, nicht <span class="bad">I drink every morning a cup of tea</span>. Ausf&uuml;hrlich in Kap.&nbsp;19 &mdash; der hartn&auml;ckigste Wortstellungsfehler bis C1.</p></div>
+  <details class="qe"><summary>Quiz 6</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Gestern ging ich ins Kino&ldquo;: (a) Yesterday went I to the cinema&nbsp; (b) Yesterday I went to the cinema</li>
+      <li>Nach vorangestellter Angabe: (a) Englisch invertiert&nbsp; (b) Subjekt bleibt vor dem Verb</li>
+      <li>In &bdquo;because she works&ldquo; steht das Verb: (a) am Ende wie im Deutschen&nbsp; (b) direkt nach dem Subjekt</li>
+      <li>Englisch invertiert Subjekt und Verb: (a) nur in Fragen&nbsp; (b) in jedem Satz mit Voranstellung</li>
+      <li>&bdquo;Ich will heute arbeiten&ldquo;: (a) I want today to work&nbsp; (b) I want to work today</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 6 &mdash; &uuml;bersetzen, Subjekt vor Verb</summary><div class="qbody">
+    <ol>
+      <li>Heute spiele ich Fu&szlig;ball.</li>
+      <li>Am Montag gehen wir ins Kino.</li>
+      <li>Dann kam der Bus.</li>
+      <li>Manchmal lese ich abends.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;Today I&rsquo;m playing football. / I play football today. &middot; 2&nbsp;On Monday we&rsquo;re going to the cinema. &middot; 3&nbsp;Then the bus came. &middot; 4&nbsp;Sometimes I read in the evening.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch7">
+  <h2>7 &middot; Fragen &amp; die Umschreibung mit do <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">Warum &bdquo;Speak you English?&ldquo; falsch ist</div>
+  <p>Deutsch bildet die Frage durch Umstellung: <span class="de">Sprichst du Englisch?</span> Englisch stellt auch um &mdash; aber nur <strong>Hilfsverben</strong> und <span class="en">be</span> d&uuml;rfen das. Ein Vollverb kann nicht umgestellt werden, also setzt Englisch das leere Hilfsverb <span class="en">do</span> ein:</p>
+  <table>
+    <tr><th>Typ</th><th>Muster</th><th>Beispiel</th></tr>
+    <tr><td>be</td><td>be umstellen</td><td class="en">Are you tired? Is she a teacher?</td></tr>
+    <tr><td>anderes Hilfsverb / Modalverb</td><td>dieses umstellen</td><td class="en">Have you finished? Can you swim? Will she come?</td></tr>
+    <tr><td>Vollverb</td><td>do/does/did davor, Verb im Stamm</td><td><span class="en">Do you speak English? Does he work here? Did they arrive?</span> <span class="bad">Speak you English? Works he here?</span></td></tr>
+  </table>
+  <p><strong>Fragew&ouml;rter:</strong> Fragewort + Hilfsverb + Subjekt + Verb: <span class="en">Where do you live? What does she want? When did they leave?</span> <span class="en">who</span> <span class="de">(wer)</span>, <span class="en">what</span> <span class="de">(was)</span>, <span class="en">where</span> <span class="de">(wo)</span>, <span class="en">when</span> <span class="de">(wann)</span>, <span class="en">why</span> <span class="de">(warum)</span>, <span class="en">how</span> <span class="de">(wie)</span>, <span class="en">which</span> <span class="de">(welcher)</span>, <span class="en">whose</span> <span class="de">(wessen)</span>. Ausnahme: Ist das Fragewort selbst das Subjekt, kein do: <span class="en">Who called? What happened?</span></p>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; do tr&auml;gt Zeit und -s</span>
+  <p>Sobald <span class="en">do</span> da ist, geht das Vollverb in den Stamm zur&uuml;ck: <span class="bad">Does she works?</span> <span class="bad">Did you went?</span> &rarr; <span class="en">Does she work? Did you go?</span> Und die festen Wendungen <span class="en">What&rsquo;s the weather like?</span> (nicht <span class="bad">How is the weather?</span>) und <span class="en">What does it look like?</span> f&uuml;r <span class="de">Wie sieht es aus?</span></p></div>
+  <details class="qe"><summary>Quiz 7</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Sprichst du Deutsch?&ldquo;: (a) Speak you German?&nbsp; (b) Do you speak German?</li>
+      <li>&bdquo;Arbeitet er hier?&ldquo;: (a) Does he work here?&nbsp; (b) Does he works here?</li>
+      <li>&bdquo;Kannst du schwimmen?&ldquo;: (a) Do you can swim?&nbsp; (b) Can you swim?</li>
+      <li>&bdquo;Wer hat angerufen?&ldquo;: (a) Who did call?&nbsp; (b) Who called?</li>
+      <li>&bdquo;Wie ist das Wetter?&ldquo;: (a) How is the weather?&nbsp; (b) What&rsquo;s the weather like?</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;a &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 7 &mdash; die Frage bilden</summary><div class="qbody">
+    <ol>
+      <li>She lives in Munich. &rarr; Where ___?</li>
+      <li>They went home. &rarr; When ___?</li>
+      <li>He is a teacher. &rarr; What ___?</li>
+      <li>You like coffee. &rarr; ___?</li>
+      <li>Something happened. &rarr; What ___?</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;Where does she live? &middot; 2&nbsp;When did they go home? &middot; 3&nbsp;What does he do? / What is he? &middot; 4&nbsp;Do you like coffee? &middot; 5&nbsp;What happened?</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch8">
+  <h2>8 &middot; Verneinung <span class="lvl a1">A1</span></h2>
+  <div class="ch-meta">not nach Hilfsverben, don&rsquo;t sonst &mdash; und keine doppelte Verneinung</div>
+  <ul>
+    <li><span class="en">not</span> steht <strong>nach</strong> <span class="en">be</span>, Hilfs- und Modalverben: <span class="en">She is<strong>n&rsquo;t</strong> here. I have<strong>n&rsquo;t</strong> finished. You can<strong>not</strong> / can<strong>&rsquo;t</strong> park here.</span></li>
+    <li>Bei Vollverben: <span class="en">do</span> + <span class="en">not</span>, Verb im Stamm: <span class="en">I <strong>don&rsquo;t</strong> smoke. She <strong>doesn&rsquo;t</strong> work here. They <strong>didn&rsquo;t</strong> come.</span> <span class="bad">I smoke not. She works not.</span></li>
+    <li><span class="en">no / any</span>: <span class="en">I have <strong>no</strong> money</span> = <span class="en">I <strong>don&rsquo;t</strong> have <strong>any</strong> money</span>. Deutsches <span class="de">kein</span> entspricht beidem.</li>
+    <li>Standardenglisch hat <strong>eine</strong> Verneinung pro Satz: <span class="en">I didn&rsquo;t see anybody</span>, nicht <span class="bad">I didn&rsquo;t see nobody</span>.</li>
+  </ul>
+  <div class="box deutsch"><span class="label">Deutsche Parallele</span>
+  <p>Die Aufteilung nicht/kein hat ihr Echo in not/no &mdash; das Konzept ist vertraut. Neu ist nur die Mechanik: <span class="en">don&rsquo;t/doesn&rsquo;t/didn&rsquo;t</span> statt <span class="de">nicht</span> nach einem Vollverb. Beachte auch <span class="en">don&rsquo;t have to</span> f&uuml;r <span class="de">muss nicht</span> &mdash; warum <span class="en">mustn&rsquo;t</span> eine Falle ist, steht in Kap.&nbsp;14.</p></div>
+  <details class="qe"><summary>Quiz 8</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Er kommt nicht&ldquo;: (a) He comes not&nbsp; (b) He doesn&rsquo;t come</li>
+      <li>&bdquo;Ich habe kein Geld&ldquo;: (a) I have no money&nbsp; (b) I have not money</li>
+      <li>&bdquo;Sie ist nicht m&uuml;de&ldquo;: (a) She isn&rsquo;t tired&nbsp; (b) She doesn&rsquo;t tired</li>
+      <li>&bdquo;Ich habe niemanden gesehen&ldquo;: (a) I didn&rsquo;t see nobody&nbsp; (b) I didn&rsquo;t see anybody</li>
+      <li>Nach <span class="en">didn&rsquo;t</span> steht das Verb: (a) im Stamm&nbsp; (b) in der Vergangenheitsform</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;a &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 8 &mdash; verneinen</summary><div class="qbody">
+    <ol>
+      <li>I drink beer. &rarr;</li>
+      <li>She is tired. &rarr;</li>
+      <li>We have time. &rarr; (zwei M&ouml;glichkeiten)</li>
+      <li>He came yesterday. &rarr;</li>
+      <li>They can swim. &rarr;</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;I don&rsquo;t drink beer. &middot; 2&nbsp;She isn&rsquo;t tired. &middot; 3&nbsp;We have no time. / We don&rsquo;t have any time. &middot; 4&nbsp;He didn&rsquo;t come yesterday. &middot; 5&nbsp;They can&rsquo;t swim.</div></details>
+  </div></details>
+</section>
+<!-- ================= TEIL B ================= -->
+<section class="part-head" id="partb">
+  <div class="part-label">Teil B</div>
+  <h2>Kerngrammatik</h2>
+  <p class="kicker">Kapitel 9&ndash;23 &middot; A2 bis B1 &middot; Das Verbsystem und die Gewohnheiten, die B1 von C1 trennen</p>
+</section>
+
+<section class="chapter" id="ch9">
+  <h2>9 &middot; Present Continuous <span class="lvl a2">A2</span></h2>
+  <div class="ch-meta">Der Aspekt, den Deutsch nicht hat &mdash; be + -ing</div>
+  <p>Englisch grammatikalisiert, was Deutsch mit <span class="de">gerade</span> ausdr&uuml;ckt: <span class="de">Er schl&auml;ft gerade</span> = <span class="en">He <strong>is sleeping</strong></span>. Form: <span class="en">be</span> + Verb-<span class="en">ing</span> (<span class="en">I am working, she is reading, they are playing</span>). Schreibung: <span class="en">make&rarr;making, sit&rarr;sitting, lie&rarr;lying</span>.</p>
+  <table>
+    <tr><th>Gebrauch</th><th>Present Simple</th><th>Present Continuous</th></tr>
+    <tr><td>Gewohnheit vs. jetzt</td><td class="en">I work in Berlin.</td><td class="en">I&rsquo;m working from home today.</td></tr>
+    <tr><td>dauerhaft vs. vor&uuml;bergehend</td><td class="en">She lives with her parents.</td><td class="en">She&rsquo;s living with her parents at the moment.</td></tr>
+    <tr><td>Trend / Ver&auml;nderung</td><td class="en">Prices are high.</td><td class="en">Prices are rising.</td></tr>
+    <tr><td>Verabredung in der Zukunft (Kap. 13)</td><td>&mdash;</td><td class="en">I&rsquo;m meeting Anna tomorrow.</td></tr>
+  </table>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; in beide Richtungen</span>
+  <p>Zu wenig: <span class="bad">I work now, call me later</span> &rarr; <span class="en">I&rsquo;m working now</span>. Und wenn man die Form kennt, zu viel &mdash; bei Gewohnheiten: <span class="bad">He is coming always at 9</span> &rarr; <span class="en">He always comes at 9</span>. Der Test: Gewohnheit oder Fakt (Simple) &mdash; oder gerade im Gang / vor&uuml;bergehend (Continuous)?</p>
+  <p><strong>Zustandsverben</strong> bilden normalerweise keine Verlaufsform: <span class="en">know, believe, want, need, like, love, hate, own, belong, seem, mean, understand</span>. <span class="bad">I am knowing</span>, <span class="bad">I&rsquo;m wanting a coffee</span> &rarr; <span class="en">I know, I want</span>. (Das Werbe-&bdquo;I&rsquo;m loving it&ldquo; ist absichtlicher Regelbruch.)</p></div>
+  <details class="qe"><summary>Quiz 9</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Ich arbeite gerade&ldquo;: (a) I work&nbsp; (b) I&rsquo;m working</li>
+      <li>&bdquo;Er kommt immer um 9&ldquo;: (a) He always comes at 9&nbsp; (b) He is always coming at 9</li>
+      <li>&bdquo;Ich brauche Hilfe&ldquo;: (a) I need help&nbsp; (b) I am needing help</li>
+      <li>-ing-Form von <span class="en">sit</span>: (a) siting&nbsp; (b) sitting</li>
+      <li>Die Verlaufsform markiert eine Handlung als: (a) gewohnheitsm&auml;&szlig;ig&nbsp; (b) im Gang / vor&uuml;bergehend</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;a &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 9 &mdash; Simple oder Continuous?</summary><div class="qbody">
+    <ol>
+      <li>Listen! Someone (knock) ___ at the door.</li>
+      <li>She usually (drive) ___ to work, but this week she (take) ___ the bus.</li>
+      <li>I (not understand) ___ this sentence.</li>
+      <li>Water (boil) ___ at 100 degrees.</li>
+      <li>Why (you / wear) ___ a coat? It&rsquo;s warm.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;is knocking &middot; 2&nbsp;drives / is taking &middot; 3&nbsp;don&rsquo;t understand &middot; 4&nbsp;boils &middot; 5&nbsp;are you wearing</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch10">
+  <h2>10 &middot; Simple Past <span class="lvl a2">A2</span></h2>
+  <div class="ch-meta">Die Alltagsvergangenheit &mdash; viel h&auml;ufiger als das deutsche Pr&auml;teritum</div>
+  <p>Form: regelm&auml;&szlig;ige Verben h&auml;ngen <span class="en">-ed</span> an (<span class="en">worked, played, studied, stopped</span>); unregelm&auml;&szlig;ige muss man lernen (<span class="en">go/went, see/saw, take/took, write/wrote</span>) &mdash; oft dieselben Ablautreihen wie deutsche starke Verben (<span class="de">singen/sang</span> &asymp; <span class="en">sing/sang</span>, <span class="de">trinken/trank</span> &asymp; <span class="en">drink/drank</span>). Nur <span class="en">be</span> hat zwei Formen: <span class="en">was/were</span>. Fragen und Verneinungen mit <span class="en">did</span> + Stamm.</p>
+  <p><strong>Gebrauch:</strong> abgeschlossene Handlung zu abgeschlossener Zeit &mdash; <span class="en">yesterday, last week, in 2019, two hours ago, when I was a child</span>. Gesprochen <em>und</em> geschrieben.</p>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; der Perfekt-Reflex</span>
+  <p>Gesprochenes Deutsch nutzt das Perfekt f&uuml;r Abgeschlossenes (<span class="de">Ich habe gestern den Film gesehen</span>); Englisch nutzt das <strong>Simple Past</strong>: <span class="en">I <strong>saw</strong> the film yesterday</span>. <span class="bad">I have seen the film yesterday</span> ist der erkennbarste deutsche Fehler im Englischen &uuml;berhaupt. Regel: Eine abgeschlossene Zeitangabe (yesterday, last&hellip;, ago, in 2019) <strong>erzwingt</strong> das Simple Past. Ebenso: <span class="en">I <strong>was</strong> born in Dresden</span>, nie <span class="bad">I am born</span>.</p></div>
+  <details class="qe"><summary>Quiz 10</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Ich habe gestern gearbeitet&ldquo;: (a) I have worked yesterday&nbsp; (b) I worked yesterday</li>
+      <li>Vergangenheit von <span class="en">go</span>: (a) goed&nbsp; (b) went</li>
+      <li>&bdquo;Ich bin 1990 geboren&ldquo;: (a) I am born in 1990&nbsp; (b) I was born in 1990</li>
+      <li>Verneinung: (a) I didn&rsquo;t saw him&nbsp; (b) I didn&rsquo;t see him</li>
+      <li>Welches Wort erzwingt das Simple Past? (a) already&nbsp; (b) ago</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 10 &mdash; &uuml;bersetzen</summary><div class="qbody">
+    <ol>
+      <li>Ich habe letzte Woche das Projekt abgeschlossen. (finish)</li>
+      <li>Wir sind vor zwei Jahren nach Berlin gezogen. (move)</li>
+      <li>Hast du gestern den Film gesehen?</li>
+      <li>Sie ist nicht gekommen.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;I finished the project last week. &middot; 2&nbsp;We moved to Berlin two years ago. &middot; 3&nbsp;Did you see the film yesterday? &middot; 4&nbsp;She didn&rsquo;t come.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch11">
+  <h2>11 &middot; Present Perfect vs. Simple Past <span class="lvl a2">A2&ndash;B1</span></h2>
+  <div class="ch-meta">Das Kapitel, das B1 von C1 trennt &mdash; eine Form, die aussieht wie das Perfekt und es nicht ist</div>
+  <p><strong>Form:</strong> <span class="en">have/has</span> + Partizip Perfekt (<span class="en">worked, gone, seen, written</span>). Sieht genau aus wie <span class="de">habe gearbeitet</span> &mdash; und genau diese &Auml;hnlichkeit ist das Problem. Das englische Present Perfect ist <strong>keine Vergangenheitsform</strong>. Es verbindet ein vergangenes Ereignis mit der Gegenwart:</p>
+  <table>
+    <tr><th>Bedeutung</th><th>Beispiel</th><th>Deutsche Entsprechung</th></tr>
+    <tr><td>Ergebnis jetzt</td><td class="en">I&rsquo;ve lost my keys. <span class="tr">(= ich habe sie jetzt nicht)</span></td><td class="de">Ich habe meine Schl&uuml;ssel verloren.</td></tr>
+    <tr><td>Erfahrung, Zeit unbestimmt</td><td class="en">Have you ever been to Rome? I&rsquo;ve never eaten sushi.</td><td class="de">Warst du schon mal in Rom?</td></tr>
+    <tr><td>Nicht abgeschlossener Zeitraum</td><td class="en">I&rsquo;ve had three coffees today. <span class="tr">(heute ist noch nicht vorbei)</span></td><td class="de">Ich habe heute drei Kaffee getrunken.</td></tr>
+    <tr><td>Zustand bis jetzt</td><td class="en">I&rsquo;ve lived here for ten years. <span class="tr">(und tue es noch)</span></td><td class="de"><strong>Ich wohne</strong> seit zehn Jahren hier. (Pr&auml;sens!)</td></tr>
+  </table>
+  <p><strong>Entscheidungsregel:</strong> Gibt es eine abgeschlossene Zeit (yesterday, last year, in 2019, ago, when I was&hellip;)? &rarr; <strong>Simple Past</strong>. Ist die Zeit unbestimmt, nicht abgeschlossen (today, this week, ever, yet, already, just, so far) oder dauert der Zustand an? &rarr; <strong>Present Perfect</strong>.</p>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; das Perfekt f&uuml;hrt dreifach in die Irre</span>
+  <p>1. <strong>Perfekt f&uuml;r Abgeschlossenes</strong> &rarr; englisch Simple Past: <span class="bad">I have called him yesterday</span> &rarr; <span class="en">I called him yesterday</span>.<br>
+  2. <strong>Pr&auml;sens f&uuml;r andauernde Zust&auml;nde</strong> &rarr; englisch Present Perfect: <span class="bad">I have this dress a long time</span> / <span class="bad">I live here since 2010</span> &rarr; <span class="en">I&rsquo;ve had this dress a long time. I&rsquo;ve lived here since 2010.</span> (Kap.&nbsp;12).<br>
+  3. <strong>Niemals</strong> Present Perfect mit einer abgeschlossenen Zeitangabe kombinieren. <span class="en">just, already, yet, ever, never, so far, recently</span> sind seine nat&uuml;rlichen Partner.</p></div>
+  <details class="qe"><summary>Quiz 11</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Ich habe ihn gestern angerufen&ldquo;: (a) I have called him yesterday&nbsp; (b) I called him yesterday</li>
+      <li>&bdquo;Warst du schon mal in London?&ldquo;: (a) Were you ever in London?&nbsp; (b) Have you ever been to London?</li>
+      <li>&bdquo;Ich wohne seit 2010 hier&ldquo;: (a) I live here since 2010&nbsp; (b) I&rsquo;ve lived here since 2010</li>
+      <li>&bdquo;Ich habe meinen Schl&uuml;ssel verloren (und habe ihn noch nicht)&ldquo;: (a) I lost my key&nbsp; (b) I&rsquo;ve lost my key</li>
+      <li>Welches Wort passt zum Present Perfect? (a) yesterday&nbsp; (b) already</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 11 &mdash; Simple Past oder Present Perfect?</summary><div class="qbody">
+    <ol>
+      <li>I (finish) ___ the report last night.</li>
+      <li>I (finish) ___ the report &mdash; here it is.</li>
+      <li>She (never / be) ___ to Japan.</li>
+      <li>We (meet) ___ in 2015.</li>
+      <li>(you / see) ___ my glasses? I can&rsquo;t find them.</li>
+      <li>He (work) ___ here for six years and still loves it.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;finished &middot; 2&nbsp;have finished / &rsquo;ve finished &middot; 3&nbsp;has never been &middot; 4&nbsp;met &middot; 5&nbsp;Have you seen &middot; 6&nbsp;has worked / has been working</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch12">
+  <h2>12 &middot; since, for, ago &mdash; und das Present Perfect Continuous <span class="lvl b1">B1</span></h2>
+  <div class="ch-meta">seit und vor entwirren</div>
+  <p>Deutsches <span class="de">seit</span> deckt zwei englische W&ouml;rter ab, und deutsches <span class="de">vor</span> ist hier nicht <span class="en">before</span>:</p>
+  <table>
+    <tr><th>Deutsch</th><th>Englisch</th><th>Beispiel</th></tr>
+    <tr><td class="de">seit + Zeitpunkt (seit 2010, seit Montag)</td><td class="en">since + Zeitpunkt</td><td class="en">I&rsquo;ve worked here <strong>since 2010</strong>.</td></tr>
+    <tr><td class="de">seit + Zeitraum (seit drei Jahren)</td><td class="en">for + Zeitraum</td><td><span class="en">I&rsquo;ve worked here <strong>for three years</strong>.</span> <span class="bad">since three years</span></td></tr>
+    <tr><td class="de">vor drei Jahren</td><td class="en">three years <strong>ago</strong> (nach dem Zeitraum, mit Simple Past)</td><td><span class="en">I moved here <strong>three years ago</strong>.</span> <span class="bad">before three years</span></td></tr>
+    <tr><td class="de">bis Freitag (Frist)</td><td class="en"><strong>by</strong> Friday</td><td><span class="en">Send it <strong>by</strong> Friday.</span> <span class="bad">until Friday</span> (= durchgehend bis Freitag)</td></tr>
+  </table>
+  <p><strong>Present Perfect Continuous</strong> (<span class="en">have been + -ing</span>) betont die andauernde T&auml;tigkeit: <span class="en">I&rsquo;ve been working here for two years. It&rsquo;s been raining all day.</span> Bei Zustandsverben (know, have, be) das einfache Present Perfect: <span class="en">I&rsquo;ve known her for years</span>.</p>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; der &bdquo;seit&ldquo;-Satz</span>
+  <p>Der Denglisch-Klassiker enth&auml;lt zwei Fehler auf einmal: <span class="bad">I work since two years for this company</span>. Beides korrigieren: Zeitform (Present Perfect, nicht Pr&auml;sens) und Wort (for, nicht since): <span class="en">I&rsquo;ve been working for this company for two years.</span></p></div>
+  <details class="qe"><summary>Quiz 12</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;seit drei Jahren&ldquo;: (a) since three years&nbsp; (b) for three years</li>
+      <li>&bdquo;vor drei Jahren&ldquo;: (a) before three years&nbsp; (b) three years ago</li>
+      <li>&bdquo;Schick es mir bis Freitag&ldquo;: (a) until Friday&nbsp; (b) by Friday</li>
+      <li>&bdquo;Ich kenne sie seit Jahren&ldquo;: (a) I&rsquo;ve known her for years&nbsp; (b) I&rsquo;ve been knowing her for years</li>
+      <li>Nach <span class="en">since</span> steht: (a) ein Zeitraum&nbsp; (b) ein Zeitpunkt</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 12 &mdash; &uuml;bersetzen</summary><div class="qbody">
+    <ol>
+      <li>Ich lerne seit zwei Jahren Englisch.</li>
+      <li>Wir wohnen seit 2018 in K&ouml;ln.</li>
+      <li>Sie ist vor einer Stunde gegangen.</li>
+      <li>Bitte antworte bis Montag.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;I&rsquo;ve been learning English for two years. &middot; 2&nbsp;We&rsquo;ve lived in Cologne since 2018. &middot; 3&nbsp;She left an hour ago. &middot; 4&nbsp;Please reply by Monday.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch13">
+  <h2>13 &middot; Die Zukunft <span class="lvl a2">A2&ndash;B1</span></h2>
+  <div class="ch-meta">will, going to, Present Continuous &mdash; und warum das Pr&auml;sens meist nicht reicht</div>
+  <table>
+    <tr><th>Form</th><th>Gebrauch</th><th>Beispiel</th></tr>
+    <tr><td class="en">will + Infinitiv</td><td>spontane Entscheidungen, Versprechen, Angebote, Vorhersagen</td><td class="en">I&rsquo;ll call you tomorrow. It&rsquo;ll rain later.</td></tr>
+    <tr><td class="en">be going to + Infinitiv</td><td>vorher gefasste Absichten; Vorhersagen aus Anzeichen</td><td class="en">I&rsquo;m going to sell my car. Look at those clouds &mdash; it&rsquo;s going to rain.</td></tr>
+    <tr><td class="en">Present Continuous</td><td>feste Verabredungen mit Zeit/Ort</td><td class="en">I&rsquo;m meeting Anna at 6.</td></tr>
+    <tr><td class="en">Present Simple</td><td><strong>nur</strong> Fahrpl&auml;ne und Programme</td><td class="en">The train leaves at 8.</td></tr>
+  </table>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; zwei auf einmal</span>
+  <p>1. Deutsch nutzt das Pr&auml;sens f&uuml;r die Zukunft: <span class="de">Ich rufe dich morgen an</span>. Englisch braucht eine Zukunftsform: <span class="bad">I call you tomorrow</span> &rarr; <span class="en">I&rsquo;ll call you tomorrow</span>. <span class="bad">I send you the file</span> &rarr; <span class="en">I&rsquo;ll send you the file</span>.<br>
+  2. <span class="en">will</span> ist ein falscher Freund: Es hei&szlig;t <strong>nicht</strong> <span class="de">wollen</span>. <span class="bad">He will go home</span> f&uuml;r <span class="de">Er will nach Hause</span> bedeutet &bdquo;er wird nach Hause gehen&ldquo;. <span class="de">wollen</span> = <span class="en">want to</span>: <span class="en">He wants to go home.</span></p></div>
+  <p>In Temporals&auml;tzen steht das Pr&auml;sens, nicht will: <span class="en">I&rsquo;ll tell her <strong>when I see</strong> her</span> (nicht <span class="bad">when I will see</span>) &mdash; wie <span class="de">wenn ich sie sehe</span>; dieser Teil &uuml;bertr&auml;gt sich.</p>
+  <details class="qe"><summary>Quiz 13</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Ich rufe dich morgen an&ldquo;: (a) I call you tomorrow&nbsp; (b) I&rsquo;ll call you tomorrow</li>
+      <li>&bdquo;Er will nach Hause&ldquo;: (a) He will go home&nbsp; (b) He wants to go home</li>
+      <li>Feste Verabredung (&bdquo;Ich treffe Anna um 6&ldquo;): (a) I&rsquo;m meeting Anna at 6&nbsp; (b) I meet Anna at 6</li>
+      <li>&bdquo;Der Zug f&auml;hrt um 8&ldquo;: (a) The train will leave at 8&nbsp; (b) The train leaves at 8</li>
+      <li>&bdquo;Ich sage es ihr, wenn ich sie sehe&ldquo;: (a) when I see her&nbsp; (b) when I will see her</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 13 &mdash; &uuml;bersetzen</summary><div class="qbody">
+    <ol>
+      <li>Ich schicke dir die Infos heute Abend. (spontan)</li>
+      <li>Wir ziehen n&auml;chstes Jahr um. (Absicht, schon entschieden)</li>
+      <li>Sie will Lehrerin werden.</li>
+      <li>Ich helfe dir, wenn du fertig bist.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;I&rsquo;ll send you the information tonight. &middot; 2&nbsp;We&rsquo;re going to move next year. &middot; 3&nbsp;She wants to become a teacher. &middot; 4&nbsp;I&rsquo;ll help you when you&rsquo;re finished.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch14">
+  <h2>14 &middot; Modalverben <span class="lvl a2">A2&ndash;B1</span></h2>
+  <div class="ch-meta">Vertrautes System, drei Fallen: kein do, mustn&rsquo;t, will</div>
+  <p>Englische Modalverben (<span class="en">can, could, may, might, must, shall, should, will, would</span>) verhalten sich wie deutsche: kein <span class="en">-s</span>, kein <span class="en">to</span>, blo&szlig;er Infinitiv folgt. <span class="en">She can swim</span> = <span class="de">Sie kann schwimmen</span>. Fragen und Verneinungen bilden sie <strong>selbst</strong>, niemals mit do: <span class="en">Can you swim? I can&rsquo;t swim.</span> <span class="bad">Do you can swim? I don&rsquo;t can.</span></p>
+  <table>
+    <tr><th>Deutsch</th><th>Englisch</th><th>Hinweis</th></tr>
+    <tr><td class="de">k&ouml;nnen</td><td class="en">can / could / be able to</td><td>Vergangenheit: could (F&auml;higkeit), was able to (einmalig gelungen)</td></tr>
+    <tr><td class="de">m&uuml;ssen</td><td class="en">must / have to</td><td>must = eigene Verpflichtung; have to = &auml;u&szlig;ere Regel; Vergangenheit nur <strong>had to</strong></td></tr>
+    <tr><td class="de">nicht m&uuml;ssen</td><td class="en"><strong>don&rsquo;t have to / needn&rsquo;t</strong></td><td>siehe Falle unten</td></tr>
+    <tr><td class="de">nicht d&uuml;rfen</td><td class="en"><strong>mustn&rsquo;t</strong></td><td>= Verbot</td></tr>
+    <tr><td class="de">d&uuml;rfen</td><td class="en">may / can / be allowed to</td><td>can ist das Alltagswort</td></tr>
+    <tr><td class="de">sollen / sollte</td><td class="en">should / ought to / be supposed to</td><td><span class="de">Soll ich&hellip;?</span> = <span class="en">Shall I&hellip;?</span></td></tr>
+    <tr><td class="de">wollen</td><td class="en"><strong>want to</strong></td><td>nicht will (Kap. 13)</td></tr>
+    <tr><td class="de">m&ouml;gen / m&ouml;chte</td><td class="en">like / would like</td><td class="en">I&rsquo;d like a coffee.</td></tr>
+  </table>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; mustn&rsquo;t ist nicht &bdquo;muss nicht&ldquo;</span>
+  <p><span class="en">You <strong>mustn&rsquo;t</strong> help</span> = <span class="de">Du darfst nicht helfen</span> (Verbot). <span class="de">Du musst nicht helfen</span> = <span class="en">You <strong>don&rsquo;t have to</strong> help</span>. Die Verwechslung &auml;ndert die Bedeutung &mdash; und geh&ouml;rt zu den h&auml;ufigsten Fehlern in Texten deutscher Lerner.</p></div>
+  <p>Schlussfolgerungen (B1&ndash;B2): <span class="en">must be</span> (muss sein), <span class="en">can&rsquo;t be</span> (kann nicht sein), <span class="en">might/may/could be</span> (k&ouml;nnte sein). Modalverben der Vergangenheit: <span class="en">should have done, must have been, could have gone</span> &mdash; <span class="en">have</span> + Partizip, analog zu <span class="de">h&auml;tte tun sollen</span>.</p>
+  <details class="qe"><summary>Quiz 14</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Du musst nicht kommen&ldquo;: (a) You mustn&rsquo;t come&nbsp; (b) You don&rsquo;t have to come</li>
+      <li>&bdquo;Du darfst hier nicht rauchen&ldquo;: (a) You mustn&rsquo;t smoke here&nbsp; (b) You don&rsquo;t have to smoke here</li>
+      <li>&bdquo;Kannst du schwimmen?&ldquo;: (a) Do you can swim?&nbsp; (b) Can you swim?</li>
+      <li>&bdquo;Soll ich das Fenster &ouml;ffnen?&ldquo;: (a) Shall I open the window?&nbsp; (b) Will I open the window?</li>
+      <li>Vergangenheit von <span class="en">must</span> (Verpflichtung): (a) musted&nbsp; (b) had to</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;a &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 14 &mdash; &uuml;bersetzen</summary><div class="qbody">
+    <ol>
+      <li>Ich kann heute nicht kommen.</li>
+      <li>Du solltest mehr schlafen.</li>
+      <li>Sie musste gestern arbeiten.</li>
+      <li>Du musst das nicht bezahlen.</li>
+      <li>Das muss ein Fehler sein.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;I can&rsquo;t come today. &middot; 2&nbsp;You should sleep more. &middot; 3&nbsp;She had to work yesterday. &middot; 4&nbsp;You don&rsquo;t have to pay for that. &middot; 5&nbsp;That must be a mistake.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch15">
+  <h2>15 &middot; Adjektiv &amp; Adverb <span class="lvl a2">A2</span></h2>
+  <div class="ch-meta">Keine Endungen am Adjektiv &mdash; aber Adverbien brauchen -ly</div>
+  <p><strong>Adjektive ver&auml;ndern sich nie</strong>: <span class="en">a big house, big houses, the house is big</span>. Nach Jahrzehnten von <span class="de">gro&szlig;er/gro&szlig;e/gro&szlig;es/gro&szlig;en</span> darf man das genie&szlig;en.</p>
+  <p><strong>Adverbien</strong>, die beschreiben, <em>wie</em> etwas geschieht, bekommen <span class="en">-ly</span>: <span class="en">quick &rarr; quickly, careful &rarr; carefully, good &rarr; <strong>well</strong></span> (unregelm&auml;&szlig;ig), <span class="en">fast &rarr; fast, hard &rarr; hard</span> (unver&auml;ndert). Adjektive beschreiben Nomen; Adverbien beschreiben Verben, Adjektive oder andere Adverbien.</p>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; Adjektiv = Adverb im Deutschen</span>
+  <p>Deutsch benutzt das blo&szlig;e Adjektiv als Adverb (<span class="de">Sie tanzt sehr gut</span>). Englisch kann das nicht: <span class="bad">She dances very good</span> &rarr; <span class="en">She dances very <strong>well</strong></span>. <span class="bad">He drives careful</span> &rarr; <span class="en">carefully</span>. Ausnahme: Nach <span class="en">be, seem, look, feel, sound, taste, smell</span> ist das Adjektiv richtig: <span class="en">She looks happy. It tastes good.</span></p></div>
+  <p><strong>Steigerung:</strong> kurze Adjektive <span class="en">-er / -est</span> (<span class="en">bigger, the biggest</span>); lange <span class="en">more / most</span> (<span class="en">more interesting, the most interesting</span>) &mdash; Deutsch steigert alles mit Endung (<span class="de">interessanter</span>), also aufpassen. &bdquo;als&ldquo; = <span class="en">than</span>; &bdquo;so &hellip; wie&ldquo; = <span class="en">as &hellip; as</span>. Unregelm&auml;&szlig;ig: <span class="en">good/better/best, bad/worse/worst, far/further/furthest</span>. -ed vs. -ing: <span class="en">I am bored</span> (mir ist langweilig) vs. <span class="en">the film is boring</span> (der Film ist langweilig).</p>
+  <details class="qe"><summary>Quiz 15</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Sie singt sehr gut&ldquo;: (a) She sings very good&nbsp; (b) She sings very well</li>
+      <li>&bdquo;Das Essen schmeckt gut&ldquo;: (a) The food tastes good&nbsp; (b) The food tastes well</li>
+      <li>Komparativ von <span class="en">interesting</span>: (a) interestinger&nbsp; (b) more interesting</li>
+      <li>&bdquo;gr&ouml;&szlig;er als ich&ldquo;: (a) bigger as me&nbsp; (b) bigger than me</li>
+      <li>&bdquo;Mir ist langweilig&ldquo;: (a) I am boring&nbsp; (b) I am bored</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;a &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 15 &mdash; Adjektiv oder Adverb?</summary><div class="qbody">
+    <ol>
+      <li>He speaks English (fluent) ___.</li>
+      <li>This is a (fluent) ___ speaker.</li>
+      <li>She looked (sad) ___ when she heard the news.</li>
+      <li>Drive (careful) ___!</li>
+      <li>My brother is (old) ___ than me, but I am the (tall) ___ in the family.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;fluently &middot; 2&nbsp;fluent &middot; 3&nbsp;sad &middot; 4&nbsp;carefully &middot; 5&nbsp;older / tallest</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch16">
+  <h2>16 &middot; Z&auml;hlbare &amp; unz&auml;hlbare Nomen <span class="lvl a2">A2</span></h2>
+  <div class="ch-meta">information, advice, furniture &mdash; im Englischen Singular, im Deutschen Plural</div>
+  <p>Englisch trennt scharf zwischen <strong>z&auml;hlbaren</strong> Nomen (<span class="en">a car, two cars</span>) und <strong>unz&auml;hlbaren</strong> (<span class="en">water, money, music</span>), die weder Plural noch <span class="en">a</span> haben. Mehrere Alltagsw&ouml;rter sind im Englischen unz&auml;hlbar, im Deutschen aber z&auml;hlbar oder Plural:</p>
+  <table>
+    <tr><th>Deutsch</th><th>Englisch (immer Singular)</th><th>Zum Z&auml;hlen</th></tr>
+    <tr><td class="de">Informationen</td><td class="en">information</td><td class="en">a piece of information</td></tr>
+    <tr><td class="de">Ratschl&auml;ge</td><td class="en">advice</td><td class="en">a piece of advice</td></tr>
+    <tr><td class="de">M&ouml;bel</td><td class="en">furniture</td><td class="en">a piece of furniture</td></tr>
+    <tr><td class="de">Hausaufgaben</td><td class="en">homework</td><td class="en">an assignment</td></tr>
+    <tr><td class="de">Nachrichten</td><td class="en">news (Verb im Singular!)</td><td class="en">a news item</td></tr>
+    <tr><td class="de">Kenntnisse</td><td class="en">knowledge</td><td>&mdash;</td></tr>
+    <tr><td class="de">Gep&auml;ck / Koffer</td><td class="en">luggage</td><td class="en">a suitcase</td></tr>
+  </table>
+  <p><strong>Mengenw&ouml;rter:</strong> <span class="en">much</span> + unz&auml;hlbar, <span class="en">many</span> + z&auml;hlbar (<span class="en">much money, many friends</span>); <span class="en">a lot of</span> passt zu beiden. <span class="en">little / a little</span> vs. <span class="en">few / a few</span> folgen derselben Trennung. <span class="en">some</span> in Aussagen, <span class="en">any</span> in Fragen und Verneinungen.</p>
+  <div class="box trap"><span class="label">Typischer Fehler</span>
+  <p><span class="bad">informations, advices, furnitures, homeworks</span> sind alle falsch. Und <span class="de">Personen</span> &rarr; <span class="en">people</span>, nicht <span class="bad">persons</span> (nur Juristensprache). <span class="de">Leute</span> ist ebenfalls <span class="en">people</span> &mdash; mit Pluralverb: <span class="en">people are</span>.</p></div>
+  <details class="qe"><summary>Quiz 16</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Ich schicke dir die Informationen&ldquo;: (a) the informations&nbsp; (b) the information</li>
+      <li>&bdquo;Wie viele Personen kamen?&ldquo;: (a) How many persons&nbsp; (b) How many people</li>
+      <li>&bdquo;viel Geld&ldquo;: (a) much money&nbsp; (b) many money</li>
+      <li>&bdquo;Die Nachrichten sind schlecht&ldquo;: (a) The news are bad&nbsp; (b) The news is bad</li>
+      <li>&bdquo;ein Ratschlag&ldquo;: (a) an advice&nbsp; (b) a piece of advice</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 16 &mdash; S&auml;tze korrigieren</summary><div class="qbody">
+    <ol>
+      <li>We need new furnitures for the office.</li>
+      <li>She gave me many good advices.</li>
+      <li>How much people were there?</li>
+      <li>I have a lot of homeworks today.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;We need new furniture for the office. &middot; 2&nbsp;She gave me a lot of good advice. &middot; 3&nbsp;How many people were there? &middot; 4&nbsp;I have a lot of homework today.</div></details>
+  </div></details>
+</section>
+<section class="chapter" id="ch17">
+  <h2>17 &middot; Pr&auml;positionen <span class="lvl a2">A2&ndash;B1</span></h2>
+  <div class="ch-meta">Kein Kasus zu regieren &mdash; aber hier wohnt die Denglisch-Hitliste</div>
+  <p>Englische Pr&auml;positionen regieren nichts (keine Akkusativ/Dativ-Entscheidung), aber die <em>Wahl</em> stimmt oft nicht mit dem Deutschen &uuml;berein. Die h&auml;ufigsten Abweichungen aus Korpora deutscher Englischlerner:</p>
+  <table>
+    <tr><th>Deutsch</th><th>Denglisch</th><th>Englisch</th></tr>
+    <tr><td class="de">bei einer Firma arbeiten</td><td class="bad">I work by Siemens</td><td class="en">I work <strong>at / for</strong> Siemens.</td></tr>
+    <tr><td class="de">bei meiner Oma wohnen</td><td class="bad">live by my grandmother</td><td class="en">live <strong>with</strong> my grandmother</td></tr>
+    <tr><td class="de">in der N&auml;he von</td><td class="bad">in the near from Berlin</td><td class="en"><strong>near</strong> Berlin / <strong>close to</strong> Berlin</td></tr>
+    <tr><td class="de">&uuml;ber etwas diskutieren</td><td class="bad">discuss about the topic</td><td class="en">discuss the topic</td></tr>
+    <tr><td class="de">in einer Besprechung</td><td class="bad">on a meeting</td><td class="en"><strong>in / at</strong> a meeting</td></tr>
+    <tr><td class="de">mit dem Bus</td><td class="bad">with the bus</td><td class="en"><strong>by</strong> bus (ohne Artikel)</td></tr>
+    <tr><td class="de">am Montag / im Mai / um 8 Uhr</td><td>&mdash;</td><td class="en"><strong>on</strong> Monday / <strong>in</strong> May / <strong>at</strong> 8 o&rsquo;clock</td></tr>
+    <tr><td class="de">am Wochenende</td><td class="bad">on the weekend (in US-Englisch korrekt)</td><td class="en"><strong>at</strong> the weekend (UK) / <strong>on</strong> the weekend (US)</td></tr>
+    <tr><td class="de">Das kommt darauf an.</td><td class="bad">It depends on!</td><td class="en">It depends. / It depends <strong>on</strong> the budget.</td></tr>
+    <tr><td class="de">alleine / selbst</td><td class="bad">by my own</td><td class="en"><strong>on my own</strong> / <strong>by myself</strong></td></tr>
+  </table>
+  <p><strong>Zeitpr&auml;positionen</strong> in einer Zeile: <span class="en">at</span> f&uuml;r Uhrzeiten und Zeitpunkte (<span class="en">at 6, at night, at Christmas</span>), <span class="en">on</span> f&uuml;r Tage und Daten (<span class="en">on Monday, on 5 May</span>), <span class="en">in</span> f&uuml;r l&auml;ngere Zeitr&auml;ume (<span class="en">in May, in 2020, in the morning</span>). Keine Pr&auml;position vor <span class="en">yesterday, tomorrow, next week, last year, every day</span>.</p>
+  <div class="box deutsch"><span class="label">Deutsche Parallele</span>
+  <p>Viele Kernpr&auml;positionen sind verwandt und passen weitgehend: <span class="en">in/in, under/unter, over/&uuml;ber, for/f&uuml;r, to/zu, with/mit, from/von, before/vor, after/nach</span>. Die Fallen oben sind die Ausnahmen &mdash; als Liste lernen.</p></div>
+  <details class="qe"><summary>Quiz 17</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Ich arbeite bei BMW&ldquo;: (a) I work by BMW&nbsp; (b) I work at BMW</li>
+      <li>&bdquo;Wir haben &uuml;ber das Problem diskutiert&ldquo;: (a) We discussed about the problem&nbsp; (b) We discussed the problem</li>
+      <li>&bdquo;mit dem Zug&ldquo;: (a) with the train&nbsp; (b) by train</li>
+      <li>&bdquo;am Freitag&ldquo;: (a) at Friday&nbsp; (b) on Friday</li>
+      <li>&bdquo;in der N&auml;he von Hagen&ldquo;: (a) in the near of Hagen&nbsp; (b) near Hagen</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 17 &mdash; Pr&auml;position einsetzen (oder nichts)</summary><div class="qbody">
+    <ol>
+      <li>The meeting is ___ Tuesday ___ 10 o&rsquo;clock.</li>
+      <li>She is ___ a meeting right now.</li>
+      <li>I usually go to work ___ bike.</li>
+      <li>We&rsquo;re leaving ___ next week.</li>
+      <li>He did it ___ his own.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;on / at &middot; 2&nbsp;in &middot; 3&nbsp;by &middot; 4&nbsp;&mdash; (keine Pr&auml;position) &middot; 5&nbsp;on</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch18">
+  <h2>18 &middot; Gerund vs. Infinitiv <span class="lvl b1">B1</span></h2>
+  <div class="ch-meta">Wo Deutsch zu + Infinitiv nimmt, will Englisch oft -ing</div>
+  <p>Nach vielen Verben und nach <strong>jeder Pr&auml;position</strong> steht im Englischen die <span class="en">-ing</span>-Form (Gerund), wo Deutsch <span class="de">zu</span> + Infinitiv oder ein Nomen nimmt:</p>
+  <table>
+    <tr><th>Muster</th><th>Verben / Ausl&ouml;ser</th><th>Beispiel</th></tr>
+    <tr><td><strong>+ to-Infinitiv</strong></td><td class="en">want, need, decide, hope, plan, promise, refuse, seem, manage, learn, would like</td><td class="en">I want <strong>to go</strong>. She decided <strong>to stay</strong>.</td></tr>
+    <tr><td><strong>+ -ing</strong></td><td class="en">enjoy, avoid, mind, finish, suggest, consider, keep, practise, can&rsquo;t help, look forward to</td><td class="en">I enjoy <strong>reading</strong>. He avoided <strong>answering</strong>.</td></tr>
+    <tr><td><strong>nach Pr&auml;positionen</strong></td><td class="en">without, before, after, instead of, interested in, good at, used to</td><td class="en">He left <strong>without saying</strong> goodbye. I&rsquo;m interested <strong>in learning</strong>.</td></tr>
+    <tr><td><strong>als Subjekt</strong></td><td>&mdash;</td><td class="en"><strong>Smoking</strong> is unhealthy. (Rauchen ist ungesund)</td></tr>
+    <tr><td><strong>beides, andere Bedeutung</strong></td><td class="en">stop, remember, forget, try</td><td class="en">I stopped <strong>smoking</strong> (aufh&ouml;ren) / I stopped <strong>to smoke</strong> (anhalten, um zu rauchen)</td></tr>
+  </table>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; ohne zu, gewohnt sein, sich freuen auf</span>
+  <p><span class="bad">He went without to say goodbye</span> &rarr; <span class="en">without saying</span>. <span class="bad">I&rsquo;m not used to read English books</span> &rarr; <span class="en">used to read<strong>ing</strong></span> (hier ist <span class="en">to</span> eine Pr&auml;position, also folgt -ing). <span class="bad">I look forward to see you</span> &rarr; <span class="en">to see<strong>ing</strong> you</span>. Und nicht verwechseln: <span class="en">be used to + -ing</span> (gewohnt sein) vs. <span class="en">used to + Infinitiv</span> (fr&uuml;her immer): <span class="en">I used to smoke</span> = Ich habe fr&uuml;her geraucht.</p></div>
+  <details class="qe"><summary>Quiz 18</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Ich freue mich darauf, dich zu sehen&ldquo;: (a) I look forward to see you&nbsp; (b) I look forward to seeing you</li>
+      <li>&bdquo;Er ging, ohne zu bezahlen&ldquo;: (a) without to pay&nbsp; (b) without paying</li>
+      <li>&bdquo;Ich habe fr&uuml;her Fu&szlig;ball gespielt&ldquo;: (a) I used to play football&nbsp; (b) I am used to playing football</li>
+      <li>Nach <span class="en">enjoy</span>: (a) to-Infinitiv&nbsp; (b) -ing</li>
+      <li>&bdquo;Ich habe aufgeh&ouml;rt zu rauchen&ldquo;: (a) I stopped to smoke&nbsp; (b) I stopped smoking</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 18 &mdash; Infinitiv oder -ing?</summary><div class="qbody">
+    <ol>
+      <li>She suggested (go) ___ to the cinema.</li>
+      <li>We hope (see) ___ you soon.</li>
+      <li>Thank you for (help) ___ me.</li>
+      <li>I&rsquo;m not used to (get up) ___ so early.</li>
+      <li>Don&rsquo;t forget (lock) ___ the door.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;going &middot; 2&nbsp;to see &middot; 3&nbsp;helping &middot; 4&nbsp;getting up &middot; 5&nbsp;to lock</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch19">
+  <h2>19 &middot; Adverbstellung &amp; Satzbau <span class="lvl b1">B1</span></h2>
+  <div class="ch-meta">Der hartn&auml;ckigste deutsche Fehler auf jedem Niveau</div>
+  <p>Kontrastive Studien zeigen: Inversion und Verb-am-Ende sind selten &mdash; aber <strong>dieser</strong> Fehlertyp ist &uuml;berall, selbst auf C1. Drei Regeln:</p>
+  <ol>
+    <li><strong>Verb und Objekt nie trennen.</strong> Deutsch macht das frei (<span class="de">Ich trinke <em>jeden Morgen</em> eine Tasse Tee</span>); Englisch kann es nicht. <span class="bad">I drink every morning a cup of tea</span> &rarr; <span class="en">I drink a cup of tea every morning.</span> <span class="bad">He plays very often football</span> &rarr; <span class="en">He plays football very often.</span></li>
+    <li><strong>Ort vor Zeit</strong> am Satzende &mdash; umgekehrt zum Deutschen (<span class="de">Zeit vor Ort</span>): <span class="bad">He flies once a month to New York</span> &rarr; <span class="en">He flies <strong>to New York once a month</strong>.</span> <span class="bad">She came with the bus to school</span> &rarr; <span class="en">She came <strong>to school by bus</strong>.</span></li>
+    <li><strong>H&auml;ufigkeitsadverbien</strong> (<span class="en">always, often, never, usually, sometimes, just, already</span>) stehen <strong>vor</strong> dem Vollverb, aber <strong>nach</strong> <span class="en">be</span> und Hilfsverben: <span class="en">I <strong>always</strong> drink coffee. I <strong>am</strong> always late. I <strong>have</strong> never seen it.</span> <span class="bad">I drink always coffee</span> ist deutsche Stellung.</li>
+  </ol>
+  <div class="box deutsch"><span class="label">Deutsche Parallele &middot; das Prinzip hinter der Regel</span>
+  <p>Deutsch kann Angaben frei im Mittelfeld verteilen, weil der Kasus das Objekt markiert, wo immer es steht. Englisch hat den Kasus verloren und nutzt stattdessen <em>N&auml;he</em>: Verb + Objekt bilden eine untrennbare Einheit, alles andere h&auml;ngt sich vorne oder hinten an. Wer die Regel als Folge von &bdquo;kein Kasus&ldquo; versteht, empfindet sie nicht mehr als willk&uuml;rlich.</p></div>
+  <p>L&auml;ngere Angaben d&uuml;rfen auch vorangestellt werden: <span class="en">Every morning, I drink a cup of tea</span> &mdash; ohne Inversion (Kap.&nbsp;6).</p>
+  <details class="qe"><summary>Quiz 19</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Ich lese jeden Abend ein Buch&ldquo;: (a) I read every evening a book&nbsp; (b) I read a book every evening</li>
+      <li>&bdquo;Er f&auml;hrt einmal im Jahr nach Rom&ldquo;: (a) He goes once a year to Rome&nbsp; (b) He goes to Rome once a year</li>
+      <li>&bdquo;Ich trinke immer Kaffee&ldquo;: (a) I drink always coffee&nbsp; (b) I always drink coffee</li>
+      <li>&bdquo;Ich bin immer sp&auml;t dran&ldquo;: (a) I am always late&nbsp; (b) I always am late</li>
+      <li>Reihenfolge am Satzende: (a) Zeit vor Ort&nbsp; (b) Ort vor Zeit</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 19 &mdash; umstellen</summary><div class="qbody">
+    <ol>
+      <li>She wants to go on Friday to the cinema.</li>
+      <li>We visit twice a year our grandparents in Bavaria.</li>
+      <li>I have finished already my homework.</li>
+      <li>He goes never to the gym.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;She wants to go to the cinema on Friday. &middot; 2&nbsp;We visit our grandparents in Bavaria twice a year. &middot; 3&nbsp;I have already finished my homework. &middot; 4&nbsp;He never goes to the gym.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch20">
+  <h2>20 &middot; Besitz &amp; der Apostroph <span class="lvl a2">A2&ndash;B1</span></h2>
+  <div class="ch-meta">John&rsquo;s sister &mdash; der Apostroph, den das Deutsche weggelassen hat</div>
+  <ul>
+    <li><strong>&rsquo;s f&uuml;r Personen und Tiere</strong> (und Zeitangaben): <span class="en">John<strong>&rsquo;s</strong> sister, my parents<strong>&rsquo;</strong> house</span> (Plural: Apostroph nach dem s), <span class="en">yesterday<strong>&rsquo;s</strong> meeting</span>. Deutsch schreibt <span class="de">Johns Schwester</span> ohne Apostroph &mdash; Englisch verlangt ihn: <span class="bad">Johns sister</span>.</li>
+    <li><strong>of f&uuml;r Sachen</strong>: <span class="en">the roof of the house, the end of the film</span>. Den Rest erledigen Komposita: <span class="en">the car door, the kitchen table</span> (wie <span class="de">Autot&uuml;r</span>).</li>
+    <li>Ketten statt of-Konstruktionen: <span class="bad">the husband of the sister of my friend</span> &rarr; <span class="en">my friend&rsquo;s sister&rsquo;s husband</span>.</li>
+    <li><strong>Der andere Apostroph</strong>: Kurzformen (<span class="en">it&rsquo;s</span> = it is/has, <span class="en">he&rsquo;s had</span>, <span class="en">don&rsquo;t</span>). <span class="en">it&rsquo;s</span> (es ist) vs. <span class="en">its</span> (sein/ihr) &mdash; ein Rechtschreibtest, an dem auch Muttersprachler scheitern.</li>
+    <li>Possessivbegleiter: <span class="en">my, your, his, her, its, our, their</span> &mdash; nach dem <strong>Besitzer</strong> gew&auml;hlt, nicht nach dem Nomen: <span class="en">her book</span> (ihr Buch, obwohl Buch Neutrum ist), <span class="en">his mother</span>.</li>
+  </ul>
+  <div class="box deutsch"><span class="label">Deutsche Parallele</span>
+  <p>Das Genitiv-s und das englische &rsquo;s sind historisch dieselbe Endung; nur die Zeichensetzung unterscheidet sich. Der &bdquo;Deppenapostroph&ldquo; (<span class="de">Anna&rsquo;s Caf&eacute;</span>), &uuml;ber den sich deutsche Puristen aufregen, ist im Englischen einfach richtig.</p></div>
+  <details class="qe"><summary>Quiz 20</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Johns Schwester&ldquo;: (a) Johns sister&nbsp; (b) John&rsquo;s sister</li>
+      <li>&bdquo;das Dach des Hauses&ldquo;: (a) the house&rsquo;s roof&nbsp; (b) the roof of the house</li>
+      <li>&bdquo;das Haus meiner Eltern&ldquo;: (a) my parents&rsquo; house&nbsp; (b) my parent&rsquo;s house</li>
+      <li>&bdquo;Es ist kalt&ldquo;: (a) Its cold&nbsp; (b) It&rsquo;s cold</li>
+      <li>&bdquo;ihr Vater&ldquo; (der Vater von ihr): (a) his father&nbsp; (b) her father</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 20 &mdash; umformulieren</summary><div class="qbody">
+    <ol>
+      <li>the car of my brother</li>
+      <li>the wife of the boss of my friend</li>
+      <li>the meeting of yesterday</li>
+      <li>The dog wagged it&rsquo;s tail. (korrigieren)</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;my brother&rsquo;s car &middot; 2&nbsp;my friend&rsquo;s boss&rsquo;s wife &middot; 3&nbsp;yesterday&rsquo;s meeting &middot; 4&nbsp;The dog wagged its tail.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch21">
+  <h2>21 &middot; Nebens&auml;tze &amp; Kommas <span class="lvl b1">B1</span></h2>
+  <div class="ch-meta">Gleiche Wortstellung wie im Hauptsatz &mdash; und viel weniger Kommas</div>
+  <p>Englische Nebens&auml;tze (<span class="en">because, that, if, when, although, while, before, after, since, unless</span>) behalten <strong>normale SVO-Stellung</strong>: <span class="en">I stayed at home because I <strong>was</strong> ill.</span> Kein Verb am Ende, keine Inversion im Hauptsatz, wenn der Nebensatz vorne steht: <span class="en">Because I was ill, <strong>I stayed</strong> at home.</span></p>
+  <p><strong>Zeitform in Temporals&auml;tzen:</strong> Pr&auml;sens, nicht Futur: <span class="en">when I <strong>see</strong> her</span> (Kap.&nbsp;13). <span class="en">if</span> = <span class="de">falls/wenn (Bedingung)</span>; <span class="en">when</span> = <span class="de">wenn/als (Zeit)</span> &mdash; Englisch trennt, was Deutsch in <span class="de">wenn</span> zusammenlegt. <span class="en">whether/if</span> = <span class="de">ob</span>.</p>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; der Komma-Reflex</span>
+  <p>Deutsch setzt vor jeden Nebensatz ein Komma. Englisch <strong>nicht</strong> &mdash; an zwei wichtigen Stellen:</p>
+  <p>1. Vor <span class="en">that</span>-S&auml;tzen und nach Verben des Sagens: <span class="bad">She said, that she would come</span> &rarr; <span class="en">She said that she would come.</span> <span class="bad">I think, that&hellip;</span> &rarr; <span class="en">I think that&hellip;</span><br>
+  2. Vor <strong>notwendigen</strong> Relativs&auml;tzen: <span class="bad">That&rsquo;s the boy, who broke the window</span> &rarr; <span class="en">That&rsquo;s the boy who broke the window.</span> (Kap.&nbsp;22)</p>
+  <p>Ein Komma steht <em>sehr wohl</em> nach vorangestelltem Nebensatz (<span class="en">If it rains, we&rsquo;ll stay in</span>) und vor nicht notwendigen Relativs&auml;tzen. Lehrkr&auml;fte deutscher Lerner nennen &bdquo;viel zu viele Kommas&ldquo; als Erstes, was ihnen in einem Aufsatz auff&auml;llt.</p></div>
+  <p>Au&szlig;erdem: <span class="en">that</span> kann nach h&auml;ufigen Verben wegfallen (<span class="en">I think (that) he&rsquo;s right</span>), und englische Anf&uuml;hrungszeichen stehen beidseitig oben (&ldquo;&hellip;&rdquo;), nicht &bdquo;unten-oben&ldquo;.</p>
+  <details class="qe"><summary>Quiz 21</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Er sagte, dass er kommt&ldquo;: (a) He said, that he would come&nbsp; (b) He said that he would come</li>
+      <li>In &bdquo;because I was ill&ldquo; steht das Verb: (a) am Ende&nbsp; (b) nach dem Subjekt</li>
+      <li>&bdquo;Wenn es regnet, bleiben wir zu Hause&ldquo; (Bedingung): (a) When it rains, we stay at home&nbsp; (b) If it rains, we&rsquo;ll stay at home</li>
+      <li>&bdquo;Ich wei&szlig; nicht, ob er kommt&ldquo;: (a) I don&rsquo;t know if he&rsquo;s coming&nbsp; (b) I don&rsquo;t know that he&rsquo;s coming</li>
+      <li>Komma vor einem notwendigen Relativsatz: (a) ja&nbsp; (b) nein</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 21 &mdash; &uuml;bersetzen, auf Kommas und Stellung achten</summary><div class="qbody">
+    <ol>
+      <li>Ich glaube, dass sie recht hat.</li>
+      <li>Wenn ich Zeit habe, rufe ich dich an.</li>
+      <li>Er fragte, ob ich m&uuml;de sei.</li>
+      <li>Ich bleibe zu Hause, weil ich krank bin.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;I think (that) she is right. &middot; 2&nbsp;If I have time, I&rsquo;ll call you. &middot; 3&nbsp;He asked if I was tired. &middot; 4&nbsp;I&rsquo;m staying at home because I&rsquo;m ill.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch22">
+  <h2>22 &middot; Relativs&auml;tze <span class="lvl b1">B1</span></h2>
+  <div class="ch-meta">who, which, that &mdash; und die &bdquo;was&ldquo;-Falle</div>
+  <table>
+    <tr><th>Pronomen</th><th>Bezug</th><th>Beispiel</th></tr>
+    <tr><td class="en">who</td><td>Personen</td><td class="en">the woman <strong>who</strong> lives next door</td></tr>
+    <tr><td class="en">which</td><td>Sachen; auch ein ganzer Satz</td><td class="en">the book <strong>which</strong> I read &middot; He refused, <strong>which</strong> surprised me.</td></tr>
+    <tr><td class="en">that</td><td>Personen oder Sachen, nur in notwendigen S&auml;tzen</td><td class="en">the book <strong>that</strong> I read &middot; everything <strong>that</strong> matters</td></tr>
+    <tr><td class="en">whose</td><td>Besitz</td><td class="en">the man <strong>whose</strong> car was stolen</td></tr>
+    <tr><td class="en">where / when</td><td>Ort / Zeit</td><td class="en">the town <strong>where</strong> I was born</td></tr>
+  </table>
+  <ul>
+    <li><strong>Weglassen:</strong> Ist das Pronomen Objekt, kann es wegfallen: <span class="en">the book (that) I read</span>, <span class="en">the woman (who) I met</span>. Im Deutschen unm&ouml;glich, im Englischen sehr h&auml;ufig.</li>
+    <li><strong>Notwendig vs. nicht notwendig:</strong> ohne Komma, wenn der Satz das Nomen identifiziert (<span class="en">the boy who broke the window</span>); mit Kommas, wenn er Zusatzinformation liefert (<span class="en">My brother, who lives in Bonn, is a doctor</span>). <span class="en">that</span> steht nicht in nicht notwendigen S&auml;tzen.</li>
+    <li>Keine Kasusmarkierung: <span class="en">who</span> deckt <span class="de">der/den/dem</span> ab; formales <span class="en">whom</span> f&uuml;r Objekte wird immer seltener.</li>
+  </ul>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; was &ne; what</span>
+  <p>Deutsch nutzt <span class="de">was</span> nach einem ganzen Satz und nach <span class="de">alles/nichts/etwas</span>. Englisch nutzt <span class="en">which</span> und <span class="en">that</span>: <span class="bad">He didn&rsquo;t help, what surprised me</span> &rarr; <span class="en">&hellip;, <strong>which</strong> surprised me</span>. <span class="bad">There is nothing, what I would rather do</span> &rarr; <span class="en">There is nothing <strong>that</strong> I would rather do.</span> <span class="en">what</span> als Relativpronomen hei&szlig;t nur &bdquo;das, was&ldquo;: <span class="en">I know what you mean.</span></p></div>
+  <details class="qe"><summary>Quiz 22</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;der Mann, den ich gesehen habe&ldquo;: (a) the man who I saw&nbsp; (b) the man whom him I saw</li>
+      <li>&bdquo;Er kam zu sp&auml;t, was mich &auml;rgerte&ldquo;: (a) &hellip;, what annoyed me&nbsp; (b) &hellip;, which annoyed me</li>
+      <li>Kann das Objekt-Relativpronomen wegfallen? (a) ja&nbsp; (b) nein</li>
+      <li>&bdquo;alles, was ich brauche&ldquo;: (a) everything what I need&nbsp; (b) everything (that) I need</li>
+      <li>Nicht notwendige Relativs&auml;tze nutzen: (a) that&nbsp; (b) who/which mit Kommas</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;a &middot; 2&nbsp;b &middot; 3&nbsp;a &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 22 &mdash; S&auml;tze verbinden</summary><div class="qbody">
+    <ol>
+      <li>That is the dog. It bit me.</li>
+      <li>The woman is ill. I know her. (Pronomen weglassen)</li>
+      <li>He refused to help. That surprised everyone.</li>
+      <li>My sister lives in Bonn. She is a doctor. (nicht notwendig)</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;That is the dog that/which bit me. &middot; 2&nbsp;The woman I know is ill. &middot; 3&nbsp;He refused to help, which surprised everyone. &middot; 4&nbsp;My sister, who lives in Bonn, is a doctor.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch23">
+  <h2>23 &middot; Question Tags &amp; Kurzantworten <span class="lvl b1">B1</span></h2>
+  <div class="ch-meta">&bdquo;&hellip;, oder?&ldquo; und &bdquo;Ich auch&ldquo; auf englische Art</div>
+  <p>Deutsch hat einen universellen Anh&auml;nger (<span class="de">&hellip;, oder? / &hellip;, nicht wahr?</span>). Englisch baut den Tag aus dem Hilfsverb des Satzes, mit umgekehrter Polarit&auml;t:</p>
+  <ul>
+    <li><span class="en">She is Spanish, <strong>isn&rsquo;t she</strong>? You like coffee, <strong>don&rsquo;t you</strong>? They didn&rsquo;t come, <strong>did they</strong>? You can swim, <strong>can&rsquo;t you</strong>?</span></li>
+    <li>Steigende Intonation = echte Frage; fallende = Zustimmung suchen (wie <span class="de">oder?</span> vs. <span class="de">nicht wahr?</span>).</li>
+    <li>Sonderf&auml;lle: <span class="en">I&rsquo;m late, <strong>aren&rsquo;t I</strong>? Let&rsquo;s go, <strong>shall we</strong>? Open the window, <strong>will you</strong>?</span></li>
+  </ul>
+  <p><strong>Kurzantworten</strong> wiederholen das Hilfsverb: <span class="en">Do you smoke? &mdash; No, I don&rsquo;t. Are you tired? &mdash; Yes, I am.</span> <strong>Zustimmung:</strong> <span class="en">So do I</span> (ich auch), <span class="en">Neither do I</span> (ich auch nicht), <span class="en">I hope so / I&rsquo;m afraid not</span>. <span class="bad">Me too, me not</span> versteht man, ist aber salopp; <span class="bad">I also</span> ist Denglisch.</p>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; &bdquo;wir sehen uns&ldquo;</span>
+  <p>Reziprokes <span class="de">uns/sich</span> wird nicht <span class="en">us</span>: <span class="bad">We see us next week</span> &rarr; <span class="en">See you next week.</span> <span class="bad">Let&rsquo;s meet us at 5</span> &rarr; <span class="en">Let&rsquo;s meet at 5.</span> <span class="bad">They love them</span> (sie lieben sich) &rarr; <span class="en">They love <strong>each other</strong>.</span></p></div>
+  <details class="qe"><summary>Quiz 23</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Du magst Kaffee, oder?&ldquo;: (a) You like coffee, or?&nbsp; (b) You like coffee, don&rsquo;t you?</li>
+      <li>&bdquo;Ich auch&ldquo; (nach &bdquo;I like tea&ldquo;): (a) I also&nbsp; (b) So do I</li>
+      <li>&bdquo;Wir sehen uns morgen&ldquo;: (a) We see us tomorrow&nbsp; (b) See you tomorrow</li>
+      <li>Tag zu &bdquo;I&rsquo;m right&ldquo;: (a) amn&rsquo;t I?&nbsp; (b) aren&rsquo;t I?</li>
+      <li>&bdquo;Sie kennen sich&ldquo;: (a) They know them&nbsp; (b) They know each other</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 23 &mdash; Question Tag erg&auml;nzen</summary><div class="qbody">
+    <ol>
+      <li>She works here, ___?</li>
+      <li>They haven&rsquo;t arrived, ___?</li>
+      <li>You can help me, ___?</li>
+      <li>It was cold yesterday, ___?</li>
+      <li>Let&rsquo;s start, ___?</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;doesn&rsquo;t she &middot; 2&nbsp;have they &middot; 3&nbsp;can&rsquo;t you &middot; 4&nbsp;wasn&rsquo;t it &middot; 5&nbsp;shall we</div></details>
+  </div></details>
+</section>
+<!-- ================= TEIL C ================= -->
+<section class="part-head" id="partc">
+  <div class="part-label">Teil C</div>
+  <h2>Obere Mittelstufe &amp; Fortgeschrittene</h2>
+  <p class="kicker">Kapitel 24&ndash;30 &middot; B2 bis C2 &middot; Passiv, Bedingungss&auml;tze, Erz&auml;hlzeiten, indirekte Rede, Stil</p>
+</section>
+
+<section class="chapter" id="ch24">
+  <h2>24 &middot; Das Passiv <span class="lvl b2">B2</span></h2>
+  <div class="ch-meta">be + Partizip &mdash; werden ist weg, und Englisch ist flexibler</div>
+  <ul>
+    <li><strong>Form:</strong> <span class="en">be</span> (in jeder Zeit) + Partizip Perfekt: <span class="en">The letter <strong>is written</strong> / <strong>was written</strong> / <strong>has been written</strong> / <strong>will be written</strong> / <strong>is being written</strong>.</span> Deutsch nutzt <span class="de">werden</span>; Englisch nutzt auch f&uuml;r den Vorgang <span class="en">be</span>, also sind <span class="de">wird geschrieben</span> und <span class="de">ist geschrieben</span> beide <span class="en">is written</span> &mdash; au&szlig;er man markiert den Vorgang mit der Verlaufsform (<span class="en">is being written</span>).</li>
+    <li><strong>Urheber:</strong> <span class="en">by</span> (von) &mdash; <span class="en">written <strong>by</strong> Shakespeare</span>; Mittel <span class="en">with</span>.</li>
+    <li><strong>Passiv des indirekten Objekts</strong>, im Deutschen unm&ouml;glich: <span class="en"><strong>I was given</strong> a book. <strong>She was told</strong> the news.</span> (Deutsch muss sagen <span class="de">Mir wurde ein Buch gegeben</span>.) Im Englischen sehr h&auml;ufig &mdash; nutzen.</li>
+    <li><strong>get-Passiv</strong> (informell, Ereignisse): <span class="en">He <strong>got fired</strong>. The window <strong>got broken</strong>.</span></li>
+    <li><strong>have/get something done</strong> (etwas machen lassen): <span class="en">I <strong>had my hair cut</strong>. We <strong>got the car repaired</strong>.</span> <span class="bad">I cut my hair</span> hei&szlig;t, man tat es selbst; <span class="bad">I let cut my hair</span> ist Denglisch.</li>
+    <li>Pr&auml;positionales Passiv: <span class="en">This bed <strong>has been slept in</strong>. He <strong>was laughed at</strong>.</span></li>
+  </ul>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; &bdquo;man&ldquo; und &bdquo;lassen&ldquo;</span>
+  <p>Deutsches <span class="de">man</span> wird im Englischen oft Passiv statt <span class="en">one</span>: <span class="de">Man sagt, dass&hellip;</span> &rarr; <span class="en">It is said that&hellip;</span> / <span class="en">People say&hellip;</span>. Und <span class="de">lassen</span> im Sinn von &bdquo;machen lassen&ldquo; ist <span class="en">have/get + Objekt + Partizip</span>, niemals <span class="bad">let</span>.</p></div>
+  <details class="qe"><summary>Quiz 24</summary><div class="qbody">
+    <ol>
+      <li>Passiv-Hilfsverb im Englischen: (a) become&nbsp; (b) be</li>
+      <li>&bdquo;Mir wurde ein Buch geschenkt&ldquo;: (a) Me was given a book&nbsp; (b) I was given a book</li>
+      <li>&bdquo;Ich habe mir die Haare schneiden lassen&ldquo;: (a) I let cut my hair&nbsp; (b) I had my hair cut</li>
+      <li>&bdquo;Das Haus wird gerade gebaut&ldquo;: (a) The house is built&nbsp; (b) The house is being built</li>
+      <li>Pr&auml;position f&uuml;r den Urheber: (a) from&nbsp; (b) by</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 24 &mdash; ins Passiv setzen</summary><div class="qbody">
+    <ol>
+      <li>Someone stole my bike.</li>
+      <li>They are building a new bridge.</li>
+      <li>They gave her a prize.</li>
+      <li>Man spricht hier Englisch. (&uuml;bersetzen)</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;My bike was stolen. &middot; 2&nbsp;A new bridge is being built. &middot; 3&nbsp;She was given a prize. &middot; 4&nbsp;English is spoken here.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch25">
+  <h2>25 &middot; Bedingungss&auml;tze <span class="lvl b2">B2</span></h2>
+  <div class="ch-meta">Kein Konjunktiv &mdash; und kein would im if-Satz</div>
+  <table>
+    <tr><th>Typ</th><th>if-Satz</th><th>Hauptsatz</th><th>Beispiel</th></tr>
+    <tr><td>0 (allgemeine Wahrheit)</td><td>Pr&auml;sens</td><td>Pr&auml;sens</td><td class="en">If you heat ice, it melts.</td></tr>
+    <tr><td>1 (reale Zukunft)</td><td>Pr&auml;sens</td><td>will + Inf.</td><td class="en">If it rains, we&rsquo;ll stay in.</td></tr>
+    <tr><td>2 (irreale Gegenwart)</td><td>Simple Past</td><td>would + Inf.</td><td class="en">If I had time, I would read more.</td></tr>
+    <tr><td>3 (irreale Vergangenheit)</td><td>Past Perfect</td><td>would have + Partizip</td><td class="en">If I had known, I would have come.</td></tr>
+    <tr><td>gemischt</td><td>Past Perfect</td><td>would + Inf.</td><td class="en">If I had studied, I would have a better job now.</td></tr>
+  </table>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; &bdquo;If I would&hellip;&ldquo;</span>
+  <p>Deutsch setzt <span class="de">w&uuml;rde/h&auml;tte</span> in beide H&auml;lften (<span class="de">Wenn ich Zeit <strong>h&auml;tte</strong>, <strong>w&uuml;rde</strong> ich&hellip;</span>), gesprochen sogar <span class="de">wenn ich&hellip; w&uuml;rde</span>. Englisch setzt <span class="en">would</span> <strong>niemals</strong> in den if-Satz: <span class="bad">If I would have time</span> &rarr; <span class="en">If I <strong>had</strong> time</span>. <span class="bad">If I would have known</span> &rarr; <span class="en">If I <strong>had known</strong></span>. Der if-Satz bekommt eine einfache Vergangenheitsform; nur der Hauptsatz bekommt would. Ebenso: <span class="bad">If it will rain</span> &rarr; <span class="en">If it rains</span>.</p></div>
+  <ul>
+    <li><span class="en">If I <strong>were</strong> you</span> (formaler Konjunktiv; <span class="en">was</span> ist gesprochen &uuml;blich).</li>
+    <li><span class="en">unless</span> = <span class="de">wenn nicht / au&szlig;er wenn</span>; <span class="en">in case</span> = <span class="de">falls (vorsorglich)</span>; <span class="en">as long as</span> = <span class="de">solange</span>.</li>
+    <li><span class="en">wish / if only</span> + Past f&uuml;r Gegenwartsw&uuml;nsche, + Past Perfect f&uuml;r Vergangenes: <span class="en">I wish I <strong>had</strong> more time. If only I <strong>had listened</strong>.</span></li>
+  </ul>
+  <details class="qe"><summary>Quiz 25</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Wenn ich Geld h&auml;tte, w&uuml;rde ich reisen&ldquo;: (a) If I would have money, I would travel&nbsp; (b) If I had money, I would travel</li>
+      <li>&bdquo;Wenn ich das gewusst h&auml;tte, w&auml;re ich gekommen&ldquo;: (a) If I would have known, I would have come&nbsp; (b) If I had known, I would have come</li>
+      <li>&bdquo;Wenn es morgen regnet&hellip;&ldquo;: (a) If it will rain tomorrow&nbsp; (b) If it rains tomorrow</li>
+      <li>would steht: (a) im if-Satz&nbsp; (b) im Hauptsatz</li>
+      <li>&bdquo;Ich w&uuml;nschte, ich h&auml;tte mehr Zeit&ldquo;: (a) I wish I had more time&nbsp; (b) I wish I would have more time</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 25 &mdash; &uuml;bersetzen</summary><div class="qbody">
+    <ol>
+      <li>Wenn ich du w&auml;re, w&uuml;rde ich gehen.</li>
+      <li>Wenn ich fr&uuml;her aufgestanden w&auml;re, h&auml;tte ich den Zug nicht verpasst.</li>
+      <li>Wenn du fertig bist, ruf mich an.</li>
+      <li>H&auml;tte ich doch mehr gelernt!</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;If I were you, I would go. &middot; 2&nbsp;If I had got up earlier, I wouldn&rsquo;t have missed the train. &middot; 3&nbsp;When you&rsquo;re finished, call me. &middot; 4&nbsp;If only I had studied more!</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch26">
+  <h2>26 &middot; Erz&auml;hlzeiten <span class="lvl b2">B2</span></h2>
+  <div class="ch-meta">Past Continuous, Past Perfect, used to / would</div>
+  <ul>
+    <li><strong>Past Continuous</strong> (<span class="en">was/were + -ing</span>): Hintergrundhandlung oder etwas, das im Gang war, als ein Ereignis eintrat: <span class="en">When I got home, a man <strong>was standing</strong> at the door.</span> Deutsch nimmt einfaches Pr&auml;teritum (<span class="de">stand ein Mann</span>); <span class="bad">a man stood</span> ist grammatisch, liest sich aber als Abfolge, nicht als Szene.</li>
+    <li><strong>Past Perfect</strong> (<span class="en">had + Partizip</span>) = <span class="de">Plusquamperfekt</span>, eins zu eins: <span class="en">When I arrived, everybody <strong>had left</strong>.</span> N&ouml;tig, wenn man von einem Punkt in der Vergangenheit weiter zur&uuml;ckgeht; auch in Bedingungss&auml;tzen Typ 3 (Kap.&nbsp;25) und in der indirekten Rede (Kap.&nbsp;27).</li>
+    <li><strong>Past Perfect Continuous:</strong> <span class="en">She <strong>had been waiting</strong> for an hour when he arrived.</span></li>
+    <li><strong>used to + Infinitiv</strong> = <span class="de">fr&uuml;her (immer)</span>: <span class="en">I <strong>used to</strong> live in Leipzig.</span> <strong>would</strong> f&uuml;r wiederholte Handlungen (nicht Zust&auml;nde): <span class="en">Every summer we <strong>would</strong> go to the sea.</span></li>
+  </ul>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; used to</span>
+  <p><span class="en">used to</span> hat keine Gegenwartsform und kein Perfekt: <span class="bad">I have used to learn English at school</span> &rarr; <span class="en">I <strong>used to</strong> learn English at school</span>. Nicht mit <span class="en">be used to + -ing</span> verwechseln (Kap.&nbsp;18). Und: Das deutsche Erz&auml;hlpr&auml;sens (<span class="de">Gestern gehe ich durch die Stadt, und pl&ouml;tzlich&hellip;</span>) ist im Englischen viel seltener &mdash; Geschichten in der Vergangenheit erz&auml;hlen.</p></div>
+  <details class="qe"><summary>Quiz 26</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Als ich ankam, telefonierte sie&ldquo;: (a) When I arrived, she phoned&nbsp; (b) When I arrived, she was phoning</li>
+      <li>&bdquo;Als ich ankam, war sie schon gegangen&ldquo;: (a) she already left&nbsp; (b) she had already left</li>
+      <li>&bdquo;Ich habe fr&uuml;her in Leipzig gewohnt&ldquo;: (a) I have used to live in Leipzig&nbsp; (b) I used to live in Leipzig</li>
+      <li>Past Continuous bildet man mit: (a) was/were + -ing&nbsp; (b) had + -ing</li>
+      <li><span class="en">would</span> f&uuml;r fr&uuml;here Gewohnheiten passt zu: (a) Handlungen&nbsp; (b) Zust&auml;nden</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 26 &mdash; Zeitform w&auml;hlen</summary><div class="qbody">
+    <ol>
+      <li>I (read) ___ when the phone (ring) ___.</li>
+      <li>By the time we (get) ___ there, the film (start) ___.</li>
+      <li>She (live) ___ in Rome for a year before she (move) ___ to Berlin.</li>
+      <li>As a child I (spend) ___ every summer at my grandparents&rsquo;. (used to)</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;was reading / rang &middot; 2&nbsp;got / had started &middot; 3&nbsp;had lived (had been living) / moved &middot; 4&nbsp;used to spend</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch27">
+  <h2>27 &middot; Indirekte Rede <span class="lvl b2">B2</span></h2>
+  <div class="ch-meta">Zeitverschiebung statt Konjunktiv I</div>
+  <p>Deutsch markiert indirekte Rede durch den Modus (<span class="de">Er sagte, er <strong>sei</strong> krank</span>) oder beh&auml;lt das Pr&auml;sens. Englisch hat keinen Konjunktiv I; nach einem Verb des Sagens in der Vergangenheit <strong>verschiebt es die Zeitform zur&uuml;ck</strong>:</p>
+  <table>
+    <tr><th>Direkt</th><th>Indirekt (nach &bdquo;said&ldquo;)</th></tr>
+    <tr><td class="en">&ldquo;I <strong>am</strong> tired.&rdquo;</td><td class="en">She said (that) she <strong>was</strong> tired.</td></tr>
+    <tr><td class="en">&ldquo;I <strong>work</strong> here.&rdquo;</td><td class="en">He said he <strong>worked</strong> there.</td></tr>
+    <tr><td class="en">&ldquo;I <strong>have finished</strong>.&rdquo; / &ldquo;I <strong>finished</strong>.&rdquo;</td><td class="en">She said she <strong>had finished</strong>.</td></tr>
+    <tr><td class="en">&ldquo;I <strong>will</strong> come.&rdquo;</td><td class="en">He said he <strong>would</strong> come.</td></tr>
+    <tr><td class="en">&ldquo;I <strong>can</strong> help.&rdquo;</td><td class="en">She said she <strong>could</strong> help.</td></tr>
+  </table>
+  <ul>
+    <li>Pronomen und Zeit-/Ortsw&ouml;rter verschieben sich mit: <span class="en">here &rarr; there, today &rarr; that day, tomorrow &rarr; the next day, ago &rarr; before</span>.</li>
+    <li><strong>Fragen:</strong> <span class="en">if/whether</span> (ob) oder das Fragewort, dann <strong>Aussagestellung</strong>, kein do: <span class="en">She asked <strong>if I was</strong> tired. He asked <strong>where I lived</strong>.</span> <span class="bad">He asked where did I live</span>.</li>
+    <li><strong>Aufforderungen:</strong> <span class="en">tell/ask + Objekt + to-Infinitiv</span>: <span class="en">He told me <strong>to wait</strong>.</span></li>
+    <li>Keine Verschiebung, wenn die Aussage noch gilt oder das Redeverb im Pr&auml;sens steht: <span class="en">She says she <strong>is</strong> tired.</span></li>
+    <li><span class="en">say</span> vs. <span class="en">tell</span>: <span class="en">tell</span> braucht eine Person (<span class="en">she told <strong>me</strong></span>); <span class="en">say</span> nicht (<span class="en">she said (to me) that&hellip;</span>).</li>
+  </ul>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; das Pr&auml;sens behalten</span>
+  <p><span class="de">Ich wusste nicht, was er will</span> &rarr; <span class="bad">I didn&rsquo;t know what he wants</span> &rarr; <span class="en">I didn&rsquo;t know what he <strong>wanted</strong>.</span> Deutsch toleriert Pr&auml;sens im abh&auml;ngigen Satz; Englisch gleicht es dem Redeverb in der Vergangenheit an. Und kein Komma nach dem Redeverb (Kap.&nbsp;21).</p></div>
+  <details class="qe"><summary>Quiz 27</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Er sagte, er sei krank&ldquo;: (a) He said he is sick&nbsp; (b) He said he was sick</li>
+      <li>&bdquo;Sie fragte, wo ich wohne&ldquo;: (a) She asked where I lived&nbsp; (b) She asked where did I live</li>
+      <li>&bdquo;Ich werde kommen&ldquo; indirekt: (a) he said he will come&nbsp; (b) he said he would come</li>
+      <li>&bdquo;Sie sagte mir, dass&hellip;&ldquo;: (a) She said me that&nbsp; (b) She told me that</li>
+      <li>&bdquo;Er bat mich zu warten&ldquo;: (a) He asked me to wait&nbsp; (b) He asked me that I wait</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;a &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 27 &mdash; in indirekte Rede setzen (Redeverb in der Vergangenheit)</summary><div class="qbody">
+    <ol>
+      <li>&ldquo;I&rsquo;m working from home today.&rdquo; (She said&hellip;)</li>
+      <li>&ldquo;Have you seen my keys?&rdquo; (He asked me&hellip;)</li>
+      <li>&ldquo;I&rsquo;ll call you tomorrow.&rdquo; (She promised&hellip;)</li>
+      <li>&ldquo;Please close the door.&rdquo; (He asked me&hellip;)</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;She said she was working from home that day. &middot; 2&nbsp;He asked me if I had seen his keys. &middot; 3&nbsp;She promised she would call me the next day. &middot; 4&nbsp;He asked me to close the door.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch28">
+  <h2>28 &middot; Phrasal Verbs <span class="lvl b2">B2&ndash;C1</span></h2>
+  <div class="ch-meta">Deine trennbaren Verben auf Englisch &mdash; und wo die Bedeutung undurchsichtig wird</div>
+  <p>Englische Phrasal Verbs (<span class="en">get up, put on, give up, look after, put up with</span>) sind die Verwandten der deutschen trennbaren Verben (<span class="de">aufstehen, anziehen, aufgeben</span>). Die Mechanik ist vertraut, die Bedeutungen oft nicht.</p>
+  <ul>
+    <li><strong>Trennbar</strong> (Verb + Partikel, Objekt darf dazwischen): <span class="en">Turn on the light / Turn the light on</span>. Bei einem <strong>Pronomen</strong> als Objekt <em>muss</em> die Partikel folgen: <span class="en">Turn <strong>it</strong> on</span>, niemals <span class="bad">Turn on it</span>.</li>
+    <li><strong>Untrennbar</strong> (Verb + Pr&auml;position): <span class="en">look after the kids</span> (nicht <span class="bad">look the kids after</span>), <span class="en">look for, deal with, get over</span>.</li>
+    <li><strong>Dreiteilig:</strong> <span class="en">look forward to, put up with, get on with, run out of</span>.</li>
+    <li>Register: Phrasal Verbs sind informell und m&uuml;ndlich; lateinische Einzelverben sind formell (<span class="en">put off &rarr; postpone, find out &rarr; discover, give up &rarr; abandon</span>). Deutschsprachige &uuml;berbenutzen die formellen, weil das die Verwandten sind, die sie kennen &mdash; ausbalancieren.</li>
+  </ul>
+  <div class="box trap"><span class="label">Typischer Fehler &middot; w&ouml;rtliche &Uuml;bersetzung und falsche Verwandte</span>
+  <p><span class="de">&uuml;berh&ouml;ren</span> ist nicht <span class="en">overhear</span> (= zuf&auml;llig mith&ouml;ren), sondern <span class="en">not hear / miss</span>. <span class="de">&uuml;bersehen</span> ist nicht <span class="en">oversee</span> (= beaufsichtigen), sondern <span class="en">overlook</span>. <span class="de">einladen</span> ist <span class="en">invite</span>, nicht <span class="bad">load in</span>. Phrasal Verbs als ganze Einheiten mit Beispielsatz lernen &mdash; die Partikel verr&auml;t die Bedeutung selten.</p></div>
+  <details class="qe"><summary>Quiz 28</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Mach es aus&ldquo; (das Licht): (a) Turn off it&nbsp; (b) Turn it off</li>
+      <li>&bdquo;Er hat mich &uuml;berh&ouml;rt&ldquo;: (a) He overheard me&nbsp; (b) He didn&rsquo;t hear me</li>
+      <li><span class="en">look after</span> ist: (a) trennbar&nbsp; (b) untrennbar</li>
+      <li>Formelle Entsprechung von <span class="en">put off</span>: (a) postpone&nbsp; (b) remove</li>
+      <li>&bdquo;Ich freue mich auf das Wochenende&ldquo;: (a) I look forward to the weekend&nbsp; (b) I look forward on the weekend</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;a &middot; 5&nbsp;a</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 28 &mdash; durch ein Phrasal Verb ersetzen (get up, give up, look after, find out, put off)</summary><div class="qbody">
+    <ol>
+      <li>I discovered the truth.</li>
+      <li>She abandoned smoking.</li>
+      <li>We postponed the meeting.</li>
+      <li>Who takes care of the children?</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;I found out the truth. &middot; 2&nbsp;She gave up smoking. &middot; 3&nbsp;We put the meeting off / put off the meeting. &middot; 4&nbsp;Who looks after the children?</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch29">
+  <h2>29 &middot; Inversion, Betonung, Spaltsatz <span class="lvl c1">C1</span></h2>
+  <div class="ch-meta">Wo Englisch doch invertiert &mdash; und wie es ohne V2 voranstellt</div>
+  <p>Englisch hat V2 verloren, aber die Inversion als <strong>Stilmittel</strong> an wenigen Stellen behalten. Sie zu erkennen und zu steuern ist ein C1-Merkmal:</p>
+  <ul>
+    <li><strong>Negative / einschr&auml;nkende Adverbiale vorangestellt</strong> &rarr; Hilfsverb-Inversion: <span class="en"><strong>Never have I</strong> seen such a mess. <strong>Rarely does</strong> she complain. <strong>Not only did</strong> he lie, he also stole. <strong>Only then did</strong> I understand. <strong>Under no circumstances should</strong> you open it.</span> Formell; nicht in lockerer Rede.</li>
+    <li><strong>Inversion im Bedingungssatz</strong> (formell, ohne if): <span class="en"><strong>Had I</strong> known, I would have come. <strong>Should you</strong> need help, call me. <strong>Were I</strong> you&hellip;</span> &mdash; strukturell identisch mit <span class="de">H&auml;tte ich das gewusst, &hellip;</span>, echter positiver Transfer.</li>
+    <li><strong>so / neither</strong>: <span class="en">So do I. Neither did she.</span></li>
+    <li><strong>Spalts&auml;tze</strong> zur Fokussierung, wo Deutsch einfach voranstellt: <span class="de">Den Wein habe ich gekauft</span> &rarr; <span class="en"><strong>It was the wine that</strong> I bought.</span> <span class="en"><strong>What I need is</strong> a break.</span></li>
+    <li><strong>Emphatisches do</strong>: <span class="en">I <strong>do</strong> like it.</span> (Ich mag es <em>wirklich/doch</em>) &mdash; das N&auml;chste an einer Modalpartikel, was Englisch hat.</li>
+  </ul>
+  <div class="box deutsch"><span class="label">Deutsche Parallele &middot; Partikeln</span>
+  <p>Englisch hat kein <span class="de">doch/ja/mal/eben</span>. Ihre Arbeit erledigen Intonation, emphatisches <span class="en">do</span>, Tags (Kap.&nbsp;23) und Adverbien wie <span class="en">actually, just, surely, after all</span>. <span class="de">doch</span> Wort f&uuml;r Wort zu &uuml;bersetzen ist der Grund, warum deutsch gef&auml;rbtes Englisch flach oder seltsam schroff klingen kann &mdash; mit diesen Mitteln ausgleichen, nicht mit mehr W&ouml;rtern.</p></div>
+  <details class="qe"><summary>Quiz 29</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Nie habe ich so etwas gesehen&ldquo; (emphatisch): (a) Never I have seen such a thing&nbsp; (b) Never have I seen such a thing</li>
+      <li>&bdquo;H&auml;tte ich das gewusst&hellip;&ldquo; (formell, ohne if): (a) Had I known&nbsp; (b) Would I have known</li>
+      <li>&bdquo;Das Buch habe ich gekauft&ldquo; (Fokus auf das Buch): (a) The book I bought&nbsp; (b) It was the book that I bought</li>
+      <li>Vorangestellte negative Adverbiale l&ouml;sen Inversion aus in: (a) lockerer Rede&nbsp; (b) formellem Stil</li>
+      <li>&bdquo;Ich mag es doch!&ldquo;: (a) I like it doch&nbsp; (b) I do like it!</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;b &middot; 2&nbsp;a &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 29 &mdash; mit Inversion oder Spaltsatz umformen</summary><div class="qbody">
+    <ol>
+      <li>I have rarely seen such courage. (&bdquo;rarely&ldquo; voranstellen)</li>
+      <li>If you should have any questions, contact us. (&bdquo;if&ldquo; streichen)</li>
+      <li>I need a holiday. (What-Spaltsatz)</li>
+      <li>He not only apologised, he also paid. (&bdquo;not only&ldquo; voranstellen)</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;Rarely have I seen such courage. &middot; 2&nbsp;Should you have any questions, contact us. &middot; 3&nbsp;What I need is a holiday. &middot; 4&nbsp;Not only did he apologise, he also paid.</div></details>
+  </div></details>
+</section>
+
+<section class="chapter" id="ch30">
+  <h2>30 &middot; Stil f&uuml;r Fortgeschrittene <span class="lvl c1">C1&ndash;C2</span></h2>
+  <div class="ch-meta">Konjunktiv, Register, Verben statt Nomen &mdash; und die letzten Denglisch-Gewohnheiten</div>
+  <ul>
+    <li><strong>Mandativer Konjunktiv</strong> (bes. US-Englisch): nach <span class="en">suggest, demand, insist, recommend, it is essential that</span> der blo&szlig;e Stamm: <span class="en">I suggest that he <strong>be</strong> informed. It is essential that she <strong>arrive</strong> on time.</span> Britisches Englisch nimmt oft <span class="en">should</span> oder den Indikativ.</li>
+    <li><strong>Verbalstil statt Nominalstil.</strong> Formelles Deutsch liebt Nomen (<span class="de">nach Beendigung des Projekts</span>, <span class="de">die Durchf&uuml;hrung der Analyse</span>). Gutes Englisch bevorzugt Verben: <span class="en">after the project ended</span>, <span class="en">we analysed</span>. W&ouml;rtlich &uuml;bersetzter Nominalstil ergibt schweres, b&uuml;rokratisches Englisch (<span class="bad">the realisation of the implementation</span>).</li>
+    <li><strong>Satzl&auml;nge.</strong> Englische Leser erwarten k&uuml;rzere S&auml;tze und weniger Verschachtelung als deutsche Fachprosa; teilen statt schachteln.</li>
+    <li><strong>Registerwortschatz.</strong> Germanische Phrasal Verbs = informell; lateinische Verben = formell (Kap.&nbsp;28). <span class="en">get</span> ist der gro&szlig;e informelle Allrounder (<span class="en">get a job, get tired, get home, get it</span>) &mdash; gesprochen nutzen, in formellem Schreiben meiden.</li>
+    <li><strong>Abmildern und H&ouml;flichkeit.</strong> Englisch federt st&auml;rker ab als Deutsch: <span class="en">I&rsquo;m afraid that&rsquo;s not quite right</span> statt <span class="bad">That is wrong</span>; <span class="en">Could you possibly&hellip;? Would you mind&hellip;?</span> Direkt &uuml;bertragene deutsche Direktheit wirkt unh&ouml;flich, selbst bei perfekter Grammatik.</li>
+    <li><strong>Zahlen und Formate.</strong> <span class="en">1,000.50</span> (Komma f&uuml;r Tausender, Punkt f&uuml;r Dezimalen &mdash; umgekehrt zum Deutschen), <span class="en">a billion</span> = eine Milliarde (nicht <span class="bad">a milliard</span>), <span class="en">No.</span> f&uuml;r Nummer (nicht <span class="bad">Nr.</span>), Datum <span class="en">5 May 2026</span> (UK) / <span class="en">May 5, 2026</span> (US).</li>
+    <li><strong>Wetter und Idiomatik.</strong> <span class="en">It&rsquo;s 26 degrees</span> (nicht <span class="bad">we have 26 degrees</span>); <span class="en">What&rsquo;s it like?</span>; <span class="en">I&rsquo;m working from home</span> (nicht <span class="bad">I make home office</span>).</li>
+  </ul>
+  <details class="qe"><summary>Quiz 30</summary><div class="qbody">
+    <ol>
+      <li>&bdquo;Ich schlage vor, dass er informiert wird&ldquo; (formell, AmE): (a) I suggest that he be informed&nbsp; (b) I suggest that he is informed</li>
+      <li>&bdquo;nach Beendigung des Projekts&ldquo; in gutem Englisch: (a) after the completion of the project&nbsp; (b) after the project ended</li>
+      <li>&bdquo;eine Milliarde&ldquo;: (a) a milliard&nbsp; (b) a billion</li>
+      <li>&bdquo;Wir haben 30 Grad&ldquo;: (a) We have 30 degrees&nbsp; (b) It&rsquo;s 30 degrees</li>
+      <li>Englischer Dezimaltrenner: (a) 3,5&nbsp; (b) 3.5</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;a &middot; 2&nbsp;b &middot; 3&nbsp;b &middot; 4&nbsp;b &middot; 5&nbsp;b</div></details>
+  </div></details>
+  <details class="qe"><summary>&Uuml;bung 30 &mdash; englisch klingen lassen</summary><div class="qbody">
+    <ol>
+      <li>The implementation of the new system took place in March.</li>
+      <li>That is wrong. (f&uuml;r eine Besprechung abmildern)</li>
+      <li>I make home office on Fridays.</li>
+      <li>The price is 2.500,00 euros.</li>
+    </ol>
+    <details class="ans"><summary>L&ouml;sung anzeigen</summary><div class="abody">1&nbsp;We implemented the new system in March. &middot; 2&nbsp;I&rsquo;m not sure that&rsquo;s quite right. / I&rsquo;m afraid that isn&rsquo;t correct. &middot; 3&nbsp;I work from home on Fridays. &middot; 4&nbsp;The price is 2,500.00 euros.</div></details>
+  </div></details>
+</section>
+<!-- ================= NACHSCHLAGEN ================= -->
+<section class="part-head" id="reference">
+  <div class="part-label">Nachschlagen</div>
+  <h2>Anh&auml;nge, Lernplan &amp; Einschr&auml;nkungen</h2>
+</section>
+
+<section class="chapter appendix" id="appa">
+  <h2>Anhang A &middot; Laut- &amp; Schreibhilfe</h2>
+  <p>Die zweite Lautverschiebung r&uuml;ckw&auml;rts: Dein Deutsch sagt englische Verwandte voraus.</p>
+  <ul>
+    <li>Deutsch <strong>t</strong> &rarr; Englisch <strong>d</strong>: <span class="de">Tag</span>/<span class="en">day</span>, <span class="de">Tochter</span>/<span class="en">daughter</span>, <span class="de">tot</span>/<span class="en">dead</span>, <span class="de">Tier</span>/<span class="en">deer</span></li>
+    <li>Deutsch <strong>z/ss</strong> &rarr; Englisch <strong>t</strong>: <span class="de">zwei</span>/<span class="en">two</span>, <span class="de">Wasser</span>/<span class="en">water</span>, <span class="de">Zunge</span>/<span class="en">tongue</span>, <span class="de">essen</span>/<span class="en">eat</span></li>
+    <li>Deutsch <strong>ch</strong> &rarr; Englisch <strong>k</strong>: <span class="de">machen</span>/<span class="en">make</span>, <span class="de">Buch</span>/<span class="en">book</span>, <span class="de">Milch</span>/<span class="en">milk</span></li>
+    <li>Deutsch <strong>pf/f</strong> &rarr; Englisch <strong>p</strong>: <span class="de">Pfeffer</span>/<span class="en">pepper</span>, <span class="de">Schiff</span>/<span class="en">ship</span>, <span class="de">Apfel</span>/<span class="en">apple</span></li>
+    <li>Deutsch <strong>d</strong> &rarr; Englisch <strong>th</strong>: <span class="de">Ding</span>/<span class="en">thing</span>, <span class="de">Bruder</span>/<span class="en">brother</span>, <span class="de">drei</span>/<span class="en">three</span>, <span class="de">Bad</span>/<span class="en">bath</span></li>
+    <li>Deutsch <strong>g</strong> &rarr; Englisch <strong>y</strong> (oder stumm): <span class="de">gestern</span>/<span class="en">yesterday</span>, <span class="de">Tag</span>/<span class="en">day</span>, <span class="de">Weg</span>/<span class="en">way</span></li>
+  </ul>
+  <p><strong>F&uuml;nf Laute zum &Uuml;ben</strong> (Kap.&nbsp;1): th (think/this), w vs. v (wine/vine), stimmhafter Auslaut (bad/bat), &aelig; vs. e (man/men), weiches r. <strong>Schreibfallen:</strong> <span class="en">-ce/-se</span> (<span class="en">advice</span> Nomen / <span class="en">advise</span> Verb), stumme Buchstaben (<span class="en">knife, island, Wednesday</span>), <span class="en">ie/ei</span> (<span class="en">receive, believe</span>).</p>
+</section>
+
+<section class="chapter appendix" id="appb">
+  <h2>Anhang B &middot; Falsche Freunde</h2>
+  <table>
+    <tr><th>Deutsch</th><th>Sieht aus wie</th><th>Bedeutet aber</th><th>Gesucht ist</th></tr>
+    <tr><td class="de">bekommen</td><td class="en">become</td><td>werden</td><td class="en">get, receive</td></tr>
+    <tr><td class="de">wollen / will</td><td class="en">will</td><td>werden (Futur)</td><td class="en">want to</td></tr>
+    <tr><td class="de">aktuell</td><td class="en">actual</td><td>tats&auml;chlich</td><td class="en">current, up to date</td></tr>
+    <tr><td class="de">eventuell</td><td class="en">eventually</td><td>schlie&szlig;lich, irgendwann</td><td class="en">possibly, perhaps</td></tr>
+    <tr><td class="de">Chef</td><td class="en">chef</td><td>Koch</td><td class="en">boss, manager</td></tr>
+    <tr><td class="de">Handy</td><td class="en">handy</td><td>praktisch</td><td class="en">(mobile / cell) phone</td></tr>
+    <tr><td class="de">Beamer</td><td class="en">beamer</td><td>(Slang: BMW)</td><td class="en">projector</td></tr>
+    <tr><td class="de">Fabrik</td><td class="en">fabric</td><td>Stoff</td><td class="en">factory</td></tr>
+    <tr><td class="de">Gift</td><td class="en">gift</td><td>Geschenk</td><td class="en">poison</td></tr>
+    <tr><td class="de">brav</td><td class="en">brave</td><td>mutig</td><td class="en">well-behaved, good</td></tr>
+    <tr><td class="de">sensibel</td><td class="en">sensible</td><td>vern&uuml;nftig</td><td class="en">sensitive</td></tr>
+    <tr><td class="de">&uuml;berh&ouml;ren</td><td class="en">overhear</td><td>zuf&auml;llig mith&ouml;ren</td><td class="en">not hear, miss</td></tr>
+    <tr><td class="de">&uuml;bersehen</td><td class="en">oversee</td><td>beaufsichtigen</td><td class="en">overlook</td></tr>
+    <tr><td class="de">erinnern an</td><td class="en">remember</td><td>sich erinnern</td><td class="en">remind: <em>this reminds me of</em></td></tr>
+    <tr><td class="de">Personen</td><td class="en">persons</td><td>(nur juristisch)</td><td class="en">people</td></tr>
+    <tr><td class="de">meine Frau</td><td class="en">my woman</td><td>(besitzergreifend, seltsam)</td><td class="en">my wife</td></tr>
+    <tr><td class="de">Pause machen</td><td class="en">make a pause</td><td>&mdash;</td><td class="en">take a break</td></tr>
+    <tr><td class="de">gro&szlig; (Gr&ouml;&szlig;e)</td><td class="en">great</td><td>toll, gro&szlig;artig</td><td class="en">big, large, huge</td></tr>
+    <tr><td class="de">Milliarde</td><td class="en">milliard</td><td>(veraltet)</td><td class="en">billion</td></tr>
+    <tr><td class="de">also</td><td class="en">also</td><td>auch</td><td class="en">so, therefore</td></tr>
+  </table>
+  <p class="kicker">Korpusbasierte Listen deutsch-englischer falscher Freunde umfassen mehrere hundert Paare; die zwanzig oben verursachen den Gro&szlig;teil der Fehler, die Lehrkr&auml;fte deutschsprachiger Berufst&auml;tiger berichten.</p>
+</section>
+
+<section class="chapter appendix" id="appc">
+  <h2>Anhang C &middot; make / do &amp; weitere Kollokationen</h2>
+  <p>Deutsches <span class="de">machen</span> deckt beides ab. Englisch trennt ohne verl&auml;ssliche Regel &mdash; als Chunks lernen:</p>
+  <table>
+    <tr><th>do</th><th>make</th></tr>
+    <tr><td class="en">do homework, do the dishes, do a job, do business, do a course, do your best, do a favour, do sport, do research, do the shopping</td><td class="en">make a decision, make a mistake, make money, make a phone call, make a suggestion, make plans, make sure, make an effort, make a cake, make friends, make progress</td></tr>
+  </table>
+  <p>Weitere h&auml;ufige Chunks, die Deutschsprachige falsch bilden: <span class="en">take a photo / take a break / take a shower</span> (<span class="de">machen</span>), <span class="en">have breakfast / have a party</span> (<span class="de">fr&uuml;hst&uuml;cken / eine Party machen</span>), <span class="en">throw a party</span>, <span class="en">give a presentation</span> (<span class="de">halten</span>), <span class="en">work from home</span> (<span class="de">Homeoffice machen</span>), <span class="en">it depends</span>, <span class="en">by the way</span> (<span class="de">&uuml;brigens</span>), <span class="en">at the moment</span> (<span class="de">gerade / zurzeit</span>).</p>
+</section>
+
+<section class="chapter" id="plan">
+  <h2>Lernplan f&uuml;r Deutschsprachige</h2>
+  <div class="ch-meta">Gestufte Empfehlungen mit Schwellen und Kontrollpunkten</div>
+  <ol>
+    <li><strong>Woche 1&ndash;2 &mdash; Grundlagen (Kap. 1&ndash;8).</strong> Grammatisch leicht f&uuml;r Deutschsprachige; die gesparte Zeit in Kapitel 1 (Laute) und die drei Gewohnheitsbrecher stecken: Umschreibung mit do (Kap. 7&ndash;8), keine V2-Inversion (Kap. 6) und die Idee &bdquo;Present Simple ist enger als das Pr&auml;sens&ldquo; (Kap. 4). Schwelle: 90 % in den &Uuml;bungen, Fragen mit do ohne Nachdenken.</li>
+    <li><strong>Woche 3&ndash;8 &mdash; Kern (Kap. 9&ndash;23).</strong> Ein Kapitel pro 2&ndash;3 Tage: lesen &rarr; Quiz &rarr; &Uuml;bung &rarr; &Uuml;bung von zwei Kapiteln zuvor wiederholen. <strong>Doppelte Zeit</strong> f&uuml;r die Zeitenkapitel 9&ndash;13 und f&uuml;r die Wortstellung (Kap. 19). Kontrollpunkt B1: Du sagst <span class="en">I saw the film yesterday</span> und <span class="en">I&rsquo;ve lived here for five years</span> beim Sprechen richtig, ohne zu stocken, und die Kommas vor &bdquo;that&ldquo; sind verschwunden.</li>
+    <li><strong>Woche 9&ndash;14 &mdash; Richtung B2 (Kap. 24&ndash;27).</strong> Passiv (inkl. <span class="en">I was given</span>), Bedingungss&auml;tze ohne <span class="en">would</span> im if-Satz, Erz&auml;hlzeiten, indirekte Rede mit Zeitverschiebung. Kontrollpunkt: Du kannst eine Geschichte aus einem Nachrichtenartikel mit korrektem Past Continuous / Past Perfect nacherz&auml;hlen, und ein Muttersprachler h&ouml;rt kein &bdquo;If I would have&hellip;&ldquo; mehr.</li>
+    <li><strong>Ab Monat 4 &mdash; C1/C2 (Kap. 28&ndash;30).</strong> Phrasal Verbs als Wortschatz, Inversion und Spalts&auml;tze erst als Lesekompetenz, dann produktiv im formellen Schreiben; Verbal- statt Nominalstil; Abmildern. Kontrollpunkt: Ein Text von dir ist an Kommas, Nomen und Direktheit nicht mehr als deutsch geschrieben zu erkennen.</li>
+    <li><strong>Durchgehend &mdash; Deutsch nutzen, falschen Freunden misstrauen.</strong> Anhang A zum Wortschatzraten, Anhang B sichtbar halten, make/do (Anhang C) als Chunks auswendig. T&auml;glich muttersprachliches Englisch h&ouml;ren &mdash; den akzentz&auml;hlenden Rhythmus und das Schwa lernt man mit dem Ohr, nicht &uuml;ber Regeln.</li>
+  </ol>
+  <div class="box note"><span class="label">Signale, die den Plan &auml;ndern sollten</span>
+  <p>Sagst du weiter <span class="en">I have done it yesterday</span>: Stopp, eine Woche Kap. 10&ndash;11 mit einer Checkliste abgeschlossener Zeitangaben. Bitten dich Muttersprachler, W&ouml;rter zu wiederholen: Es ist fast immer th, w/v oder ein verh&auml;rteter Auslaut &mdash; Kap. 1, nicht Grammatik. Wirken deine S&auml;tze auf Leser &bdquo;deutsch geformt&ldquo;: Zuerst auf Trennung von Verb und Objekt und Ort/Zeit-Reihenfolge pr&uuml;fen (Kap. 19).</p></div>
+</section>
+
+<section class="chapter" id="caveats">
+  <h2>Einschr&auml;nkungen</h2>
+  <ul>
+    <li><strong>Grammatikstufe ist nicht gleich CEFR-Kompetenzstufe.</strong> Die Kennzeichnungen zeigen, wo eine Struktur &uuml;blicherweise unterrichtet wird; Deutschsprachige kennen die Regeln oft lange, bevor sie sie unter Zeitdruck anwenden. Die Trefferquote bei Present Perfect und Verlaufsformen in der Produktion ist die echte B1/C1-Grenze, nicht das Regelwissen.</li>
+    <li><strong>Die kontrastive Methode hat Grenzen.</strong> Kontrastive Analyse sagt Fehler voraus, die nie auftreten (Verb am Ende im Englischen ist selten), und &uuml;bersieht andere; die deutschen Parallelen als Ger&uuml;st nutzen, nicht als Garantie.</li>
+    <li><strong>Britisches und amerikanisches Englisch unterscheiden sich</strong> genau in den Bereichen dieses Kurses: <span class="en">at/on the weekend</span>, Present Perfect vs. Simple Past mit <span class="en">just/already</span> (US-Englisch erlaubt eher Simple Past), mandativer Konjunktiv, Rechtschreibung (<span class="en">colour/color, practise/practice</span>) und Wortschatz (<span class="en">mobile/cell phone</span>). Der Kurs neigt zum Britischen, wo er sich entscheiden muss, und markiert die Unterschiede.</li>
+    <li><strong>Register z&auml;hlt mehr als im Deutschen.</strong> Phrasal vs. lateinischer Wortschatz, Kurzformen, Abmildern und Direktheit sind Registersignale; grammatisch perfektes Englisch kann trotzdem falsch klingen, wenn das Register nicht stimmt.</li>
+    <li><strong>Dies ist ein Grammatikkurs, kein vollst&auml;ndiger Sprachkurs.</strong> Er l&auml;sst systematischen Wortschatzaufbau, ausgiebiges H&ouml;r- und Sprechtraining und Rechtschreib&uuml;bungen bewusst weg. Mit t&auml;glichem Lesen und H&ouml;ren kombinieren.</li>
+  </ul>
+</section>
+
+<footer>
+  Englische Grammatik f&uuml;r Deutschsprachige &middot; A1&ndash;C2 &middot; Band 3 der Reihe &middot; Grundlage: kontrastive Analyse (Lado), Focus on Form (Long), Abrufpraxis (Roediger &amp; Karpicke), Spacing-Effekt und ver&ouml;ffentlichte Fehlerinventare deutscher Englischlerner.
+</footer>
+</main>
+</div>
+<script>
+(function(){
+  var links = document.querySelectorAll('nav a[href^="#"]');
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var targets = document.querySelectorAll('section[id], header[id]');
+  var current = null;
+  if(!('IntersectionObserver' in window)) return;
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var id = e.target.id;
+        if(map[id]){
+          if(current) current.classList.remove('active');
+          current = map[id];
+          current.classList.add('active');
+        }
+      }
+    });
+  },{rootMargin:'-10% 0px -70% 0px'});
+  targets.forEach(function(t){ obs.observe(t); });
+})();
+</script>
+<script>
+(function(){
+  /* ---------- persistent state (localStorage, per file) ---------- */
+  var KEY = 'grammar-course:' + document.title.replace(/[^A-Za-z]+/g,'-');
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY) || '{}'); }catch(e){ return {}; } }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+  var state = load(); state.done = state.done || {}; state.quiz = state.quiz || {};
+
+  /* ---------- sidebar: search + progress ---------- */
+  var nav = document.getElementById('toc');
+  var brandSub = nav.querySelector('.brand-sub');
+  var search = document.createElement('input');
+  search.id = 'navsearch'; search.type = 'search'; search.placeholder = 'Kapitel filtern\u2026'; search.setAttribute('aria-label','Kapitel filtern');
+  var prog = document.createElement('div'); prog.id = 'progress';
+  prog.innerHTML = '<div class="bar"><span></span></div><div class="txt"><span class="n"></span><a class="reset" title="Gespeicherten Fortschritt und Quiz-Ergebnisse l\u00f6schen">zur\u00fccksetzen</a></div>';
+  brandSub.insertAdjacentElement('afterend', prog);
+  brandSub.insertAdjacentElement('afterend', search);
+
+  var navLinks = Array.prototype.slice.call(nav.querySelectorAll('.navlinks a'));
+  var navParts = Array.prototype.slice.call(nav.querySelectorAll('.navlinks .part'));
+  search.addEventListener('input', function(){
+    var q = search.value.trim().toLowerCase();
+    navLinks.forEach(function(a){ a.classList.toggle('hidden', q && a.textContent.toLowerCase().indexOf(q) < 0); });
+    navParts.forEach(function(p){
+      var el = p.nextElementSibling, any = false;
+      while(el && !el.classList.contains('part')){ if(el.tagName === 'A' && !el.classList.contains('hidden')) any = true; el = el.nextElementSibling; }
+      p.classList.toggle('hidden', !any);
+    });
+  });
+  prog.querySelector('.reset').addEventListener('click', function(){
+    if(!confirm('Gesamten Fortschritt und alle Quiz-Ergebnisse dieses Kurses l\u00f6schen?')) return;
+    state = {done:{}, quiz:{}}; save(); location.reload();
+  });
+
+  /* ---------- chapter "done" toggles ---------- */
+  var chapterIds = [];
+  document.querySelectorAll('section.chapter[id^="ch"]').forEach(function(sec){
+    chapterIds.push(sec.id);
+    var anchor = sec.querySelector('.ch-meta') || sec.querySelector('h2');
+    var label = document.createElement('label'); label.className = 'done-toggle';
+    var cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!state.done[sec.id];
+    label.appendChild(cb); label.appendChild(document.createTextNode('Kapitel als erledigt markieren'));
+    cb.addEventListener('change', function(){ if(cb.checked) state.done[sec.id] = 1; else delete state.done[sec.id]; save(); paint(); });
+    anchor.insertAdjacentElement('afterend', label);
+  });
+  function paint(){
+    var n = 0;
+    chapterIds.forEach(function(id){ if(state.done[id]) n++; });
+    nav.querySelectorAll('a[href^="#ch"]').forEach(function(a){ a.classList.toggle('done', !!state.done[a.getAttribute('href').slice(1)]); });
+    prog.querySelector('.bar span').style.width = (100 * n / chapterIds.length) + '%';
+    prog.querySelector('.txt .n').textContent = n + ' / ' + chapterIds.length + ' Kapitel erledigt';
+  }
+  paint();
+
+  /* ---------- expand / collapse all + print handling ---------- */
+  var tools = document.createElement('div'); tools.className = 'tools';
+  tools.innerHTML = '<a class="exp">Alle Quizzes &amp; \u00dcbungen aufklappen</a><a class="col">Alle zuklappen</a><a class="prn">Drucken / als PDF speichern</a>';
+  var firstPart = document.querySelector('section.part-head');
+  if(firstPart) firstPart.insertAdjacentElement('beforebegin', tools);
+  function setAll(open){ document.querySelectorAll('details').forEach(function(d){ d.open = open; }); }
+  tools.querySelector('.exp').addEventListener('click', function(){ setAll(true); });
+  tools.querySelector('.col').addEventListener('click', function(){ setAll(false); });
+  tools.querySelector('.prn').addEventListener('click', function(){ window.print(); });
+  var wasOpen = null;
+  window.addEventListener('beforeprint', function(){
+    wasOpen = Array.prototype.map.call(document.querySelectorAll('details'), function(d){ return d.open; });
+    setAll(true);
+  });
+  window.addEventListener('afterprint', function(){
+    if(!wasOpen) return;
+    Array.prototype.forEach.call(document.querySelectorAll('details'), function(d,i){ d.open = wasOpen[i]; });
+    wasOpen = null;
+  });
+
+  /* ---------- interactive quizzes ---------- */
+  function shuffle(arr){ for(var i = arr.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = arr[i]; arr[i] = arr[j]; arr[j] = t; } return arr; }
+  function stripTail(s){ return s.replace(/^(\s|&nbsp;|\u00a0)+|(\s|&nbsp;|\u00a0)+$/g, ''); }
+
+  document.querySelectorAll('details.qe').forEach(function(d, qi){
+    var sum = d.querySelector('summary');
+    if(!/^\s*Quiz/.test(sum.textContent)) return;
+    var ans = d.querySelector('details.ans');
+    var body = ans && ans.querySelector('.abody');
+    if(!body) return;
+    var sec = d.closest('section'); var qid = (sec ? sec.id : 'q') + ':' + qi;
+
+    /* parse answer key: "1 b · 2 c (note) · 3 a" */
+    var key = {};
+    body.textContent.split('\u00b7').forEach(function(p){
+      var m = p.trim().match(/^(\d+)[\s\u00a0]*([a-d])\b[\s\u00a0]*(.*)$/);
+      if(m) key[m[1]] = { a: m[2], note: m[3].replace(/^\((.*)\)$/, '$1').trim() };
+    });
+
+    var items = d.querySelectorAll('.qbody > ol > li');
+    var total = 0, answered = 0, score = 0, converted = 0;
+    var scoreEl = document.createElement('span'); scoreEl.className = 'qscore'; sum.appendChild(scoreEl);
+    var retry = document.createElement('button'); retry.type = 'button'; retry.className = 'qretry'; retry.textContent = 'Noch einmal'; retry.style.display = 'none';
+
+    function paintScore(){
+      if(!total) return;
+      var saved = state.quiz[qid];
+      if(answered === total){ scoreEl.textContent = 'Ergebnis ' + score + ' / ' + total; scoreEl.classList.toggle('full', score === total); retry.style.display = ''; }
+      else if(saved){ scoreEl.textContent = 'Letztes Ergebnis ' + saved.s + ' / ' + saved.t; scoreEl.classList.toggle('full', saved.s === saved.t); }
+      else scoreEl.textContent = '';
+    }
+
+    items.forEach(function(li, idx){
+      var n = String(idx + 1); var k = key[n]; if(!k) return;
+      var parts = li.innerHTML.split(/\(([a-d])\)(?:&nbsp;|\s)*/);
+      if(parts.length < 5) return;                      /* need stem + at least 2 options */
+      var stem = stripTail(parts[0]); var opts = [];
+      for(var i = 1; i < parts.length; i += 2){ opts.push({ letter: parts[i], html: stripTail(parts[i + 1] || '') }); }
+      if(!opts.some(function(o){ return o.letter === k.a; })) return;
+      total++; converted++;
+      li.innerHTML = '';
+      var wrap = document.createElement('div'); wrap.className = 'qitem';
+      var st = document.createElement('div'); st.className = 'stem'; st.innerHTML = stem; wrap.appendChild(st);
+      var box = document.createElement('div'); box.className = 'qopts'; wrap.appendChild(box);
+      var fb = document.createElement('div'); fb.className = 'qfeedback'; wrap.appendChild(fb);
+      var buttons = [];
+      shuffle(opts.slice()).forEach(function(o){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'qopt'; b.innerHTML = o.html; b.dataset.letter = o.letter;
+        b.addEventListener('click', function(){
+          if(b.disabled) return;
+          var ok = o.letter === k.a;
+          buttons.forEach(function(x){ x.disabled = true; if(x.dataset.letter === k.a) x.classList.add('correct'); else if(x === b) x.classList.add('wrong'); else x.classList.add('dim'); });
+          fb.textContent = (ok ? 'Richtig.' : 'Leider nein.') + (k.note ? ' ' + k.note : '');
+          fb.className = 'qfeedback ' + (ok ? 'ok' : 'ko');
+          answered++; if(ok) score++;
+          if(answered === total){ state.quiz[qid] = { s: score, t: total }; save(); }
+          paintScore();
+        });
+        buttons.push(b); box.appendChild(b);
+      });
+      li.appendChild(wrap);
+      li._reset = function(){
+        buttons.forEach(function(x){ x.disabled = false; x.className = 'qopt'; });
+        fb.textContent = ''; fb.className = 'qfeedback';
+        var order = shuffle(buttons.slice()); order.forEach(function(x){ box.appendChild(x); });
+      };
+    });
+
+    if(converted){
+      ans.classList.add('print-only');      /* key stays available for printing */
+      d.querySelector('.qbody').appendChild(retry);
+      retry.addEventListener('click', function(){
+        items.forEach(function(li){ if(li._reset) li._reset(); });
+        answered = 0; score = 0; retry.style.display = 'none'; paintScore();
+      });
+      paintScore();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

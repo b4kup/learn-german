@@ -184,6 +184,82 @@ footer{
   h1{font-size:31px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== v2 enhancements: progress, search, interactive quizzes, print ===== */
+#navsearch{
+  width:100%;box-sizing:border-box;margin:0 0 6px;padding:7px 10px;
+  border:1px solid var(--line);border-radius:6px;background:#fff;
+  font:inherit;font-size:12.5px;color:var(--ink);
+}
+#navsearch:focus{outline:none;border-color:var(--accent)}
+#progress{margin:0 0 6px}
+#progress .bar{height:4px;background:#ECEAE3;border-radius:2px;overflow:hidden}
+#progress .bar span{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+#progress .txt{font-size:11px;color:var(--muted);margin-top:5px;display:flex;justify-content:space-between}
+#progress .txt a{color:var(--muted);text-decoration:none;cursor:pointer}
+#progress .txt a:hover{color:var(--accent)}
+nav a.done .n{color:var(--accent)}
+nav a.done::after{content:"\2713";margin-left:6px;font-size:10px;color:var(--accent);font-weight:700}
+nav a.done .lv{display:none}
+nav a.hidden,nav .part.hidden{display:none}
+.done-toggle{
+  display:inline-flex;align-items:center;gap:7px;
+  font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);
+  margin:-8px 0 18px;cursor:pointer;user-select:none;
+}
+.done-toggle input{accent-color:var(--accent);width:14px;height:14px;margin:0}
+.tools{
+  font-family:'Inter',sans-serif;font-size:12px;color:var(--muted);
+  display:flex;gap:14px;margin:0 0 8px;
+}
+.tools a{color:var(--muted);text-decoration:none;cursor:pointer;border-bottom:1px dotted #bbb}
+.tools a:hover{color:var(--accent)}
+/* interactive quiz */
+.qitem{margin:14px 0}
+.qitem .stem{margin-bottom:6px}
+.qopts{display:flex;flex-direction:column;gap:6px}
+.qopt{
+  text-align:left;font:inherit;font-size:15px;line-height:1.45;
+  padding:8px 12px;border:1px solid var(--line);border-radius:6px;
+  background:#fff;color:var(--ink);cursor:pointer;
+}
+.qopt:hover{border-color:var(--accent);background:var(--accent-soft)}
+.qopt[disabled]{cursor:default}
+.qopt.correct{border-color:#3F6E50;background:#F0F6F1;font-weight:600}
+.qopt.wrong{border-color:#9E3A3A;background:#FAF2F1;opacity:.85}
+.qopt.dim{opacity:.55}
+.qfeedback{font-family:'Inter',sans-serif;font-size:12.5px;margin:6px 0 0;color:var(--muted)}
+.qfeedback.ok{color:#3F6E50}
+.qfeedback.ko{color:#9E3A3A}
+.qscore{margin-left:auto;font-size:11.5px;font-weight:600;color:var(--muted)}
+.qscore.full{color:#3F6E50}
+.qretry{
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+  color:var(--accent);background:var(--accent-soft);border:1px solid var(--line);
+  border-radius:20px;padding:4px 14px;cursor:pointer;margin-top:8px;
+}
+details.ans.print-only{display:none}
+/* print */
+@media print{
+  nav,.done-toggle,.tools,.qretry,.qfeedback,#navsearch,#progress{display:none !important}
+  .layout{display:block}
+  main{padding:0;max-width:none}
+  body{font-size:11pt;line-height:1.45;background:#fff}
+  h1{font-size:24pt}
+  h2{font-size:15pt;page-break-after:avoid}
+  section.chapter{page-break-inside:auto;margin-bottom:28pt}
+  section.part-head{page-break-before:always;border-top:none;margin-top:0}
+  details.qe{border:1px solid #ccc;page-break-inside:avoid}
+  details.qe summary::before{content:""}
+  .qopts{flex-direction:row;flex-wrap:wrap;gap:4px 14px}
+  .qopt{border:none;padding:0;background:none !important;font-weight:400 !important;opacity:1 !important}
+  .qopt::before{content:"\25A1  ";color:#888}
+  details.ans.print-only{display:block}
+  details.ans summary{border:none;background:none;padding:0;color:#555}
+  .box{border:1px solid #ddd;border-left-width:3px;background:none !important}
+  a.inline{color:inherit;text-decoration:none}
+  footer{page-break-before:avoid}
+}
 </style>
 </head>
 <body>
@@ -1309,6 +1385,7 @@ footer{
   links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
   var targets = document.querySelectorAll('section[id], header[id]');
   var current = null;
+  if(!('IntersectionObserver' in window)) return;
   var obs = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
@@ -1324,5 +1401,160 @@ footer{
   targets.forEach(function(t){ obs.observe(t); });
 })();
 </script>
+<script>
+(function(){
+  /* ---------- persistent state (localStorage, per file) ---------- */
+  var KEY = 'grammar-course:' + document.title.replace(/[^A-Za-z]+/g,'-');
+  function load(){ try{ return JSON.parse(localStorage.getItem(KEY) || '{}'); }catch(e){ return {}; } }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+  var state = load(); state.done = state.done || {}; state.quiz = state.quiz || {};
+
+  /* ---------- sidebar: search + progress ---------- */
+  var nav = document.getElementById('toc');
+  var brandSub = nav.querySelector('.brand-sub');
+  var search = document.createElement('input');
+  search.id = 'navsearch'; search.type = 'search'; search.placeholder = 'Filter chapters\u2026'; search.setAttribute('aria-label','Filter chapters');
+  var prog = document.createElement('div'); prog.id = 'progress';
+  prog.innerHTML = '<div class="bar"><span></span></div><div class="txt"><span class="n"></span><a class="reset" title="Clear saved progress and quiz scores">reset</a></div>';
+  brandSub.insertAdjacentElement('afterend', prog);
+  brandSub.insertAdjacentElement('afterend', search);
+
+  var navLinks = Array.prototype.slice.call(nav.querySelectorAll('.navlinks a'));
+  var navParts = Array.prototype.slice.call(nav.querySelectorAll('.navlinks .part'));
+  search.addEventListener('input', function(){
+    var q = search.value.trim().toLowerCase();
+    navLinks.forEach(function(a){ a.classList.toggle('hidden', q && a.textContent.toLowerCase().indexOf(q) < 0); });
+    navParts.forEach(function(p){
+      var el = p.nextElementSibling, any = false;
+      while(el && !el.classList.contains('part')){ if(el.tagName === 'A' && !el.classList.contains('hidden')) any = true; el = el.nextElementSibling; }
+      p.classList.toggle('hidden', !any);
+    });
+  });
+  prog.querySelector('.reset').addEventListener('click', function(){
+    if(!confirm('Clear all saved progress and quiz scores for this course?')) return;
+    state = {done:{}, quiz:{}}; save(); location.reload();
+  });
+
+  /* ---------- chapter "done" toggles ---------- */
+  var chapterIds = [];
+  document.querySelectorAll('section.chapter[id^="ch"]').forEach(function(sec){
+    chapterIds.push(sec.id);
+    var anchor = sec.querySelector('.ch-meta') || sec.querySelector('h2');
+    var label = document.createElement('label'); label.className = 'done-toggle';
+    var cb = document.createElement('input'); cb.type = 'checkbox'; cb.checked = !!state.done[sec.id];
+    label.appendChild(cb); label.appendChild(document.createTextNode('Mark chapter as done'));
+    cb.addEventListener('change', function(){ if(cb.checked) state.done[sec.id] = 1; else delete state.done[sec.id]; save(); paint(); });
+    anchor.insertAdjacentElement('afterend', label);
+  });
+  function paint(){
+    var n = 0;
+    chapterIds.forEach(function(id){ if(state.done[id]) n++; });
+    nav.querySelectorAll('a[href^="#ch"]').forEach(function(a){ a.classList.toggle('done', !!state.done[a.getAttribute('href').slice(1)]); });
+    prog.querySelector('.bar span').style.width = (100 * n / chapterIds.length) + '%';
+    prog.querySelector('.txt .n').textContent = n + ' / ' + chapterIds.length + ' chapters done';
+  }
+  paint();
+
+  /* ---------- expand / collapse all + print handling ---------- */
+  var tools = document.createElement('div'); tools.className = 'tools';
+  tools.innerHTML = '<a class="exp">Expand all quizzes &amp; exercises</a><a class="col">Collapse all</a><a class="prn">Print / save as PDF</a>';
+  var firstPart = document.querySelector('section.part-head');
+  if(firstPart) firstPart.insertAdjacentElement('beforebegin', tools);
+  function setAll(open){ document.querySelectorAll('details').forEach(function(d){ d.open = open; }); }
+  tools.querySelector('.exp').addEventListener('click', function(){ setAll(true); });
+  tools.querySelector('.col').addEventListener('click', function(){ setAll(false); });
+  tools.querySelector('.prn').addEventListener('click', function(){ window.print(); });
+  var wasOpen = null;
+  window.addEventListener('beforeprint', function(){
+    wasOpen = Array.prototype.map.call(document.querySelectorAll('details'), function(d){ return d.open; });
+    setAll(true);
+  });
+  window.addEventListener('afterprint', function(){
+    if(!wasOpen) return;
+    Array.prototype.forEach.call(document.querySelectorAll('details'), function(d,i){ d.open = wasOpen[i]; });
+    wasOpen = null;
+  });
+
+  /* ---------- interactive quizzes ---------- */
+  function shuffle(arr){ for(var i = arr.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = arr[i]; arr[i] = arr[j]; arr[j] = t; } return arr; }
+  function stripTail(s){ return s.replace(/^(\s|&nbsp;|\u00a0)+|(\s|&nbsp;|\u00a0)+$/g, ''); }
+
+  document.querySelectorAll('details.qe').forEach(function(d, qi){
+    var sum = d.querySelector('summary');
+    if(!/^\s*Quiz/.test(sum.textContent)) return;
+    var ans = d.querySelector('details.ans');
+    var body = ans && ans.querySelector('.abody');
+    if(!body) return;
+    var sec = d.closest('section'); var qid = (sec ? sec.id : 'q') + ':' + qi;
+
+    /* parse answer key: "1 b · 2 c (note) · 3 a" */
+    var key = {};
+    body.textContent.split('\u00b7').forEach(function(p){
+      var m = p.trim().match(/^(\d+)[\s\u00a0]*([a-d])\b[\s\u00a0]*(.*)$/);
+      if(m) key[m[1]] = { a: m[2], note: m[3].replace(/^\((.*)\)$/, '$1').trim() };
+    });
+
+    var items = d.querySelectorAll('.qbody > ol > li');
+    var total = 0, answered = 0, score = 0, converted = 0;
+    var scoreEl = document.createElement('span'); scoreEl.className = 'qscore'; sum.appendChild(scoreEl);
+    var retry = document.createElement('button'); retry.type = 'button'; retry.className = 'qretry'; retry.textContent = 'Try again'; retry.style.display = 'none';
+
+    function paintScore(){
+      if(!total) return;
+      var saved = state.quiz[qid];
+      if(answered === total){ scoreEl.textContent = 'Score ' + score + ' / ' + total; scoreEl.classList.toggle('full', score === total); retry.style.display = ''; }
+      else if(saved){ scoreEl.textContent = 'Last score ' + saved.s + ' / ' + saved.t; scoreEl.classList.toggle('full', saved.s === saved.t); }
+      else scoreEl.textContent = '';
+    }
+
+    items.forEach(function(li, idx){
+      var n = String(idx + 1); var k = key[n]; if(!k) return;
+      var parts = li.innerHTML.split(/\(([a-d])\)(?:&nbsp;|\s)*/);
+      if(parts.length < 5) return;                      /* need stem + at least 2 options */
+      var stem = stripTail(parts[0]); var opts = [];
+      for(var i = 1; i < parts.length; i += 2){ opts.push({ letter: parts[i], html: stripTail(parts[i + 1] || '') }); }
+      if(!opts.some(function(o){ return o.letter === k.a; })) return;
+      total++; converted++;
+      li.innerHTML = '';
+      var wrap = document.createElement('div'); wrap.className = 'qitem';
+      var st = document.createElement('div'); st.className = 'stem'; st.innerHTML = stem; wrap.appendChild(st);
+      var box = document.createElement('div'); box.className = 'qopts'; wrap.appendChild(box);
+      var fb = document.createElement('div'); fb.className = 'qfeedback'; wrap.appendChild(fb);
+      var buttons = [];
+      shuffle(opts.slice()).forEach(function(o){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'qopt'; b.innerHTML = o.html; b.dataset.letter = o.letter;
+        b.addEventListener('click', function(){
+          if(b.disabled) return;
+          var ok = o.letter === k.a;
+          buttons.forEach(function(x){ x.disabled = true; if(x.dataset.letter === k.a) x.classList.add('correct'); else if(x === b) x.classList.add('wrong'); else x.classList.add('dim'); });
+          fb.textContent = (ok ? 'Correct.' : 'Not quite.') + (k.note ? ' ' + k.note : '');
+          fb.className = 'qfeedback ' + (ok ? 'ok' : 'ko');
+          answered++; if(ok) score++;
+          if(answered === total){ state.quiz[qid] = { s: score, t: total }; save(); }
+          paintScore();
+        });
+        buttons.push(b); box.appendChild(b);
+      });
+      li.appendChild(wrap);
+      li._reset = function(){
+        buttons.forEach(function(x){ x.disabled = false; x.className = 'qopt'; });
+        fb.textContent = ''; fb.className = 'qfeedback';
+        var order = shuffle(buttons.slice()); order.forEach(function(x){ box.appendChild(x); });
+      };
+    });
+
+    if(converted){
+      ans.classList.add('print-only');      /* key stays available for printing */
+      d.querySelector('.qbody').appendChild(retry);
+      retry.addEventListener('click', function(){
+        items.forEach(function(li){ if(li._reset) li._reset(); });
+        answered = 0; score = 0; retry.style.display = 'none'; paintScore();
+      });
+      paintScore();
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
